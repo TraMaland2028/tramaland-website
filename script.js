@@ -27,7 +27,7 @@ function vote(choice) {
 
   yesBtn.style.display = 'none';
   noBtn.style.display = 'none';
-  afterVote.classList.remove('hidden');
+  afterVote.classList.add('show');
 }
 
 yesBtn.onclick = () => vote('yes');
