@@ -14,7 +14,6 @@ function formatCount(n) {
 }
 
 function vote(choice) {
-  if (hasVoted) return;
   hasVoted = true;
   localStorage.setItem('hasVoted', 'true');
   if (choice === 'yes') {
