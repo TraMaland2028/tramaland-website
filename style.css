@@ -1,87 +1,76 @@
 
 body {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
   background: #fff;
 }
-.title {
-  font-size: 2.42em;
-  margin-top: 0px;
+h1 {
+  font-size: 2.2em;
+  margin: 0.5em 0 0.2em;
 }
-.main-image {
-  width: 80%;
+.banner {
+  width: 90%;
   max-width: 400px;
-  margin-top: 10px;
 }
-.vote-section {
+.counter-row {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px 0;
 }
-.vote-block {
-  margin: 0 20px;
-}
-.vote-btn {
-  padding: 12px 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+.counter-box {
+  font-size: 1.3em;
+  width: 110px;
+  padding: 10px;
   color: white;
+  font-weight: bold;
 }
-.yes {
+.counter-box.blue {
   background-color: #00bfff;
 }
-.no {
+.counter-box.red {
   background-color: #ff3333;
 }
-.vote-display {
-  font-size: 18px;
-  background-color: #00bfff;
-  padding: 5px 15px;
-  border-radius: 5px;
-  margin-bottom: 8px;
-  color: #fff;
-}
-.no-display {
-  background-color: #ff3333;
-}
-.logo {
-  width: 64px;
-  height: 64px;
-}
-.comment-block {
-  margin: 20px 0;
-}
-.comment-btn {
-  background-color: #008000;
-  color: white;
-  font-size: 22px;
-  padding: 15px 38px;
+.center-icon img {
+  width: 50px;
   cursor: pointer;
-  border: none;
-  border-radius: 8px;
 }
-.book-section {
-  margin-top: 30px;
+.button-row {
+  margin: 10px;
+}
+.btn {
+  padding: 12px 24px;
+  font-size: 1em;
+  margin: 5px;
+  cursor: pointer;
+}
+.blue { background-color: #00bfff; color: white; }
+.red { background-color: #ff3333; color: white; }
+.green { background-color: green; color: white; }
+.book-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  width: 80%;
 }
 .book-btn {
-  max-width: 80%;
-  margin: 12px auto;
-  padding: 18px 10px;
-  font-size: 16px;
-  line-height: 1.4em;
+  background: #e6f0ff;
+  border: 1px solid #3399ff;
+  padding: 12px;
+  margin: 5px;
+  width: 100%;
+  max-width: 600px;
   font-weight: bold;
-  text-align: center;
-  background-color: #e6f0ff;
-  border: 2px solid #337ab7;
-  border-radius: 10px;
-  cursor: pointer;
+}
+.hidden {
   display: none;
 }
-#after-vote.show .book-btn {
-  display: block;
+
+.x-icon {
+  width: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
 }

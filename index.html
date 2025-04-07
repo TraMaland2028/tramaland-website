@@ -1,44 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TraMaland 2028</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tramaland 2028</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
 </head>
 <body>
-  <h1 class="title">TraMaland 2028</h1>
-  <img src="assets/tramaland.png" alt="TraMaland Map" class="main-image">
+  <h1 id="title">TraMaland 2028</h1>
+  <img src="трамалэнд.png" alt="Tramaland" class="banner" />
 
-  <div class="vote-section">
-    <div class="vote-block">
-      <div class="vote-display yes-display" id="yes-count">000000000</div>
-      <button id="yes-button" class="vote-btn yes">YES</button>
-    </div>
-
-    <div class="vote-center">
-      <a id="opensea-link" href="https://opensea.io/account" target="_blank" class="opensea-link">
-        <img src="https://opensea.io/static/images/logos/opensea.svg" alt="OpenSea" class="logo">
-      </a>
-    </div>
-
-    <div class="vote-block">
-      <div class="vote-display no-display" id="no-count">000000000</div>
-      <button id="no-button" class="vote-btn no">NO</button>
-    </div>
+  <div class="counter-row">
+    <div class="counter-box blue"><span id="yesCount">000000000</span></div>
+    <div class="center-icon"><img src="opensea-logo.png" id="openseaBtn" /></div>
+    <div class="counter-box red"><span id="noCount">000000000</span></div>
   </div>
 
-  <div class="comment-block">
-    <a id="comment-link" href="#" target="_blank">
-      <button class="comment-btn">DISCUSS</button>
-    </a>
+  <div class="button-row">
+    <button id="yesBtn" class="btn blue">YES</button>
+    <button id="noBtn" class="btn red">NO</button>
   </div>
 
-  <div id="after-vote" class="book-section">
-    <a href="tramaland-en.pdf" target="_blank"><button class="book-btn">Tramaland 2028:<br><strong>The Theory of the Origin of Humanity and the World</strong></button></a>
-    <a href="tramaland-ru.pdf" target="_blank"><button class="book-btn">Tramaland 2028:<br><strong>Теория происхождения человечества и мира</strong></button></a>
-    <a href="tramaland-de.pdf" target="_blank"><button class="book-btn">Tramaland 2028:<br><strong>Theorie über die Entstehung der Menschheit und der Welt</strong></button></a>
+  <div class="button-row">
+    <button id="discussBtn" class="btn green"><img src="x-icon.png" class="x-icon"> DISCUSS</button>
   </div>
+
+  <div id="books" class="book-buttons hidden">
+    <button class="book-btn">Tramaland 2028:<br>The Theory of the Origin of Humanity and the World</button>
+    <button class="book-btn">Tramaland 2028:<br>Теория происхождения человечества и мира</button>
+    <button class="book-btn">Tramaland 2028:<br>Theorie über die Entstehung der Menschheit und der Welt</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
