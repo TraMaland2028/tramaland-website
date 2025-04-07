@@ -1,7 +1,6 @@
 
-// TODO: вставь свой firebaseConfig ниже 👇 вместо пустого объекта
 const firebaseConfig = {
-  // вставь свои данные из Firebase сюда
+  // ВСТАВЬ СВОЙ FIREBASE CONFIG СЮДА
 };
 
 firebase.initializeApp(firebaseConfig);
