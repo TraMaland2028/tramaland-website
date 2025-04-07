@@ -1,48 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tramaland 2028</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <meta charset="UTF-8">
+  <title>TraMaland 2028</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <h1>TraMaland 2028</h1>
-  <img src="Трамаланд.png" alt="Tramaland" class="main-image" />
+  <h1 class="title">TraMaland 2028</h1>
+  <img src="assets/tramaland.png" alt="TraMaland Map" class="main-image">
 
-  <div class="counters">
-    <div class="counter-box blue"><div id="yesCount">000000000</div></div>
-    <div class="counter-box red"><div id="noCount">000000000</div></div>
+  <div class="vote-section">
+    <div class="vote-block">
+      <div class="vote-display yes-display" id="yes-count">000000000</div>
+      <button id="yes-button" class="vote-btn yes">YES</button>
+    </div>
+
+    <div class="vote-center">
+      <a id="opensea-link" href="https://opensea.io/account" target="_blank" class="opensea-link">
+        <img src="https://opensea.io/static/images/logos/opensea.svg" alt="OpenSea" class="logo">
+      </a>
+    </div>
+
+    <div class="vote-block">
+      <div class="vote-display no-display" id="no-count">000000000</div>
+      <button id="no-button" class="vote-btn no">NO</button>
+    </div>
   </div>
 
-  <div class="buttons">
-    <button id="yesBtn" class="btn blue">YES</button>
-    <button id="noBtn" class="btn red">NO</button>
-  </div>
-
-  <button id="openseaBtn" class="btn center">
-    <img src="opensea.png" class="x-icon" />
-  </button>
-
-  <button id="discussBtn" class="btn green">
-    <img src="x-icon.png" class="x-icon" /> DISCUSS
-  </button>
-
-  <div id="books" class="hidden">
-    <a href="tramaland-en.pdf" class="book-link" download>
-      Tramaland 2028:<br>The Theory of the Origin of Humanity and the World
-    </a>
-    <a href="tramaland-ru.pdf" class="book-link" download>
-      Tramaland 2028:<br>Теория происхождения человечества и мира
-    </a>
-    <a href="tramaland-de.pdf" class="book-link" download>
-      Tramaland 2028:<br>Theorie über die Entstehung der Menschheit und der Welt
+  <div class="comment-block">
+    <a id="comment-link" href="#" target="_blank">
+      <button class="comment-btn">DISCUSS</button>
     </a>
   </div>
 
-  <script src="script.js"></script>
+  <div id="after-vote" class="book-section">
+    <a href="tramaland-en.pdf" target="_blank"><button class="book-btn">Tramaland 2028:<br><strong>The Theory of the Origin of Humanity and the World</strong></button></a>
+    <a href="tramaland-ru.pdf" target="_blank"><button class="book-btn">Tramaland 2028:<br><strong>Теория происхождения человечества и мира</strong></button></a>
+    <a href="tramaland-de.pdf" target="_blank"><button class="book-btn">Tramaland 2028:<br><strong>Theorie über die Entstehung der Menschheit und der Welt</strong></button></a>
+  </div>
 </body>
 </html>

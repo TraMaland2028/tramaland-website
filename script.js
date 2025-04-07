@@ -1,49 +1,34 @@
 
-const firebaseConfig = {
-  // ВСТАВЬ СВОЙ FIREBASE CONFIG СЮДА
-};
+let yesCount = 0;
+let noCount = 0;
+let hasVoted = localStorage.getItem('hasVoted') === 'true';
 
-firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+const yesBtn = document.getElementById('yes-button');
+const noBtn = document.getElementById('no-button');
+const yesCountDisplay = document.getElementById('yes-count');
+const noCountDisplay = document.getElementById('no-count');
+const afterVote = document.getElementById('after-vote');
 
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const yesCountEl = document.getElementById("yesCount");
-const noCountEl = document.getElementById("noCount");
-const books = document.getElementById("books");
-const discussBtn = document.getElementById("discussBtn");
-const openseaBtn = document.getElementById("openseaBtn");
-
-function updateCounts(snapshot) {
-  const data = snapshot.val() || { yes: 0, no: 0 };
-  yesCountEl.textContent = data.yes.toString().padStart(9, "0");
-  noCountEl.textContent = data.no.toString().padStart(9, "0");
+function formatCount(n) {
+  return n.toString().padStart(9, '0');
 }
 
-firebase.database().ref("votes").on("value", updateCounts);
+function vote(choice) {
+  if (hasVoted) return;
+  hasVoted = true;
+  localStorage.setItem('hasVoted', 'true');
+  if (choice === 'yes') {
+    yesCount++;
+    yesCountDisplay.textContent = formatCount(yesCount);
+  } else {
+    noCount++;
+    noCountDisplay.textContent = formatCount(noCount);
+  }
 
-function handleVote(type) {
-  const ref = firebase.database().ref("votes");
-  ref.transaction(current => {
-    if (current === null) {
-      current = { yes: 0, no: 0 };
-    }
-    current[type]++;
-    return current;
-  });
-
-  yesBtn.style.display = "none";
-  noBtn.style.display = "none";
-  books.classList.remove("hidden");
+  yesBtn.style.display = 'none';
+  noBtn.style.display = 'none';
+  afterVote.classList.add('show');
 }
 
-yesBtn.onclick = () => handleVote("yes");
-noBtn.onclick = () => handleVote("no");
-
-discussBtn.onclick = () => {
-  window.open("https://x.com/Waiss77Johann", "_blank");
-};
-
-openseaBtn.onclick = () => {
-  window.open("https://opensea.io/account", "_blank");
-};
+yesBtn.onclick = () => vote('yes');
+noBtn.onclick = () => vote('no');
