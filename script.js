@@ -15,8 +15,6 @@ const books = document.getElementById("books");
 const discussBtn = document.getElementById("discussBtn");
 const openseaBtn = document.getElementById("openseaBtn");
 
-let hasVoted = localStorage.getItem("hasVoted");
-
 function updateCounts(snapshot) {
   const data = snapshot.val() || { yes: 0, no: 0 };
   yesCountEl.textContent = data.yes.toString().padStart(9, "0");
@@ -26,8 +24,6 @@ function updateCounts(snapshot) {
 firebase.database().ref("votes").on("value", updateCounts);
 
 function handleVote(type) {
-  if (hasVoted) return;
-
   const ref = firebase.database().ref("votes");
   ref.transaction(current => {
     if (current === null) {
@@ -37,7 +33,6 @@ function handleVote(type) {
     return current;
   });
 
-  localStorage.setItem("hasVoted", "true");
   yesBtn.style.display = "none";
   noBtn.style.display = "none";
   books.classList.remove("hidden");
@@ -53,9 +48,3 @@ discussBtn.onclick = () => {
 openseaBtn.onclick = () => {
   window.open("https://opensea.io/account", "_blank");
 };
-
-if (hasVoted) {
-  yesBtn.style.display = "none";
-  noBtn.style.display = "none";
-  books.classList.remove("hidden");
-}
