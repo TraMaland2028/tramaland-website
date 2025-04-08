@@ -1,116 +1,87 @@
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
   text-align: center;
-  background-color: #f4f4f4;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
+  background: #fff;
 }
 .title {
-  font-size: 2.25rem;
-  margin-bottom: 20px;
-}
-.image-container {
-  margin-bottom: 30px;
+  font-size: 2.42em;
+  margin-top: 0px;
 }
 .main-image {
-  max-width: 90%;
-  height: auto;
-  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  margin-top: 10px;
 }
-.center-vote {
+.vote-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+  margin: 20px 0;
 }
 .vote-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.vote-display {
-  font-size: 1.2rem;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  width: 80px;
-  text-align: center;
-}
-.yes-color {
-  background-color: #00bfff;
-  color: white;
-}
-.no-color {
-  background-color: #ff4d4d;
-  color: white;
+  margin: 0 20px;
 }
 .vote-btn {
-  font-size: 1.5rem;
-  padding: 10px 20px;
+  padding: 12px 30px;
+  font-size: 18px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  width: 80px;
+  color: white;
 }
 .yes {
   background-color: #00bfff;
-  color: white;
 }
 .no {
-  background-color: #ff4d4d;
-  color: white;
+  background-color: #ff3333;
 }
-.opensea-btn.round {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #2081e2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
+.vote-display {
+  font-size: 18px;
+  background-color: #00bfff;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.no-display {
+  background-color: #ff3333;
+}
+.logo {
+  width: 64px;
+  height: 64px;
+}
+.comment-block {
+  margin: 20px 0;
+}
+.comment-btn {
+  background-color: #008000;
+  color: white;
+  font-size: 22px;
+  padding: 15px 38px;
   cursor: pointer;
-}
-.icon-only {
-  width: 30px;
-  height: 30px;
-}
-.twitter-btn {
-  background-color: #4caf50;
-  color: white;
-  font-size: 1.1rem;
-  padding: 10px 20px;
+  border: none;
   border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  margin: 20px auto;
-  display: inline-flex;
-  align-items: center;
 }
-.icon {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 8px;
+.book-section {
+  margin-top: 30px;
 }
 .book-btn {
-  background-color: #4caf50;
-  color: white;
-  font-size: 1rem;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  margin: 10px auto;
+  max-width: 80%;
+  margin: 12px auto;
+  padding: 18px 10px;
+  font-size: 16px;
+  line-height: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #e6f0ff;
+  border: 2px solid #337ab7;
+  border-radius: 10px;
   cursor: pointer;
-  display: block;
-}
-.download-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.hidden {
   display: none;
+}
+#after-vote.show .book-btn {
+  display: block;
 }
