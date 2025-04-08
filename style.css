@@ -85,12 +85,3 @@ body {
 #after-vote.show .book-btn {
   display: block;
 }
-
-.main-title {
-    font-size: 4em;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    top: -20px;
-    text-align: center;
-}
