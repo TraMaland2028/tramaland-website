@@ -1,58 +1,36 @@
 
-
 const firebaseConfig = {
-  apiKey: "AIzaSyDv4736rT_yRzpT2iNcE0ptjBl7evoL8zA",
+  apiKey: "AIzaSyD-bPKCgbgZxHvK94dqp9Zh2x_TcTnIdGc",
   authDomain: "tramaland2028.firebaseapp.com",
   databaseURL: "https://tramaland2028-default-rtdb.firebaseio.com",
   projectId: "tramaland2028",
   storageBucket: "tramaland2028.appspot.com",
-  messagingSenderId: "163224729043",
-  appId: "1:163224729043:web:d9f04156e931021a482b26",
-  measurementId: "G-4YPET2Q0DD"
+  messagingSenderId: "574127419835",
+  appId: "1:574127419835:web:cf5a4187de7636b5acb7a3"
 };
-
 firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
-
+const db = firebase.database();
 
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
-const yesCountEl = document.getElementById("yesCount");
-const noCountEl = document.getElementById("noCount");
+const yesCount = document.getElementById("yesCount");
+const noCount = document.getElementById("noCount");
 const books = document.getElementById("books");
-const discussBtn = document.getElementById("discussBtn");
-const openseaBtn = document.getElementById("openseaBtn");
 
-function updateCounts(snapshot) {
-  const data = snapshot.val() || { yes: 0, no: 0 };
-  yesCountEl.textContent = data.yes.toString().padStart(9, "0");
-  noCountEl.textContent = data.no.toString().padStart(9, "0");
+const votesRef = db.ref("votes");
+
+votesRef.on("value", (snapshot) => {
+    const data = snapshot.val();
+    yesCount.textContent = "YES: " + (data?.yes || 0);
+    noCount.textContent = "NO: " + (data?.no || 0);
+});
+
+function vote(option) {
+    votesRef.child(option).transaction(current => (current || 0) + 1);
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    books.classList.remove("hidden");
 }
 
-firebase.database().ref("votes").on("value", updateCounts);
-
-function handleVote(type) {
-  const ref = firebase.database().ref("votes");
-  ref.transaction(current => {
-    if (current === null) {
-      current = { yes: 0, no: 0 };
-    }
-    current[type]++;
-    return current;
-  });
-
-  yesBtn.style.display = "none";
-  noBtn.style.display = "none";
-  books.classList.remove("hidden");
-}
-
-yesBtn.onclick = () => handleVote("yes");
-noBtn.onclick = () => handleVote("no");
-
-discussBtn.onclick = () => {
-  window.open("https://x.com/Waiss77Johann", "_blank");
-};
-
-openseaBtn.onclick = () => {
-  window.open("https://opensea.io/account", "_blank");
-};
+yesBtn.addEventListener("click", () => vote("yes"));
+noBtn.addEventListener("click", () => vote("no"));
