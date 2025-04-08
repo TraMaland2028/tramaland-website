@@ -1,40 +1,53 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>TraMaland 2028</title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="style.css" rel="stylesheet"/>
-<script defer="" src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TraMaland 2028</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1 class="title" style="font-size: 320%; margin-top: 0; margin-bottom: -10px;">TraMaland 2028</h1>
-<img alt="TraMaland Map" class="main-image" src="assets/tramaland.png"/>
-<div class="vote-section">
-<div class="vote-block">
-<div class="vote-display yes-display" id="yes-count">000000000</div>
-<button class="vote-btn yes" id="yes-button">YES</button>
-</div>
-<div class="vote-center">
-<a class="opensea-link" href="https://opensea.io/account" id="opensea-link" target="_blank">
-<img alt="OpenSea" class="logo" src="https://opensea.io/static/images/logos/opensea.svg"/>
-</a>
-</div>
-<div class="vote-block">
-<div class="vote-display no-display" id="no-count">000000000</div>
-<button class="vote-btn no" id="no-button">NO</button>
-</div>
-</div>
-<div class="comment-block">
-<a href="#" id="comment-link" target="_blank">
-<button class="comment-btn">DISCUSS</button>
-</a>
-</div>
-<div class="book-section" id="after-vote">
-<a href="tramaland-en.pdf" target="_blank"><button class="book-btn">Tramaland 2028:<br/><strong>The Theory of the Origin of Humanity and the World</strong></button></a>
-<a href="tramaland-ru.pdf" target="_blank"><button class="book-btn">Tramaland 2028:<br/><strong>Теория происхождения человечества и мира</strong></button></a>
-<a href="tramaland-de.pdf" target="_blank"><button class="book-btn">Tramaland 2028:<br/><strong>Theorie über die Entstehung der Menschheit und der Welt</strong></button></a>
-</div>
+  <h1 class="title">TraMaland 2028</h1>
+
+  <div class="image-container">
+    <img src="tramaland.png" alt="TraMaland Image" class="main-image">
+  </div>
+
+  <div class="vote-section">
+    <div class="vote-block">
+      <div id="yesDisplay" class="vote-display yes-color">YES: 0</div>
+      <button id="yesBtn" class="vote-btn yes">Yes</button>
+    </div>
+
+    <div class="opensea-block">
+      <a href="https://opensea.io/your_profile_link" target="_blank">
+        <button class="opensea-btn">
+          <img src="https://storage.googleapis.com/opensea-static/Logomark/Logomark-Blue.svg" alt="OpenSea" class="icon">
+          OpenSea
+        </button>
+      </a>
+    </div>
+
+    <div class="vote-block">
+      <div id="noDisplay" class="vote-display no-color">NO: 0</div>
+      <button id="noBtn" class="vote-btn no">No</button>
+    </div>
+  </div>
+
+  <div class="extra-buttons">
+    <a href="https://twitter.com/your_discussion_post" target="_blank">
+      <button class="twitter-btn">
+        <img src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" class="icon"> DISCUSS
+      </button>
+    </a>
+  </div>
+
+  <div id="download-buttons" class="hidden">
+    <a href="tramaland-en.pdf" download><button class="book-btn">Download Book (EN)</button></a>
+    <a href="tramaland-ru.pdf" download><button class="book-btn">Скачать книгу (RU)</button></a>
+    <a href="tramaland-de.pdf" download><button class="book-btn">Buch herunterladen (DE)</button></a>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

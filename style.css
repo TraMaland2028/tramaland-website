@@ -1,87 +1,96 @@
 
 body {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
-  margin: 0;
-  padding: 0;
-  background: #fff;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 .title {
-  font-size: 2.42em;
-  margin-top: 0px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.image-container {
+  margin-bottom: 30px;
 }
 .main-image {
-  width: 80%;
-  max-width: 400px;
-  margin-top: 10px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
 }
 .vote-section {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin: 20px 0;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 .vote-block {
-  margin: 0 20px;
+  margin: 10px;
+}
+.vote-display {
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.yes-color {
+  background-color: #00bfff;
+  color: white;
+}
+.no-color {
+  background-color: #ff4d4d;
+  color: white;
 }
 .vote-btn {
-  padding: 12px 30px;
-  font-size: 18px;
+  font-size: 1.5rem;
+  padding: 10px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  color: white;
 }
 .yes {
   background-color: #00bfff;
+  color: white;
 }
 .no {
-  background-color: #ff3333;
-}
-.vote-display {
-  font-size: 18px;
-  background-color: #00bfff;
-  padding: 5px 15px;
-  border-radius: 5px;
-  margin-bottom: 8px;
-  color: #fff;
-}
-.no-display {
-  background-color: #ff3333;
-}
-.logo {
-  width: 64px;
-  height: 64px;
-}
-.comment-block {
-  margin: 20px 0;
-}
-.comment-btn {
-  background-color: #008000;
+  background-color: #ff4d4d;
   color: white;
-  font-size: 22px;
-  padding: 15px 38px;
-  cursor: pointer;
-  border: none;
-  border-radius: 8px;
 }
-.book-section {
-  margin-top: 30px;
+.opensea-btn {
+  background-color: #2081e2;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.twitter-btn {
+  background-color: #1da1f2;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
 }
 .book-btn {
-  max-width: 80%;
-  margin: 12px auto;
-  padding: 18px 10px;
-  font-size: 16px;
-  line-height: 1.4em;
-  font-weight: bold;
-  text-align: center;
-  background-color: #e6f0ff;
-  border: 2px solid #337ab7;
-  border-radius: 10px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
   cursor: pointer;
-  display: none;
 }
-#after-vote.show .book-btn {
-  display: block;
+.hidden {
+  display: none;
 }
