@@ -1,5 +1,5 @@
 
-
+// Firebase конфигурация
 const firebaseConfig = {
   apiKey: "AIzaSyDv4736rT_yRzpT2iNcE0ptjBl7evoL8zA",
   authDomain: "tramaland2028.firebaseapp.com",
@@ -11,48 +11,45 @@ const firebaseConfig = {
   measurementId: "G-4YPET2Q0DD"
 };
 
+// Инициализация Firebase
 firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+const db = firebase.database();
 
+// Элементы
+const yesBtn = document.getElementById("yes-btn");
+const noBtn = document.getElementById("no-btn");
+const yesCount = document.getElementById("yes-count");
+const noCount = document.getElementById("no-count");
+const downloadButtons = document.getElementById("download-buttons");
 
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const yesCountEl = document.getElementById("yesCount");
-const noCountEl = document.getElementById("noCount");
-const books = document.getElementById("books");
-const discussBtn = document.getElementById("discussBtn");
-const openseaBtn = document.getElementById("openseaBtn");
-
-function updateCounts(snapshot) {
-  const data = snapshot.val() || { yes: 0, no: 0 };
-  yesCountEl.textContent = data.yes.toString().padStart(9, "0");
-  noCountEl.textContent = data.no.toString().padStart(9, "0");
+// Обновление счётчиков
+function updateCounts() {
+  db.ref("votes").once("value", snapshot => {
+    const data = snapshot.val() || { yes: 0, no: 0 };
+    yesCount.textContent = data.yes.toString().padStart(9, "0");
+    noCount.textContent = data.no.toString().padStart(9, "0");
+  });
 }
 
-firebase.database().ref("votes").on("value", updateCounts);
-
-function handleVote(type) {
-  const ref = firebase.database().ref("votes");
-  ref.transaction(current => {
+// Голосование
+function vote(option) {
+  db.ref("votes").transaction(current => {
     if (current === null) {
       current = { yes: 0, no: 0 };
     }
-    current[type]++;
+    current[option]++;
     return current;
+  }).then(() => {
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    downloadButtons.style.display = "block";
+    updateCounts();
   });
-
-  yesBtn.style.display = "none";
-  noBtn.style.display = "none";
-  books.classList.remove("hidden");
 }
 
-yesBtn.onclick = () => handleVote("yes");
-noBtn.onclick = () => handleVote("no");
+// Обработчики
+yesBtn.onclick = () => vote("yes");
+noBtn.onclick = () => vote("no");
 
-discussBtn.onclick = () => {
-  window.open("https://x.com/Waiss77Johann", "_blank");
-};
-
-openseaBtn.onclick = () => {
-  window.open("https://opensea.io/account", "_blank");
-};
+// Загрузка при старте
+updateCounts();
