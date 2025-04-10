@@ -85,36 +85,3 @@ body {
 #after-vote.show .book-btn {
   display: block;
 }
-
-.opensea-btn.round {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #2081e2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-}
-.icon-only {
-  width: 30px;
-  height: 30px;
-}
-.twitter-btn {
-  background-color: #4caf50;
-  color: white;
-  font-size: 1.1rem;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  margin: 20px auto;
-  display: inline-flex;
-  align-items: center;
-}
-.download-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
