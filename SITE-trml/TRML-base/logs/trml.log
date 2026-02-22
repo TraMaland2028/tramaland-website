@@ -1,0 +1,972 @@
+2026-02-15 21:54:48,357 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-15 21:54:48,574 | ERROR | Failed to get ticker 'CL=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:48,645 | ERROR | Failed to fetch CL=F: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:49,536 | ERROR | Failed to get ticker 'NG=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:49,614 | ERROR | Failed to fetch NG=F: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:50,505 | ERROR | Failed to get ticker 'GC=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:50,599 | ERROR | Failed to fetch GC=F: 'NoneType' object is not subscriptable
+2026-02-15 21:54:51,499 | ERROR | Failed to get ticker 'SI=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:51,582 | ERROR | Failed to fetch SI=F: 'NoneType' object is not subscriptable
+2026-02-15 21:54:52,490 | ERROR | Failed to get ticker 'HG=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:52,567 | ERROR | Failed to fetch HG=F: 'NoneType' object is not subscriptable
+2026-02-15 21:54:53,476 | ERROR | Failed to get ticker 'PL=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:53,552 | ERROR | Failed to fetch PL=F: 'NoneType' object is not subscriptable
+2026-02-15 21:54:54,442 | ERROR | Failed to get ticker 'ZW=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:54,536 | ERROR | Failed to fetch ZW=F: 'NoneType' object is not subscriptable
+2026-02-15 21:54:55,458 | ERROR | Failed to get ticker 'ZC=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:55,556 | ERROR | Failed to fetch ZC=F: 'NoneType' object is not subscriptable
+2026-02-15 21:54:57,473 | ERROR | Failed to get ticker 'ZS=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 21:54:57,552 | ERROR | Failed to fetch ZS=F: 'NoneType' object is not subscriptable
+2026-02-15 21:54:58,363 | ERROR | Missing tickers: ['CL=F', 'NG=F', 'GC=F', 'SI=F', 'HG=F', 'PL=F', 'ZW=F', 'ZC=F', 'ZS=F']. Stop.
+2026-02-15 22:52:21,713 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-15 22:52:21,911 | ERROR | Failed to get ticker 'CL=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:21,990 | WARNING | Live fetch failed for CL=F: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:21,990 | ERROR | No fallback available for CL=F
+2026-02-15 22:52:22,879 | ERROR | Failed to get ticker 'NG=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:22,958 | WARNING | Live fetch failed for NG=F: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:22,958 | ERROR | No fallback available for NG=F
+2026-02-15 22:52:23,850 | ERROR | Failed to get ticker 'GC=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:23,927 | WARNING | Live fetch failed for GC=F: 'NoneType' object is not subscriptable
+2026-02-15 22:52:23,927 | ERROR | No fallback available for GC=F
+2026-02-15 22:52:24,818 | ERROR | Failed to get ticker 'SI=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:24,911 | WARNING | Live fetch failed for SI=F: 'NoneType' object is not subscriptable
+2026-02-15 22:52:24,912 | ERROR | No fallback available for SI=F
+2026-02-15 22:52:25,803 | ERROR | Failed to get ticker 'HG=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:25,894 | WARNING | Live fetch failed for HG=F: 'NoneType' object is not subscriptable
+2026-02-15 22:52:25,894 | ERROR | No fallback available for HG=F
+2026-02-15 22:52:26,787 | ERROR | Failed to get ticker 'PL=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:26,885 | WARNING | Live fetch failed for PL=F: 'NoneType' object is not subscriptable
+2026-02-15 22:52:26,885 | ERROR | No fallback available for PL=F
+2026-02-15 22:52:27,771 | ERROR | Failed to get ticker 'ZW=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:27,864 | WARNING | Live fetch failed for ZW=F: 'NoneType' object is not subscriptable
+2026-02-15 22:52:27,865 | ERROR | No fallback available for ZW=F
+2026-02-15 22:52:28,756 | ERROR | Failed to get ticker 'ZC=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:28,847 | WARNING | Live fetch failed for ZC=F: 'NoneType' object is not subscriptable
+2026-02-15 22:52:28,847 | ERROR | No fallback available for ZC=F
+2026-02-15 22:52:29,740 | ERROR | Failed to get ticker 'ZS=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 22:52:29,833 | WARNING | Live fetch failed for ZS=F: 'NoneType' object is not subscriptable
+2026-02-15 22:52:29,833 | ERROR | No fallback available for ZS=F
+2026-02-15 22:52:30,647 | ERROR | Missing tickers (no live + no fallback): ['CL=F', 'NG=F', 'GC=F', 'SI=F', 'HG=F', 'PL=F', 'ZW=F', 'ZC=F', 'ZS=F']. Stop.
+2026-02-15 23:06:01,349 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-15 23:06:01,543 | ERROR | Failed to get ticker 'CL=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:01,627 | WARNING | Live fetch failed for CL=F: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:01,627 | ERROR | No fallback available for CL=F
+2026-02-15 23:06:02,528 | ERROR | Failed to get ticker 'NG=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:02,599 | WARNING | Live fetch failed for NG=F: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:02,599 | ERROR | No fallback available for NG=F
+2026-02-15 23:06:03,514 | ERROR | Failed to get ticker 'GC=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:03,599 | WARNING | Live fetch failed for GC=F: 'NoneType' object is not subscriptable
+2026-02-15 23:06:03,600 | ERROR | No fallback available for GC=F
+2026-02-15 23:06:04,490 | ERROR | Failed to get ticker 'SI=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:04,584 | WARNING | Live fetch failed for SI=F: 'NoneType' object is not subscriptable
+2026-02-15 23:06:04,584 | ERROR | No fallback available for SI=F
+2026-02-15 23:06:05,474 | ERROR | Failed to get ticker 'HG=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:05,552 | WARNING | Live fetch failed for HG=F: 'NoneType' object is not subscriptable
+2026-02-15 23:06:05,568 | ERROR | No fallback available for HG=F
+2026-02-15 23:06:06,459 | ERROR | Failed to get ticker 'PL=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:06,553 | WARNING | Live fetch failed for PL=F: 'NoneType' object is not subscriptable
+2026-02-15 23:06:06,553 | ERROR | No fallback available for PL=F
+2026-02-15 23:06:07,443 | ERROR | Failed to get ticker 'ZW=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:07,521 | WARNING | Live fetch failed for ZW=F: 'NoneType' object is not subscriptable
+2026-02-15 23:06:07,521 | ERROR | No fallback available for ZW=F
+2026-02-15 23:06:08,417 | ERROR | Failed to get ticker 'ZC=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:08,490 | WARNING | Live fetch failed for ZC=F: 'NoneType' object is not subscriptable
+2026-02-15 23:06:08,505 | ERROR | No fallback available for ZC=F
+2026-02-15 23:06:09,406 | ERROR | Failed to get ticker 'ZS=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:06:09,490 | WARNING | Live fetch failed for ZS=F: 'NoneType' object is not subscriptable
+2026-02-15 23:06:09,490 | ERROR | No fallback available for ZS=F
+2026-02-15 23:06:10,303 | ERROR | Missing tickers (no live + no fallback): ['CL=F', 'NG=F', 'GC=F', 'SI=F', 'HG=F', 'PL=F', 'ZW=F', 'ZC=F', 'ZS=F']. Stop.
+2026-02-15 23:08:58,973 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-15 23:08:59,190 | ERROR | Failed to get ticker 'CL=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:08:59,279 | WARNING | Live fetch failed for CL=F: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:08:59,280 | ERROR | No fallback available for CL=F
+2026-02-15 23:09:00,166 | ERROR | Failed to get ticker 'NG=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:09:00,260 | WARNING | Live fetch failed for NG=F: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:09:00,260 | ERROR | No fallback available for NG=F
+2026-02-15 23:09:01,145 | ERROR | Failed to get ticker 'GC=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:09:01,223 | WARNING | Live fetch failed for GC=F: 'NoneType' object is not subscriptable
+2026-02-15 23:09:01,223 | ERROR | No fallback available for GC=F
+2026-02-15 23:09:02,114 | ERROR | Failed to get ticker 'SI=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:09:02,204 | WARNING | Live fetch failed for SI=F: 'NoneType' object is not subscriptable
+2026-02-15 23:09:02,205 | ERROR | No fallback available for SI=F
+2026-02-15 23:09:03,092 | ERROR | Failed to get ticker 'HG=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:09:03,177 | WARNING | Live fetch failed for HG=F: 'NoneType' object is not subscriptable
+2026-02-15 23:09:03,177 | ERROR | No fallback available for HG=F
+2026-02-15 23:09:04,077 | ERROR | Failed to get ticker 'PL=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:09:04,161 | WARNING | Live fetch failed for PL=F: 'NoneType' object is not subscriptable
+2026-02-15 23:09:04,162 | ERROR | No fallback available for PL=F
+2026-02-15 23:09:05,051 | ERROR | Failed to get ticker 'ZW=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:09:05,133 | WARNING | Live fetch failed for ZW=F: 'NoneType' object is not subscriptable
+2026-02-15 23:09:05,134 | ERROR | No fallback available for ZW=F
+2026-02-15 23:09:06,034 | ERROR | Failed to get ticker 'ZC=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:09:06,123 | WARNING | Live fetch failed for ZC=F: 'NoneType' object is not subscriptable
+2026-02-15 23:09:06,123 | ERROR | No fallback available for ZC=F
+2026-02-15 23:09:07,021 | ERROR | Failed to get ticker 'ZS=F' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: C:\Users\Иван\Desktop\TRML-base\.venv\lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-02-15 23:09:07,107 | WARNING | Live fetch failed for ZS=F: 'NoneType' object is not subscriptable
+2026-02-15 23:09:07,107 | ERROR | No fallback available for ZS=F
+2026-02-15 23:09:07,924 | ERROR | Missing tickers (no live + no fallback): ['CL=F', 'NG=F', 'GC=F', 'SI=F', 'HG=F', 'PL=F', 'ZW=F', 'ZC=F', 'ZS=F']. Stop.
+2026-02-15 23:24:15,145 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-15 23:24:17,776 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:24:19,225 | ERROR | CL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:24:19,225 | WARNING | Live fetch failed for CL=F: No data for CL=F
+2026-02-15 23:24:19,225 | ERROR | No fallback available for CL=F
+2026-02-15 23:24:21,318 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:24:22,600 | ERROR | NG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:24:22,600 | WARNING | Live fetch failed for NG=F: No data for NG=F
+2026-02-15 23:24:22,600 | ERROR | No fallback available for NG=F
+2026-02-15 23:24:24,911 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:24:26,208 | ERROR | GC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:24:26,208 | WARNING | Live fetch failed for GC=F: No data for GC=F
+2026-02-15 23:24:26,208 | ERROR | No fallback available for GC=F
+2026-02-15 23:24:28,317 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:24:29,553 | ERROR | SI=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:24:29,553 | WARNING | Live fetch failed for SI=F: No data for SI=F
+2026-02-15 23:24:29,553 | ERROR | No fallback available for SI=F
+2026-02-15 23:24:31,678 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:24:33,006 | ERROR | HG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:24:33,006 | WARNING | Live fetch failed for HG=F: No data for HG=F
+2026-02-15 23:24:33,006 | ERROR | No fallback available for HG=F
+2026-02-15 23:24:35,116 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:24:36,396 | ERROR | PL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:24:36,412 | WARNING | Live fetch failed for PL=F: No data for PL=F
+2026-02-15 23:24:36,412 | ERROR | No fallback available for PL=F
+2026-02-15 23:24:38,465 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:24:39,754 | ERROR | ZW=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:24:39,754 | WARNING | Live fetch failed for ZW=F: No data for ZW=F
+2026-02-15 23:24:39,754 | ERROR | No fallback available for ZW=F
+2026-02-15 23:24:41,848 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:24:43,141 | ERROR | ZC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:24:43,141 | WARNING | Live fetch failed for ZC=F: No data for ZC=F
+2026-02-15 23:24:43,157 | ERROR | No fallback available for ZC=F
+2026-02-15 23:24:45,272 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:24:46,587 | ERROR | ZS=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:24:46,590 | WARNING | Live fetch failed for ZS=F: No data for ZS=F
+2026-02-15 23:24:46,591 | ERROR | No fallback available for ZS=F
+2026-02-15 23:24:47,397 | ERROR | Missing tickers (no live + no fallback): ['CL=F', 'NG=F', 'GC=F', 'SI=F', 'HG=F', 'PL=F', 'ZW=F', 'ZC=F', 'ZS=F']. Stop.
+2026-02-15 23:57:25,835 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-15 23:57:30,020 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:57:32,095 | ERROR | CL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:57:32,099 | WARNING | Live fetch failed for CL=F: No data for CL=F
+2026-02-15 23:57:32,099 | ERROR | No fallback available for CL=F
+2026-02-15 23:57:35,459 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:57:38,398 | ERROR | NG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:57:38,403 | WARNING | Live fetch failed for NG=F: No data for NG=F
+2026-02-15 23:57:38,404 | ERROR | No fallback available for NG=F
+2026-02-15 23:57:41,411 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:57:43,761 | ERROR | GC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:57:43,761 | WARNING | Live fetch failed for GC=F: No data for GC=F
+2026-02-15 23:57:43,761 | ERROR | No fallback available for GC=F
+2026-02-15 23:57:46,753 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:57:49,021 | ERROR | SI=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:57:49,021 | WARNING | Live fetch failed for SI=F: No data for SI=F
+2026-02-15 23:57:49,021 | ERROR | No fallback available for SI=F
+2026-02-15 23:57:52,554 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:57:54,849 | ERROR | HG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:57:54,849 | WARNING | Live fetch failed for HG=F: No data for HG=F
+2026-02-15 23:57:54,865 | ERROR | No fallback available for HG=F
+2026-02-15 23:57:57,975 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:58:00,252 | ERROR | PL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:58:00,258 | WARNING | Live fetch failed for PL=F: No data for PL=F
+2026-02-15 23:58:00,259 | ERROR | No fallback available for PL=F
+2026-02-15 23:58:03,334 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:58:05,600 | ERROR | ZW=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:58:05,600 | WARNING | Live fetch failed for ZW=F: No data for ZW=F
+2026-02-15 23:58:05,600 | ERROR | No fallback available for ZW=F
+2026-02-15 23:58:08,895 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:58:11,143 | ERROR | ZC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:58:11,148 | WARNING | Live fetch failed for ZC=F: No data for ZC=F
+2026-02-15 23:58:11,149 | ERROR | No fallback available for ZC=F
+2026-02-15 23:58:14,225 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-15 23:58:16,521 | ERROR | ZS=F: No price data found, symbol may be delisted (period=10d)
+2026-02-15 23:58:16,521 | WARNING | Live fetch failed for ZS=F: No data for ZS=F
+2026-02-15 23:58:16,521 | ERROR | No fallback available for ZS=F
+2026-02-15 23:58:17,333 | ERROR | Missing tickers (no live + no fallback): ['CL=F', 'NG=F', 'GC=F', 'SI=F', 'HG=F', 'PL=F', 'ZW=F', 'ZC=F', 'ZS=F']. Stop.
+2026-02-16 00:01:10,351 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-16 00:01:14,506 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:16,818 | ERROR | CL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:16,818 | WARNING | Fetch attempt 1/3 failed for CL=F: No data for CL=F
+2026-02-16 00:01:17,631 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:19,865 | ERROR | CL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:19,865 | WARNING | Fetch attempt 2/3 failed for CL=F: No data for CL=F
+2026-02-16 00:01:21,473 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:23,809 | ERROR | CL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:23,813 | WARNING | Fetch attempt 3/3 failed for CL=F: No data for CL=F
+2026-02-16 00:01:23,814 | WARNING | Live fetch failed for CL=F: Failed to fetch CL=F after 3 attempts: No data for CL=F
+2026-02-16 00:01:23,814 | ERROR | No fallback available for CL=F
+2026-02-16 00:01:26,866 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:29,069 | ERROR | NG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:29,069 | WARNING | Fetch attempt 1/3 failed for NG=F: No data for NG=F
+2026-02-16 00:01:29,895 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:32,131 | ERROR | NG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:32,131 | WARNING | Fetch attempt 2/3 failed for NG=F: No data for NG=F
+2026-02-16 00:01:33,741 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:35,990 | ERROR | NG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:35,997 | WARNING | Fetch attempt 3/3 failed for NG=F: No data for NG=F
+2026-02-16 00:01:35,997 | WARNING | Live fetch failed for NG=F: Failed to fetch NG=F after 3 attempts: No data for NG=F
+2026-02-16 00:01:35,998 | ERROR | No fallback available for NG=F
+2026-02-16 00:01:39,093 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:41,367 | ERROR | GC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:41,373 | WARNING | Fetch attempt 1/3 failed for GC=F: No data for GC=F
+2026-02-16 00:01:42,178 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:44,443 | ERROR | GC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:44,459 | WARNING | Fetch attempt 2/3 failed for GC=F: No data for GC=F
+2026-02-16 00:01:46,071 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:48,364 | ERROR | GC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:48,380 | WARNING | Fetch attempt 3/3 failed for GC=F: No data for GC=F
+2026-02-16 00:01:48,380 | WARNING | Live fetch failed for GC=F: Failed to fetch GC=F after 3 attempts: No data for GC=F
+2026-02-16 00:01:48,380 | ERROR | No fallback available for GC=F
+2026-02-16 00:01:51,442 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:53,631 | ERROR | SI=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:53,631 | WARNING | Fetch attempt 1/3 failed for SI=F: No data for SI=F
+2026-02-16 00:01:54,444 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:01:56,741 | ERROR | SI=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:01:56,741 | WARNING | Fetch attempt 2/3 failed for SI=F: No data for SI=F
+2026-02-16 00:01:58,341 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:00,615 | ERROR | SI=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:00,615 | WARNING | Fetch attempt 3/3 failed for SI=F: No data for SI=F
+2026-02-16 00:02:00,615 | WARNING | Live fetch failed for SI=F: Failed to fetch SI=F after 3 attempts: No data for SI=F
+2026-02-16 00:02:00,615 | ERROR | No fallback available for SI=F
+2026-02-16 00:02:03,747 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:06,021 | ERROR | HG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:06,021 | WARNING | Fetch attempt 1/3 failed for HG=F: No data for HG=F
+2026-02-16 00:02:06,833 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:09,089 | ERROR | HG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:09,101 | WARNING | Fetch attempt 2/3 failed for HG=F: No data for HG=F
+2026-02-16 00:02:10,709 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:13,069 | ERROR | HG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:13,073 | WARNING | Fetch attempt 3/3 failed for HG=F: No data for HG=F
+2026-02-16 00:02:13,073 | WARNING | Live fetch failed for HG=F: Failed to fetch HG=F after 3 attempts: No data for HG=F
+2026-02-16 00:02:13,074 | ERROR | No fallback available for HG=F
+2026-02-16 00:02:16,402 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:18,636 | ERROR | PL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:18,639 | WARNING | Fetch attempt 1/3 failed for PL=F: No data for PL=F
+2026-02-16 00:02:19,447 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:21,739 | ERROR | PL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:21,739 | WARNING | Fetch attempt 2/3 failed for PL=F: No data for PL=F
+2026-02-16 00:02:23,350 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:25,569 | ERROR | PL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:25,569 | WARNING | Fetch attempt 3/3 failed for PL=F: No data for PL=F
+2026-02-16 00:02:25,584 | WARNING | Live fetch failed for PL=F: Failed to fetch PL=F after 3 attempts: No data for PL=F
+2026-02-16 00:02:25,584 | ERROR | No fallback available for PL=F
+2026-02-16 00:02:28,437 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:30,709 | ERROR | ZW=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:30,725 | WARNING | Fetch attempt 1/3 failed for ZW=F: No data for ZW=F
+2026-02-16 00:02:31,537 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:33,756 | ERROR | ZW=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:33,756 | WARNING | Fetch attempt 2/3 failed for ZW=F: No data for ZW=F
+2026-02-16 00:02:35,366 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:37,661 | ERROR | ZW=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:37,677 | WARNING | Fetch attempt 3/3 failed for ZW=F: No data for ZW=F
+2026-02-16 00:02:37,677 | WARNING | Live fetch failed for ZW=F: Failed to fetch ZW=F after 3 attempts: No data for ZW=F
+2026-02-16 00:02:37,677 | ERROR | No fallback available for ZW=F
+2026-02-16 00:02:40,725 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:42,974 | ERROR | ZC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:42,974 | WARNING | Fetch attempt 1/3 failed for ZC=F: No data for ZC=F
+2026-02-16 00:02:43,787 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:46,052 | ERROR | ZC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:46,067 | WARNING | Fetch attempt 2/3 failed for ZC=F: No data for ZC=F
+2026-02-16 00:02:47,680 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:49,911 | ERROR | ZC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:49,911 | WARNING | Fetch attempt 3/3 failed for ZC=F: No data for ZC=F
+2026-02-16 00:02:49,911 | WARNING | Live fetch failed for ZC=F: Failed to fetch ZC=F after 3 attempts: No data for ZC=F
+2026-02-16 00:02:49,911 | ERROR | No fallback available for ZC=F
+2026-02-16 00:02:52,975 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:55,232 | ERROR | ZS=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:55,236 | WARNING | Fetch attempt 1/3 failed for ZS=F: No data for ZS=F
+2026-02-16 00:02:56,040 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:02:58,307 | ERROR | ZS=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:02:58,310 | WARNING | Fetch attempt 2/3 failed for ZS=F: No data for ZS=F
+2026-02-16 00:02:59,914 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:03:02,208 | ERROR | ZS=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:03:02,215 | WARNING | Fetch attempt 3/3 failed for ZS=F: No data for ZS=F
+2026-02-16 00:03:02,216 | WARNING | Live fetch failed for ZS=F: Failed to fetch ZS=F after 3 attempts: No data for ZS=F
+2026-02-16 00:03:02,216 | ERROR | No fallback available for ZS=F
+2026-02-16 00:03:03,020 | ERROR | First run requires all tickers, but missing: ['CL=F', 'NG=F', 'GC=F', 'SI=F', 'HG=F', 'PL=F', 'ZW=F', 'ZC=F', 'ZS=F']. Stop.
+2026-02-16 00:04:09,975 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-16 00:04:14,028 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:17,444 | ERROR | CL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:17,459 | WARNING | Fetch attempt 1/3 failed for CL=F: No data for CL=F
+2026-02-16 00:04:18,262 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:20,542 | ERROR | CL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:20,547 | WARNING | Fetch attempt 2/3 failed for CL=F: No data for CL=F
+2026-02-16 00:04:22,162 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:24,599 | ERROR | CL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:24,599 | WARNING | Fetch attempt 3/3 failed for CL=F: No data for CL=F
+2026-02-16 00:04:24,599 | WARNING | Yahoo fetch failed for CL=F: Failed to fetch CL=F after 3 attempts: No data for CL=F
+2026-02-16 00:04:25,071 | INFO | Fetched CL=F via stooq: 62.89
+2026-02-16 00:04:28,096 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:30,340 | ERROR | NG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:30,357 | WARNING | Fetch attempt 1/3 failed for NG=F: No data for NG=F
+2026-02-16 00:04:31,162 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:33,444 | ERROR | NG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:33,444 | WARNING | Fetch attempt 2/3 failed for NG=F: No data for NG=F
+2026-02-16 00:04:35,056 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:37,302 | ERROR | NG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:37,307 | WARNING | Fetch attempt 3/3 failed for NG=F: No data for NG=F
+2026-02-16 00:04:37,308 | WARNING | Yahoo fetch failed for NG=F: Failed to fetch NG=F after 3 attempts: No data for NG=F
+2026-02-16 00:04:37,688 | INFO | Fetched NG=F via stooq: 3.243
+2026-02-16 00:04:40,725 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:43,026 | ERROR | GC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:43,034 | WARNING | Fetch attempt 1/3 failed for GC=F: No data for GC=F
+2026-02-16 00:04:43,850 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:45,975 | ERROR | GC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:45,975 | WARNING | Fetch attempt 2/3 failed for GC=F: No data for GC=F
+2026-02-16 00:04:47,585 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:49,826 | ERROR | GC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:49,826 | WARNING | Fetch attempt 3/3 failed for GC=F: No data for GC=F
+2026-02-16 00:04:49,826 | WARNING | Yahoo fetch failed for GC=F: Failed to fetch GC=F after 3 attempts: No data for GC=F
+2026-02-16 00:04:50,216 | INFO | Fetched GC=F via stooq: 5046.3
+2026-02-16 00:04:53,240 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:55,552 | ERROR | SI=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:55,555 | WARNING | Fetch attempt 1/3 failed for SI=F: No data for SI=F
+2026-02-16 00:04:56,365 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:04:58,630 | ERROR | SI=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:04:58,630 | WARNING | Fetch attempt 2/3 failed for SI=F: No data for SI=F
+2026-02-16 00:05:00,253 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:02,474 | ERROR | SI=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:02,474 | WARNING | Fetch attempt 3/3 failed for SI=F: No data for SI=F
+2026-02-16 00:05:02,474 | WARNING | Yahoo fetch failed for SI=F: Failed to fetch SI=F after 3 attempts: No data for SI=F
+2026-02-16 00:05:03,182 | INFO | Fetched SI=F via stooq: 7796.4
+2026-02-16 00:05:06,256 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:08,491 | ERROR | HG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:08,506 | WARNING | Fetch attempt 1/3 failed for HG=F: No data for HG=F
+2026-02-16 00:05:09,319 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:11,631 | ERROR | HG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:11,647 | WARNING | Fetch attempt 2/3 failed for HG=F: No data for HG=F
+2026-02-16 00:05:13,256 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:15,638 | ERROR | HG=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:15,642 | WARNING | Fetch attempt 3/3 failed for HG=F: No data for HG=F
+2026-02-16 00:05:15,642 | WARNING | Yahoo fetch failed for HG=F: Failed to fetch HG=F after 3 attempts: No data for HG=F
+2026-02-16 00:05:16,022 | INFO | Fetched HG=F via stooq: 580.3
+2026-02-16 00:05:19,090 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:21,427 | ERROR | PL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:21,427 | WARNING | Fetch attempt 1/3 failed for PL=F: No data for PL=F
+2026-02-16 00:05:22,239 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:24,803 | ERROR | PL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:24,803 | WARNING | Fetch attempt 2/3 failed for PL=F: No data for PL=F
+2026-02-16 00:05:26,414 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:28,708 | ERROR | PL=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:28,708 | WARNING | Fetch attempt 3/3 failed for PL=F: No data for PL=F
+2026-02-16 00:05:28,708 | WARNING | Yahoo fetch failed for PL=F: Failed to fetch PL=F after 3 attempts: No data for PL=F
+2026-02-16 00:05:29,090 | INFO | Fetched PL=F via stooq: 2077.1
+2026-02-16 00:05:32,147 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:34,397 | ERROR | ZW=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:34,397 | WARNING | Fetch attempt 1/3 failed for ZW=F: No data for ZW=F
+2026-02-16 00:05:35,203 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:37,498 | ERROR | ZW=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:37,501 | WARNING | Fetch attempt 2/3 failed for ZW=F: No data for ZW=F
+2026-02-16 00:05:39,107 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:41,330 | ERROR | ZW=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:41,330 | WARNING | Fetch attempt 3/3 failed for ZW=F: No data for ZW=F
+2026-02-16 00:05:41,330 | WARNING | Yahoo fetch failed for ZW=F: Failed to fetch ZW=F after 3 attempts: No data for ZW=F
+2026-02-16 00:05:41,851 | INFO | Fetched ZW=F via stooq: 548.75
+2026-02-16 00:05:44,910 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:47,146 | ERROR | ZC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:47,162 | WARNING | Fetch attempt 1/3 failed for ZC=F: No data for ZC=F
+2026-02-16 00:05:47,977 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:50,242 | ERROR | ZC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:50,242 | WARNING | Fetch attempt 2/3 failed for ZC=F: No data for ZC=F
+2026-02-16 00:05:51,850 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:54,115 | ERROR | ZC=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:54,115 | WARNING | Fetch attempt 3/3 failed for ZC=F: No data for ZC=F
+2026-02-16 00:05:54,115 | WARNING | Yahoo fetch failed for ZC=F: Failed to fetch ZC=F after 3 attempts: No data for ZC=F
+2026-02-16 00:05:54,521 | INFO | Fetched ZC=F via stooq: 431.75
+2026-02-16 00:05:57,569 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:05:59,592 | ERROR | ZS=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:05:59,592 | WARNING | Fetch attempt 1/3 failed for ZS=F: No data for ZS=F
+2026-02-16 00:06:00,400 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:06:02,583 | ERROR | ZS=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:06:02,599 | WARNING | Fetch attempt 2/3 failed for ZS=F: No data for ZS=F
+2026-02-16 00:06:04,209 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 00:06:06,246 | ERROR | ZS=F: No price data found, symbol may be delisted (period=10d)
+2026-02-16 00:06:06,249 | WARNING | Fetch attempt 3/3 failed for ZS=F: No data for ZS=F
+2026-02-16 00:06:06,249 | WARNING | Yahoo fetch failed for ZS=F: Failed to fetch ZS=F after 3 attempts: No data for ZS=F
+2026-02-16 00:06:06,648 | INFO | Fetched ZS=F via stooq: 1133.0
+2026-02-16 00:06:07,457 | INFO | Base prices saved. Next run will calculate index.
+2026-02-16 00:06:07,462 | INFO | History updated | raw=100.0
+2026-02-16 00:06:07,464 | INFO | Day-0 archive saved.
+2026-02-16 00:06:27,036 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-16 00:06:27,511 | INFO | Fetched CL=F via stooq: 62.89
+2026-02-16 00:06:28,739 | INFO | Fetched NG=F via stooq: 3.243
+2026-02-16 00:06:29,937 | INFO | Fetched GC=F via stooq: 5046.3
+2026-02-16 00:06:31,124 | INFO | Fetched SI=F via stooq: 7796.4
+2026-02-16 00:06:32,355 | INFO | Fetched HG=F via stooq: 580.3
+2026-02-16 00:06:33,583 | INFO | Fetched PL=F via stooq: 2077.1
+2026-02-16 00:06:34,772 | INFO | Fetched ZW=F via stooq: 548.75
+2026-02-16 00:06:35,975 | INFO | Fetched ZC=F via stooq: 431.75
+2026-02-16 00:06:37,210 | INFO | Fetched ZS=F via stooq: 1133.0
+2026-02-16 00:06:38,042 | INFO | TRML index: 100.0
+2026-02-16 00:06:38,043 | INFO | SMA7: None | SMA30: None
+2026-02-16 00:06:38,043 | INFO | Archive saved.
+2026-02-16 00:06:38,043 | INFO | === TRML run end ===
+2026-02-16 00:14:47,723 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-16 00:14:48,301 | INFO | Fetched CL=F via stooq: 62.89
+2026-02-16 00:14:49,499 | INFO | Fetched NG=F via stooq: 3.243
+2026-02-16 00:14:50,697 | INFO | Fetched GC=F via stooq: 5046.3
+2026-02-16 00:14:51,926 | INFO | Fetched SI=F via stooq: 7796.4
+2026-02-16 00:14:53,180 | INFO | Fetched HG=F via stooq: 580.3
+2026-02-16 00:14:54,395 | INFO | Fetched PL=F via stooq: 2077.1
+2026-02-16 00:14:55,577 | INFO | Fetched ZW=F via stooq: 548.75
+2026-02-16 00:14:56,797 | INFO | Fetched ZC=F via stooq: 431.75
+2026-02-16 00:14:57,990 | INFO | Fetched ZS=F via stooq: 1133.0
+2026-02-16 00:14:58,804 | INFO | TRML index: 100.0
+2026-02-16 00:14:58,804 | INFO | SMA7: None | SMA30: None
+2026-02-16 00:14:58,805 | INFO | Archive saved.
+2026-02-16 00:14:58,805 | INFO | === TRML run end ===
+2026-02-16 00:16:19,378 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-16 00:16:19,895 | INFO | Fetched CL=F via stooq: 62.89
+2026-02-16 00:16:21,112 | INFO | Fetched NG=F via stooq: 3.243
+2026-02-16 00:16:22,346 | INFO | Fetched GC=F via stooq: 5046.3
+2026-02-16 00:16:23,539 | INFO | Fetched SI=F via stooq: 7796.4
+2026-02-16 00:16:24,735 | INFO | Fetched HG=F via stooq: 580.3
+2026-02-16 00:16:25,906 | INFO | Fetched PL=F via stooq: 2077.1
+2026-02-16 00:16:27,113 | INFO | Fetched ZW=F via stooq: 548.75
+2026-02-16 00:16:28,293 | INFO | Fetched ZC=F via stooq: 431.75
+2026-02-16 00:16:29,516 | INFO | Fetched ZS=F via stooq: 1133.0
+2026-02-16 00:16:30,347 | INFO | TRML index: 1000000.0
+2026-02-16 00:16:30,348 | INFO | SMA7: None | SMA30: None
+2026-02-16 00:16:30,349 | INFO | Archive saved.
+2026-02-16 00:16:30,349 | INFO | === TRML run end ===
+2026-02-16 00:16:56,754 | INFO | === TRML run start | date(UTC)=2026-02-15 | version=TRML-R1 ===
+2026-02-16 00:16:57,268 | INFO | Fetched CL=F via stooq: 62.89
+2026-02-16 00:16:58,469 | INFO | Fetched NG=F via stooq: 3.243
+2026-02-16 00:16:59,661 | INFO | Fetched GC=F via stooq: 5046.3
+2026-02-16 00:17:00,883 | INFO | Fetched SI=F via stooq: 7796.4
+2026-02-16 00:17:02,065 | INFO | Fetched HG=F via stooq: 580.3
+2026-02-16 00:17:03,281 | INFO | Fetched PL=F via stooq: 2077.1
+2026-02-16 00:17:04,498 | INFO | Fetched ZW=F via stooq: 548.75
+2026-02-16 00:17:05,714 | INFO | Fetched ZC=F via stooq: 431.75
+2026-02-16 00:17:06,925 | INFO | Fetched ZS=F via stooq: 1133.0
+2026-02-16 00:17:07,736 | INFO | TRML index: 1000000.0
+2026-02-16 00:17:07,737 | INFO | SMA7: None | SMA30: None
+2026-02-16 00:17:07,738 | INFO | Archive saved.
+2026-02-16 00:17:07,738 | INFO | === TRML run end ===
+2026-02-16 15:15:45,130 | INFO | === TRML run start | date(UTC)=2026-02-16 | version=TRML-R1 ===
+2026-02-16 15:15:45,741 | INFO | Fetched CL=F via stooq: 62.44
+2026-02-16 15:15:46,926 | INFO | Fetched NG=F via stooq: 3.006
+2026-02-16 15:15:48,125 | INFO | Fetched GC=F via stooq: 5030.04
+2026-02-16 15:15:49,340 | INFO | Fetched SI=F via stooq: 7674.8
+2026-02-16 15:15:50,525 | INFO | Fetched HG=F via stooq: 577.13
+2026-02-16 15:15:51,731 | INFO | Fetched PL=F via stooq: 2037.85
+2026-02-16 15:15:52,932 | INFO | Fetched ZW=F via stooq: 548.75
+2026-02-16 15:15:54,142 | INFO | Fetched ZC=F via stooq: 431.25
+2026-02-16 15:15:55,324 | INFO | Fetched ZS=F via stooq: 1133.75
+2026-02-16 15:15:56,154 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-16 15:15:56,154 | INFO | TRML index: 983444.3228651298
+2026-02-16 15:15:56,154 | INFO | SMA7: None | SMA30: None
+2026-02-16 15:15:56,154 | INFO | Archive saved.
+2026-02-16 15:15:56,155 | INFO | === TRML run end ===
+2026-02-16 15:26:47,813 | INFO | === TRML run start | date(UTC)=2026-02-16 | version=TRML-R1 ===
+2026-02-16 15:26:48,380 | INFO | Fetched CL=F via stooq: 62.56
+2026-02-16 15:26:49,604 | INFO | Fetched NG=F via stooq: 3.004
+2026-02-16 15:26:50,805 | INFO | Fetched GC=F via stooq: 5029.89
+2026-02-16 15:26:52,035 | INFO | Fetched SI=F via stooq: 7715.8
+2026-02-16 15:26:53,233 | INFO | Fetched HG=F via stooq: 577.63
+2026-02-16 15:26:54,446 | INFO | Fetched PL=F via stooq: 2036.4
+2026-02-16 15:26:55,668 | INFO | Fetched ZW=F via stooq: 548.75
+2026-02-16 15:26:56,966 | INFO | Fetched ZC=F via stooq: 431.25
+2026-02-16 15:26:58,254 | INFO | Fetched ZS=F via stooq: 1133.75
+2026-02-16 15:26:59,086 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-16 15:26:59,093 | INFO | TRML index: 984185.9205621404
+2026-02-16 15:26:59,094 | INFO | SMA7: None | SMA30: None
+2026-02-16 15:26:59,095 | INFO | Archive saved.
+2026-02-16 15:26:59,095 | INFO | === TRML run end ===
+2026-02-16 18:49:02,030 | INFO | === TRML run start | date(UTC)=2026-02-16 | version=TRML-R1 ===
+2026-02-16 18:49:02,636 | WARNING | Stooq fetch failed for CL=F: No stooq data for CL=F
+2026-02-16 18:49:06,246 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:08,350 | ERROR | CL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:08,354 | WARNING | Fetch attempt 1/3 failed for CL=F: No data for CL=F
+2026-02-16 18:49:09,163 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:11,264 | ERROR | CL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:11,268 | WARNING | Fetch attempt 2/3 failed for CL=F: No data for CL=F
+2026-02-16 18:49:12,876 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:14,769 | ERROR | CL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:14,772 | WARNING | Fetch attempt 3/3 failed for CL=F: No data for CL=F
+2026-02-16 18:49:14,772 | WARNING | Yahoo fetch failed for CL=F: Failed to fetch CL=F after 3 attempts: No data for CL=F
+2026-02-16 18:49:14,778 | WARNING | Using fallback (archive) for CL=F: 62.56
+2026-02-16 18:49:15,964 | WARNING | Stooq fetch failed for NG=F: No stooq data for NG=F
+2026-02-16 18:49:18,076 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:20,157 | ERROR | NG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:20,161 | WARNING | Fetch attempt 1/3 failed for NG=F: No data for NG=F
+2026-02-16 18:49:20,971 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:22,898 | ERROR | NG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:22,901 | WARNING | Fetch attempt 2/3 failed for NG=F: No data for NG=F
+2026-02-16 18:49:24,515 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:26,960 | ERROR | NG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:26,963 | WARNING | Fetch attempt 3/3 failed for NG=F: No data for NG=F
+2026-02-16 18:49:26,964 | WARNING | Yahoo fetch failed for NG=F: Failed to fetch NG=F after 3 attempts: No data for NG=F
+2026-02-16 18:49:26,965 | WARNING | Using fallback (archive) for NG=F: 3.004
+2026-02-16 18:49:28,146 | WARNING | Stooq fetch failed for GC=F: No stooq data for GC=F
+2026-02-16 18:49:30,200 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:32,512 | ERROR | GC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:32,515 | WARNING | Fetch attempt 1/3 failed for GC=F: No data for GC=F
+2026-02-16 18:49:33,329 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:35,413 | ERROR | GC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:35,416 | WARNING | Fetch attempt 2/3 failed for GC=F: No data for GC=F
+2026-02-16 18:49:37,026 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:39,103 | ERROR | GC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:39,106 | WARNING | Fetch attempt 3/3 failed for GC=F: No data for GC=F
+2026-02-16 18:49:39,106 | WARNING | Yahoo fetch failed for GC=F: Failed to fetch GC=F after 3 attempts: No data for GC=F
+2026-02-16 18:49:39,107 | WARNING | Using fallback (archive) for GC=F: 5029.89
+2026-02-16 18:49:40,410 | WARNING | Stooq fetch failed for SI=F: No stooq data for SI=F
+2026-02-16 18:49:42,513 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:44,570 | ERROR | SI=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:44,574 | WARNING | Fetch attempt 1/3 failed for SI=F: No data for SI=F
+2026-02-16 18:49:45,386 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:47,489 | ERROR | SI=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:47,492 | WARNING | Fetch attempt 2/3 failed for SI=F: No data for SI=F
+2026-02-16 18:49:49,100 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:51,181 | ERROR | SI=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:51,184 | WARNING | Fetch attempt 3/3 failed for SI=F: No data for SI=F
+2026-02-16 18:49:51,184 | WARNING | Yahoo fetch failed for SI=F: Failed to fetch SI=F after 3 attempts: No data for SI=F
+2026-02-16 18:49:51,186 | WARNING | Using fallback (archive) for SI=F: 7715.8
+2026-02-16 18:49:52,397 | WARNING | Stooq fetch failed for HG=F: No stooq data for HG=F
+2026-02-16 18:49:54,478 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:56,595 | ERROR | HG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:56,598 | WARNING | Fetch attempt 1/3 failed for HG=F: No data for HG=F
+2026-02-16 18:49:57,412 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:49:59,449 | ERROR | HG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:49:59,454 | WARNING | Fetch attempt 2/3 failed for HG=F: No data for HG=F
+2026-02-16 18:50:01,056 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:03,141 | ERROR | HG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:03,144 | WARNING | Fetch attempt 3/3 failed for HG=F: No data for HG=F
+2026-02-16 18:50:03,145 | WARNING | Yahoo fetch failed for HG=F: Failed to fetch HG=F after 3 attempts: No data for HG=F
+2026-02-16 18:50:03,146 | WARNING | Using fallback (archive) for HG=F: 577.63
+2026-02-16 18:50:04,307 | WARNING | Stooq fetch failed for PL=F: No stooq data for PL=F
+2026-02-16 18:50:06,310 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:08,388 | ERROR | PL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:08,391 | WARNING | Fetch attempt 1/3 failed for PL=F: No data for PL=F
+2026-02-16 18:50:09,204 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:11,383 | ERROR | PL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:11,387 | WARNING | Fetch attempt 2/3 failed for PL=F: No data for PL=F
+2026-02-16 18:50:13,000 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:15,075 | ERROR | PL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:15,078 | WARNING | Fetch attempt 3/3 failed for PL=F: No data for PL=F
+2026-02-16 18:50:15,078 | WARNING | Yahoo fetch failed for PL=F: Failed to fetch PL=F after 3 attempts: No data for PL=F
+2026-02-16 18:50:15,080 | WARNING | Using fallback (archive) for PL=F: 2036.4
+2026-02-16 18:50:16,348 | WARNING | Stooq fetch failed for ZW=F: No stooq data for ZW=F
+2026-02-16 18:50:18,522 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:20,477 | ERROR | ZW=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:20,480 | WARNING | Fetch attempt 1/3 failed for ZW=F: No data for ZW=F
+2026-02-16 18:50:21,295 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:23,387 | ERROR | ZW=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:23,391 | WARNING | Fetch attempt 2/3 failed for ZW=F: No data for ZW=F
+2026-02-16 18:50:25,008 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:27,102 | ERROR | ZW=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:27,105 | WARNING | Fetch attempt 3/3 failed for ZW=F: No data for ZW=F
+2026-02-16 18:50:27,105 | WARNING | Yahoo fetch failed for ZW=F: Failed to fetch ZW=F after 3 attempts: No data for ZW=F
+2026-02-16 18:50:27,106 | WARNING | Using fallback (archive) for ZW=F: 548.75
+2026-02-16 18:50:28,319 | WARNING | Stooq fetch failed for ZC=F: No stooq data for ZC=F
+2026-02-16 18:50:30,378 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:32,312 | ERROR | ZC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:32,316 | WARNING | Fetch attempt 1/3 failed for ZC=F: No data for ZC=F
+2026-02-16 18:50:33,119 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:35,232 | ERROR | ZC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:35,236 | WARNING | Fetch attempt 2/3 failed for ZC=F: No data for ZC=F
+2026-02-16 18:50:36,850 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:38,927 | ERROR | ZC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:38,930 | WARNING | Fetch attempt 3/3 failed for ZC=F: No data for ZC=F
+2026-02-16 18:50:38,930 | WARNING | Yahoo fetch failed for ZC=F: Failed to fetch ZC=F after 3 attempts: No data for ZC=F
+2026-02-16 18:50:38,932 | WARNING | Using fallback (archive) for ZC=F: 431.25
+2026-02-16 18:50:40,120 | WARNING | Stooq fetch failed for ZS=F: No stooq data for ZS=F
+2026-02-16 18:50:43,412 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:45,517 | ERROR | ZS=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:45,520 | WARNING | Fetch attempt 1/3 failed for ZS=F: No data for ZS=F
+2026-02-16 18:50:46,330 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:48,461 | ERROR | ZS=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:48,464 | WARNING | Fetch attempt 2/3 failed for ZS=F: No data for ZS=F
+2026-02-16 18:50:50,073 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:50:52,153 | ERROR | ZS=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:50:52,153 | WARNING | Fetch attempt 3/3 failed for ZS=F: No data for ZS=F
+2026-02-16 18:50:52,153 | WARNING | Yahoo fetch failed for ZS=F: Failed to fetch ZS=F after 3 attempts: No data for ZS=F
+2026-02-16 18:50:52,153 | WARNING | Using fallback (archive) for ZS=F: 1133.75
+2026-02-16 18:50:53,011 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-16 18:50:53,011 | INFO | TRML index: 984185.9205621404
+2026-02-16 18:50:53,011 | INFO | K raw: 0.9841859205621404 | K smooth EMA7: 0.9841859205621404
+2026-02-16 18:50:53,012 | INFO | TRML USD (raw): 984185.9205621404 | TRML USD (smooth): 984185.9205621404
+2026-02-16 18:50:53,012 | INFO | SMA7: None | SMA30: None
+2026-02-16 18:50:53,012 | INFO | Archive saved.
+2026-02-16 18:50:53,012 | INFO | === TRML run end ===
+2026-02-16 18:51:37,413 | INFO | === TRML run start | date(UTC)=2026-02-16 | version=TRML-R1 ===
+2026-02-16 18:51:37,939 | WARNING | Stooq fetch failed for CL=F: No stooq data for CL=F
+2026-02-16 18:51:41,764 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:51:43,914 | ERROR | CL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:51:43,919 | WARNING | Fetch attempt 1/3 failed for CL=F: No data for CL=F
+2026-02-16 18:51:44,727 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:51:46,912 | ERROR | CL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:51:46,916 | WARNING | Fetch attempt 2/3 failed for CL=F: No data for CL=F
+2026-02-16 18:51:48,520 | ERROR | Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:51:50,621 | ERROR | CL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:51:50,625 | WARNING | Fetch attempt 3/3 failed for CL=F: No data for CL=F
+2026-02-16 18:51:50,625 | WARNING | Yahoo fetch failed for CL=F: Failed to fetch CL=F after 3 attempts: No data for CL=F
+2026-02-16 18:51:50,627 | WARNING | Using fallback (archive) for CL=F: 62.56
+2026-02-16 18:51:51,850 | WARNING | Stooq fetch failed for NG=F: No stooq data for NG=F
+2026-02-16 18:51:53,944 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:51:56,067 | ERROR | NG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:51:56,070 | WARNING | Fetch attempt 1/3 failed for NG=F: No data for NG=F
+2026-02-16 18:51:56,875 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:51:58,972 | ERROR | NG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:51:58,976 | WARNING | Fetch attempt 2/3 failed for NG=F: No data for NG=F
+2026-02-16 18:52:00,592 | ERROR | Failed to get ticker 'NG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:02,662 | ERROR | NG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:02,666 | WARNING | Fetch attempt 3/3 failed for NG=F: No data for NG=F
+2026-02-16 18:52:02,666 | WARNING | Yahoo fetch failed for NG=F: Failed to fetch NG=F after 3 attempts: No data for NG=F
+2026-02-16 18:52:02,668 | WARNING | Using fallback (archive) for NG=F: 3.004
+2026-02-16 18:52:03,869 | WARNING | Stooq fetch failed for GC=F: No stooq data for GC=F
+2026-02-16 18:52:05,954 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:08,085 | ERROR | GC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:08,088 | WARNING | Fetch attempt 1/3 failed for GC=F: No data for GC=F
+2026-02-16 18:52:08,905 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:11,036 | ERROR | GC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:11,039 | WARNING | Fetch attempt 2/3 failed for GC=F: No data for GC=F
+2026-02-16 18:52:12,643 | ERROR | Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:14,784 | ERROR | GC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:14,788 | WARNING | Fetch attempt 3/3 failed for GC=F: No data for GC=F
+2026-02-16 18:52:14,788 | WARNING | Yahoo fetch failed for GC=F: Failed to fetch GC=F after 3 attempts: No data for GC=F
+2026-02-16 18:52:14,789 | WARNING | Using fallback (archive) for GC=F: 5029.89
+2026-02-16 18:52:16,112 | WARNING | Stooq fetch failed for SI=F: No stooq data for SI=F
+2026-02-16 18:52:18,237 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:20,797 | ERROR | SI=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:20,801 | WARNING | Fetch attempt 1/3 failed for SI=F: No data for SI=F
+2026-02-16 18:52:21,608 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:24,130 | ERROR | SI=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:24,133 | WARNING | Fetch attempt 2/3 failed for SI=F: No data for SI=F
+2026-02-16 18:52:25,743 | ERROR | Failed to get ticker 'SI=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:27,859 | ERROR | SI=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:27,863 | WARNING | Fetch attempt 3/3 failed for SI=F: No data for SI=F
+2026-02-16 18:52:27,864 | WARNING | Yahoo fetch failed for SI=F: Failed to fetch SI=F after 3 attempts: No data for SI=F
+2026-02-16 18:52:27,866 | WARNING | Using fallback (archive) for SI=F: 7715.8
+2026-02-16 18:52:29,064 | WARNING | Stooq fetch failed for HG=F: No stooq data for HG=F
+2026-02-16 18:52:31,171 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:33,331 | ERROR | HG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:33,335 | WARNING | Fetch attempt 1/3 failed for HG=F: No data for HG=F
+2026-02-16 18:52:34,141 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:36,240 | ERROR | HG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:36,243 | WARNING | Fetch attempt 2/3 failed for HG=F: No data for HG=F
+2026-02-16 18:52:37,851 | ERROR | Failed to get ticker 'HG=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:40,123 | ERROR | HG=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:40,128 | WARNING | Fetch attempt 3/3 failed for HG=F: No data for HG=F
+2026-02-16 18:52:40,128 | WARNING | Yahoo fetch failed for HG=F: Failed to fetch HG=F after 3 attempts: No data for HG=F
+2026-02-16 18:52:40,130 | WARNING | Using fallback (archive) for HG=F: 577.63
+2026-02-16 18:52:41,639 | WARNING | Stooq fetch failed for PL=F: No stooq data for PL=F
+2026-02-16 18:52:43,801 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:45,883 | ERROR | PL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:45,887 | WARNING | Fetch attempt 1/3 failed for PL=F: No data for PL=F
+2026-02-16 18:52:46,694 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:48,814 | ERROR | PL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:48,817 | WARNING | Fetch attempt 2/3 failed for PL=F: No data for PL=F
+2026-02-16 18:52:50,423 | ERROR | Failed to get ticker 'PL=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:52,509 | ERROR | PL=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:52,512 | WARNING | Fetch attempt 3/3 failed for PL=F: No data for PL=F
+2026-02-16 18:52:52,513 | WARNING | Yahoo fetch failed for PL=F: Failed to fetch PL=F after 3 attempts: No data for PL=F
+2026-02-16 18:52:52,514 | WARNING | Using fallback (archive) for PL=F: 2036.4
+2026-02-16 18:52:53,787 | WARNING | Stooq fetch failed for ZW=F: No stooq data for ZW=F
+2026-02-16 18:52:55,751 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:52:57,850 | ERROR | ZW=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:52:57,856 | WARNING | Fetch attempt 1/3 failed for ZW=F: No data for ZW=F
+2026-02-16 18:52:58,660 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:53:00,760 | ERROR | ZW=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:53:00,765 | WARNING | Fetch attempt 2/3 failed for ZW=F: No data for ZW=F
+2026-02-16 18:53:02,369 | ERROR | Failed to get ticker 'ZW=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:53:04,450 | ERROR | ZW=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:53:04,454 | WARNING | Fetch attempt 3/3 failed for ZW=F: No data for ZW=F
+2026-02-16 18:53:04,455 | WARNING | Yahoo fetch failed for ZW=F: Failed to fetch ZW=F after 3 attempts: No data for ZW=F
+2026-02-16 18:53:04,456 | WARNING | Using fallback (archive) for ZW=F: 548.75
+2026-02-16 18:53:05,672 | WARNING | Stooq fetch failed for ZC=F: No stooq data for ZC=F
+2026-02-16 18:53:07,753 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:53:09,831 | ERROR | ZC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:53:09,834 | WARNING | Fetch attempt 1/3 failed for ZC=F: No data for ZC=F
+2026-02-16 18:53:10,646 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:53:12,735 | ERROR | ZC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:53:12,740 | WARNING | Fetch attempt 2/3 failed for ZC=F: No data for ZC=F
+2026-02-16 18:53:14,351 | ERROR | Failed to get ticker 'ZC=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:53:16,823 | ERROR | ZC=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:53:16,827 | WARNING | Fetch attempt 3/3 failed for ZC=F: No data for ZC=F
+2026-02-16 18:53:16,827 | WARNING | Yahoo fetch failed for ZC=F: Failed to fetch ZC=F after 3 attempts: No data for ZC=F
+2026-02-16 18:53:16,828 | WARNING | Using fallback (archive) for ZC=F: 431.25
+2026-02-16 18:53:18,026 | WARNING | Stooq fetch failed for ZS=F: No stooq data for ZS=F
+2026-02-16 18:53:20,147 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:53:22,211 | ERROR | ZS=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:53:22,213 | WARNING | Fetch attempt 1/3 failed for ZS=F: No data for ZS=F
+2026-02-16 18:53:23,024 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:53:25,120 | ERROR | ZS=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:53:25,124 | WARNING | Fetch attempt 2/3 failed for ZS=F: No data for ZS=F
+2026-02-16 18:53:26,735 | ERROR | Failed to get ticker 'ZS=F' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 18:53:28,861 | ERROR | ZS=F: No price data found, symbol may be delisted (period=15d)
+2026-02-16 18:53:28,861 | WARNING | Fetch attempt 3/3 failed for ZS=F: No data for ZS=F
+2026-02-16 18:53:28,861 | WARNING | Yahoo fetch failed for ZS=F: Failed to fetch ZS=F after 3 attempts: No data for ZS=F
+2026-02-16 18:53:28,861 | WARNING | Using fallback (archive) for ZS=F: 1133.75
+2026-02-16 18:53:29,740 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-16 18:53:29,741 | INFO | TRML index: 984185.9205621404
+2026-02-16 18:53:29,743 | INFO | K raw: 0.9841859205621404 | K smooth EMA7: 0.9841859205621404
+2026-02-16 18:53:29,743 | INFO | TRML USD (raw): 984185.9205621404 | TRML USD (smooth): 984185.9205621404
+2026-02-16 18:53:29,751 | INFO | SMA7: None | SMA30: None
+2026-02-16 18:53:29,752 | INFO | Archive saved.
+2026-02-16 18:53:29,755 | INFO | === TRML run end ===
+2026-02-16 19:22:01,992 | INFO | === TRML run start | date(UTC)=2026-02-16 | version=TRML-R1 ===
+2026-02-16 19:22:02,924 | INFO | Fetched CL=F via stooq (median-3): 63.18
+2026-02-16 19:22:04,532 | INFO | Fetched NG=F via stooq (median-3): 3.038
+2026-02-16 19:22:06,127 | INFO | Fetched GC=F via stooq (median-3): 5013.34
+2026-02-16 19:22:07,734 | INFO | Fetched SI=F via stooq (median-3): 7682.8
+2026-02-16 19:22:09,341 | INFO | Fetched HG=F via stooq (median-3): 577.35
+2026-02-16 19:22:10,946 | INFO | Fetched PL=F via stooq (median-3): 2021.65
+2026-02-16 19:22:12,611 | INFO | Fetched ZW=F via stooq (median-3): 548.75
+2026-02-16 19:22:14,235 | INFO | Fetched ZC=F via stooq (median-3): 431.25
+2026-02-16 19:22:15,873 | INFO | Fetched ZS=F via stooq (median-3): 1133.75
+2026-02-16 19:22:16,690 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-16 19:22:16,690 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-16 19:22:16,690 | INFO | TRML index: 986434.8071127891
+2026-02-16 19:22:16,690 | INFO | K raw: 0.9864348071127891 | K smooth EMA7: 0.9847481421998026
+2026-02-16 19:22:16,690 | INFO | TRML USD (raw): 986434.8071127891 | TRML USD (smooth): 984748.1421998026
+2026-02-16 19:22:16,690 | INFO | SMA7: None | SMA30: None
+2026-02-16 19:22:16,705 | INFO | Archive saved.
+2026-02-16 19:22:16,705 | INFO | === TRML run end ===
+2026-02-16 22:09:03,139 | INFO | === TRML run start | date(UTC)=2026-02-16 | version=TRML-R1 ===
+2026-02-16 22:09:04,108 | INFO | Fetched CL=F via stooq (median-3): 63.43
+2026-02-16 22:09:05,700 | INFO | Fetched NG=F via stooq (median-3): 3.041
+2026-02-16 22:09:07,359 | INFO | Fetched GC=F via stooq (median-3): 5013.66
+2026-02-16 22:09:09,043 | INFO | Fetched SI=F via stooq (median-3): 7644.2
+2026-02-16 22:09:10,724 | INFO | Fetched HG=F via stooq (median-3): 576.9
+2026-02-16 22:09:12,398 | INFO | Fetched PL=F via stooq (median-3): 2042.7
+2026-02-16 22:09:14,042 | INFO | Fetched ZW=F via stooq (median-3): 548.5
+2026-02-16 22:09:15,697 | INFO | Fetched ZC=F via stooq (median-3): 431.25
+2026-02-16 22:09:17,316 | INFO | Fetched ZS=F via stooq (median-3): 1133.75
+2026-02-16 22:09:22,137 | ERROR | Failed to get ticker 'XAUUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 22:09:24,979 | ERROR | XAUUSD=X: No price data found, symbol may be delisted (period=15d)
+2026-02-16 22:09:24,984 | WARNING | Fetch attempt 1/3 failed for XAUUSD=X: No data for XAUUSD=X
+2026-02-16 22:09:25,794 | ERROR | Failed to get ticker 'XAUUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 22:09:27,866 | ERROR | XAUUSD=X: No price data found, symbol may be delisted (period=15d)
+2026-02-16 22:09:27,871 | WARNING | Fetch attempt 2/3 failed for XAUUSD=X: No data for XAUUSD=X
+2026-02-16 22:09:29,483 | ERROR | Failed to get ticker 'XAUUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 22:09:31,377 | ERROR | XAUUSD=X: No price data found, symbol may be delisted (period=15d)
+2026-02-16 22:09:31,381 | WARNING | Fetch attempt 3/3 failed for XAUUSD=X: No data for XAUUSD=X
+2026-02-16 22:09:31,381 | WARNING | SPOT fetch failed for GC=F (XAUUSD=X): Failed to fetch XAUUSD=X after 3 attempts: No data for XAUUSD=X
+2026-02-16 22:09:31,381 | WARNING | No SPOT price available for GC=F; futures-only mode for this ticker
+2026-02-16 22:09:34,351 | ERROR | Failed to get ticker 'XAGUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 22:09:36,548 | ERROR | XAGUSD=X: No price data found, symbol may be delisted (period=15d)
+2026-02-16 22:09:36,553 | WARNING | Fetch attempt 1/3 failed for XAGUSD=X: No data for XAGUSD=X
+2026-02-16 22:09:37,358 | ERROR | Failed to get ticker 'XAGUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 22:09:39,534 | ERROR | XAGUSD=X: No price data found, symbol may be delisted (period=15d)
+2026-02-16 22:09:39,539 | WARNING | Fetch attempt 2/3 failed for XAGUSD=X: No data for XAGUSD=X
+2026-02-16 22:09:41,145 | ERROR | Failed to get ticker 'XAGUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 22:09:43,282 | ERROR | XAGUSD=X: No price data found, symbol may be delisted (period=15d)
+2026-02-16 22:09:43,285 | WARNING | Fetch attempt 3/3 failed for XAGUSD=X: No data for XAGUSD=X
+2026-02-16 22:09:43,285 | WARNING | SPOT fetch failed for SI=F (XAGUSD=X): Failed to fetch XAGUSD=X after 3 attempts: No data for XAGUSD=X
+2026-02-16 22:09:43,286 | WARNING | No SPOT price available for SI=F; futures-only mode for this ticker
+2026-02-16 22:09:46,231 | ERROR | Failed to get ticker 'XPTUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 22:09:48,335 | ERROR | XPTUSD=X: No price data found, symbol may be delisted (period=15d)
+2026-02-16 22:09:48,337 | WARNING | Fetch attempt 1/3 failed for XPTUSD=X: No data for XPTUSD=X
+2026-02-16 22:09:49,151 | ERROR | Failed to get ticker 'XPTUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 22:09:51,091 | ERROR | XPTUSD=X: No price data found, symbol may be delisted (period=15d)
+2026-02-16 22:09:51,094 | WARNING | Fetch attempt 2/3 failed for XPTUSD=X: No data for XPTUSD=X
+2026-02-16 22:09:52,700 | ERROR | Failed to get ticker 'XPTUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2026-02-16 22:09:55,076 | ERROR | XPTUSD=X: No price data found, symbol may be delisted (period=15d)
+2026-02-16 22:09:55,082 | WARNING | Fetch attempt 3/3 failed for XPTUSD=X: No data for XPTUSD=X
+2026-02-16 22:09:55,083 | WARNING | SPOT fetch failed for PL=F (XPTUSD=X): Failed to fetch XPTUSD=X after 3 attempts: No data for XPTUSD=X
+2026-02-16 22:09:55,083 | WARNING | No SPOT price available for PL=F; futures-only mode for this ticker
+2026-02-16 22:09:55,894 | WARNING | Hybrid unavailable for tickers (futures-only fallback): ['GC=F', 'SI=F', 'PL=F']
+2026-02-16 22:09:55,907 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-16 22:09:55,910 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-16 22:09:55,911 | INFO | TRML index: 991880.2391133329
+2026-02-16 22:09:55,911 | INFO | K raw: 0.9918802391133329 | K smooth EMA7: 0.9865311664281851
+2026-02-16 22:09:55,911 | INFO | Index (raw): 991880.2391133329 | Index (smooth): 986531.1664281851
+2026-02-16 22:09:55,912 | INFO | Hybrid spot used: [] | Spot fallback to futures: ['GC=F', 'SI=F', 'PL=F']
+2026-02-16 22:09:55,912 | INFO | SMA7: None | SMA30: None
+2026-02-16 22:09:55,912 | INFO | Archive saved.
+2026-02-16 22:09:55,913 | INFO | === TRML run end ===
+2026-02-16 22:11:15,295 | INFO | === TRML run start | date(UTC)=2026-02-16 | version=TRML-R1 ===
+2026-02-16 22:11:16,252 | INFO | Fetched CL=F via stooq (median-3): 63.42
+2026-02-16 22:11:17,811 | INFO | Fetched NG=F via stooq (median-3): 3.043
+2026-02-16 22:11:19,368 | INFO | Fetched GC=F via stooq (median-3): 5014.16
+2026-02-16 22:11:20,962 | INFO | Fetched SI=F via stooq (median-3): 7653.5
+2026-02-16 22:11:22,546 | INFO | Fetched HG=F via stooq (median-3): 576.95
+2026-02-16 22:11:24,129 | INFO | Fetched PL=F via stooq (median-3): 2045.65
+2026-02-16 22:11:25,695 | INFO | Fetched ZW=F via stooq (median-3): 548.5
+2026-02-16 22:11:27,283 | INFO | Fetched ZC=F via stooq (median-3): 431.25
+2026-02-16 22:11:28,880 | INFO | Fetched ZS=F via stooq (median-3): 1133.75
+2026-02-16 22:11:30,896 | INFO | Fetched SPOT GC=F via stooq symbol=xauusd (median-3): 4993.895
+2026-02-16 22:11:32,703 | WARNING | Clamped SI=F from 76.671 to lower bound 6497.57 (ref=7644.2)
+2026-02-16 22:11:32,703 | INFO | Fetched SPOT SI=F via stooq symbol=xagusd (median-3): 6497.57
+2026-02-16 22:11:34,405 | INFO | Fetched SPOT PL=F via stooq symbol=xptusd (median-3): 2042.86
+2026-02-16 22:11:35,233 | INFO | Base SPOT prices initialized from current SPOT data.
+2026-02-16 22:11:35,243 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-16 22:11:35,245 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-16 22:11:35,245 | INFO | TRML index: 994014.3696377955
+2026-02-16 22:11:35,246 | INFO | K raw: 0.9940143696377954 | K smooth EMA7: 0.9884019672305876
+2026-02-16 22:11:35,246 | INFO | Index (raw): 994014.3696377955 | Index (smooth): 988401.9672305876
+2026-02-16 22:11:35,246 | INFO | Hybrid spot used: ['GC=F', 'SI=F', 'PL=F'] | Spot fallback to futures: []
+2026-02-16 22:11:35,246 | INFO | SMA7: None | SMA30: None
+2026-02-16 22:11:35,247 | INFO | Archive saved.
+2026-02-16 22:11:35,247 | INFO | === TRML run end ===
+2026-02-16 22:12:23,211 | INFO | === TRML run start | date(UTC)=2026-02-16 | version=TRML-R1 ===
+2026-02-16 22:12:24,282 | INFO | Fetched CL=F via stooq (median-3): 63.4
+2026-02-16 22:12:25,937 | INFO | Fetched NG=F via stooq (median-3): 3.04
+2026-02-16 22:12:27,601 | INFO | Fetched GC=F via stooq (median-3): 5013.66
+2026-02-16 22:12:29,214 | INFO | Fetched SI=F via stooq (median-3): 7650.0
+2026-02-16 22:12:31,592 | INFO | Fetched HG=F via stooq (median-3): 576.9
+2026-02-16 22:12:33,237 | INFO | Fetched PL=F via stooq (median-3): 2043.95
+2026-02-16 22:12:34,903 | INFO | Fetched ZW=F via stooq (median-3): 548.5
+2026-02-16 22:12:36,579 | INFO | Fetched ZC=F via stooq (median-3): 431.25
+2026-02-16 22:12:38,206 | INFO | Fetched ZS=F via stooq (median-3): 1133.75
+2026-02-16 22:12:40,038 | INFO | Fetched SPOT GC=F via stooq symbol=xauusd (median-3): 4992.935
+2026-02-16 22:12:42,047 | WARNING | Clamped SI=F from 76.596 to lower bound 5522.934499999999 (ref=6497.57)
+2026-02-16 22:12:42,047 | INFO | Fetched SPOT SI=F via stooq symbol=xagusd (median-3): 5522.934499999999
+2026-02-16 22:12:43,950 | INFO | Fetched SPOT PL=F via stooq symbol=xptusd (median-3): 2041.49
+2026-02-16 22:12:44,828 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-16 22:12:44,842 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-16 22:12:44,843 | INFO | TRML index: 986786.1069686325
+2026-02-16 22:12:44,844 | INFO | K raw: 0.9867861069686326 | K smooth EMA7: 0.9879980021650988
+2026-02-16 22:12:44,844 | INFO | Index (raw): 986786.1069686325 | Index (smooth): 987998.0021650988
+2026-02-16 22:12:44,844 | INFO | Hybrid spot used: ['GC=F', 'SI=F', 'PL=F'] | Spot fallback to futures: []
+2026-02-16 22:12:44,845 | INFO | SMA7: None | SMA30: None
+2026-02-16 22:12:44,845 | INFO | Archive saved.
+2026-02-16 22:12:44,845 | INFO | === TRML run end ===
+2026-02-16 22:13:18,367 | INFO | === TRML run start | date(UTC)=2026-02-16 | version=TRML-R1 ===
+2026-02-16 22:13:19,335 | INFO | Fetched CL=F via stooq (median-3): 63.44
+2026-02-16 22:13:20,977 | INFO | Fetched NG=F via stooq (median-3): 3.04
+2026-02-16 22:13:22,572 | INFO | Fetched GC=F via stooq (median-3): 5012.61
+2026-02-16 22:13:24,255 | INFO | Fetched SI=F via stooq (median-3): 7650.0
+2026-02-16 22:13:25,902 | INFO | Fetched HG=F via stooq (median-3): 576.8
+2026-02-16 22:13:27,545 | INFO | Fetched PL=F via stooq (median-3): 2042.65
+2026-02-16 22:13:29,196 | INFO | Fetched ZW=F via stooq (median-3): 548.5
+2026-02-16 22:13:31,138 | INFO | Fetched ZC=F via stooq (median-3): 431.25
+2026-02-16 22:13:32,765 | INFO | Fetched ZS=F via stooq (median-3): 1133.75
+2026-02-16 22:13:34,747 | INFO | Fetched SPOT GC=F via stooq symbol=xauusd (median-3): 4991.905
+2026-02-16 22:13:36,727 | INFO | Fetched SPOT SI=F via stooq symbol=xagusd (median-3): 76.611
+2026-02-16 22:13:38,543 | INFO | Fetched SPOT PL=F via stooq symbol=xptusd (median-3): 2039.04
+2026-02-16 22:13:39,351 | WARNING | SPOT base normalization for SI=F: old=6497.57, new=76.611 (ratio=84.81)
+2026-02-16 22:13:39,353 | INFO | Normalized base SPOT prices for: ['SI=F']
+2026-02-16 22:13:39,380 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-16 22:13:39,382 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-16 22:13:39,383 | INFO | TRML index: 993761.1652749752
+2026-02-16 22:13:39,383 | INFO | K raw: 0.9937611652749753 | K smooth EMA7: 0.9894387929425679
+2026-02-16 22:13:39,383 | INFO | Index (raw): 993761.1652749752 | Index (smooth): 989438.7929425678
+2026-02-16 22:13:39,383 | INFO | Hybrid spot used: ['GC=F', 'SI=F', 'PL=F'] | Spot fallback to futures: []
+2026-02-16 22:13:39,383 | INFO | SMA7: None | SMA30: None
+2026-02-16 22:13:39,384 | INFO | Archive saved.
+2026-02-16 22:13:39,384 | INFO | === TRML run end ===
+2026-02-17 10:32:48,077 | INFO | === TRML run start | date(UTC)=2026-02-17 | version=TRML-R1 ===
+2026-02-17 10:32:49,481 | INFO | Fetched CL=F via stooq (median-3): 63.27
+2026-02-17 10:32:51,107 | INFO | Fetched NG=F via stooq (median-3): 3.11
+2026-02-17 10:32:52,837 | INFO | Fetched GC=F via stooq (median-3): 4887.5
+2026-02-17 10:32:54,492 | INFO | Fetched SI=F via stooq (median-3): 7276.5
+2026-02-17 10:32:56,361 | INFO | Fetched HG=F via stooq (median-3): 568.68
+2026-02-17 10:32:57,945 | INFO | Fetched PL=F via stooq (median-3): 1994.0
+2026-02-17 10:32:59,510 | INFO | Fetched ZW=F via stooq (median-3): 540.37
+2026-02-17 10:33:01,083 | INFO | Fetched ZC=F via stooq (median-3): 428.62
+2026-02-17 10:33:02,628 | INFO | Fetched ZS=F via stooq (median-3): 1126.25
+2026-02-17 10:33:04,435 | INFO | Fetched SPOT GC=F via stooq symbol=xauusd (median-3): 4992.47
+2026-02-17 10:33:06,270 | INFO | Fetched SPOT SI=F via stooq symbol=xagusd (median-3): 76.625
+2026-02-17 10:33:07,987 | INFO | Fetched SPOT PL=F via stooq symbol=xptusd (median-3): 2045.7
+2026-02-17 10:33:08,834 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-17 10:33:08,840 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-17 10:33:08,841 | INFO | TRML index: 985896.3746609522
+2026-02-17 10:33:08,842 | INFO | K raw: 0.9858963746609523 | K smooth EMA7: 0.988553188372164
+2026-02-17 10:33:08,843 | INFO | Index (raw): 985896.3746609522 | Index (smooth): 988553.188372164
+2026-02-17 10:33:08,843 | INFO | Hybrid spot used: ['GC=F', 'SI=F', 'PL=F'] | Spot fallback to futures: []
+2026-02-17 10:33:08,845 | INFO | SMA7: None | SMA30: None
+2026-02-17 10:33:08,845 | INFO | Archive saved.
+2026-02-17 10:33:08,850 | INFO | === TRML run end ===
+2026-02-17 12:15:15,919 | INFO | === TRML run start | date(UTC)=2026-02-17 | version=TRML-R1 ===
+2026-02-17 12:15:16,903 | INFO | Fetched CL=F via stooq (median-3): 63.03
+2026-02-17 12:15:18,511 | INFO | Fetched NG=F via stooq (median-3): 3.093
+2026-02-17 12:15:20,177 | INFO | Fetched GC=F via stooq (median-3): 4925.04
+2026-02-17 12:15:21,830 | INFO | Fetched SI=F via stooq (median-3): 7424.5
+2026-02-17 12:15:23,396 | INFO | Fetched HG=F via stooq (median-3): 570.67
+2026-02-17 12:15:25,317 | INFO | Fetched PL=F via stooq (median-3): 2012.45
+2026-02-17 12:15:27,101 | INFO | Fetched ZW=F via stooq (median-3): 540.8
+2026-02-17 12:15:29,089 | INFO | Fetched ZC=F via stooq (median-3): 428.62
+2026-02-17 12:15:30,710 | INFO | Fetched ZS=F via stooq (median-3): 1127.38
+2026-02-17 12:15:32,681 | INFO | Fetched SPOT GC=F via stooq symbol=xauusd (median-3): 4992.47
+2026-02-17 12:15:34,673 | INFO | Fetched SPOT SI=F via stooq symbol=xagusd (median-3): 76.625
+2026-02-17 12:15:36,490 | INFO | Fetched SPOT PL=F via stooq symbol=xptusd (median-3): 2045.7
+2026-02-17 12:15:37,311 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-17 12:15:37,313 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-17 12:15:37,315 | INFO | TRML index: 987003.1483386876
+2026-02-17 12:15:37,315 | INFO | K raw: 0.9870031483386876 | K smooth EMA7: 0.9881656783637949
+2026-02-17 12:15:37,315 | INFO | Index (raw): 987003.1483386876 | Index (smooth): 988165.6783637949
+2026-02-17 12:15:37,316 | INFO | Purchasing power USD (raw): 1.0131679941276668 | Purchasing power USD (smooth): 1.011976050064601
+2026-02-17 12:15:37,316 | INFO | Purchasing power change vs base: 1.3167994127666782%
+2026-02-17 12:15:37,316 | INFO | Hybrid spot used: ['GC=F', 'SI=F', 'PL=F'] | Spot fallback to futures: []
+2026-02-17 12:15:37,316 | INFO | SMA7: None | SMA30: None
+2026-02-17 12:15:37,317 | INFO | Archive saved.
+2026-02-17 12:15:37,317 | INFO | === TRML run end ===
+2026-02-17 16:52:56,142 | INFO | === TRML run start | date(UTC)=2026-02-17 | version=TRML-R1 ===
+2026-02-17 16:52:57,246 | INFO | Fetched CL=F via stooq (median-3): 63.94
+2026-02-17 16:52:58,836 | INFO | Fetched NG=F via stooq (median-3): 3.165
+2026-02-17 16:53:01,472 | INFO | Fetched GC=F via stooq (median-3): 4945.81
+2026-02-17 16:53:03,067 | INFO | Fetched SI=F via stooq (median-3): 7421.5
+2026-02-17 16:53:04,765 | INFO | Fetched HG=F via stooq (median-3): 570.03
+2026-02-17 16:53:06,401 | INFO | Fetched PL=F via stooq (median-3): 2001.8
+2026-02-17 16:53:08,023 | INFO | Fetched ZW=F via stooq (median-3): 540.5
+2026-02-17 16:53:09,674 | INFO | Fetched ZC=F via stooq (median-3): 429.37
+2026-02-17 16:53:11,263 | INFO | Fetched ZS=F via stooq (median-3): 1132.88
+2026-02-17 16:53:13,708 | INFO | Fetched SPOT GC=F via stooq symbol=xauusd (median-3): 4992.47
+2026-02-17 16:53:16,245 | INFO | Fetched SPOT SI=F via stooq symbol=xagusd (median-3): 76.625
+2026-02-17 16:53:18,426 | INFO | Fetched SPOT PL=F via stooq symbol=xptusd (median-3): 2045.7
+2026-02-17 16:53:19,253 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-17 16:53:19,268 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-17 16:53:19,268 | INFO | TRML index: 992232.5397740154
+2026-02-17 16:53:19,268 | INFO | K raw: 0.9922325397740154 | K smooth EMA7: 0.98918239371635
+2026-02-17 16:53:19,268 | INFO | Index (raw): 992232.5397740154 | Index (smooth): 989182.39371635
+2026-02-17 16:53:19,268 | INFO | Purchasing power USD (raw): 1.0078282659705493 | Purchasing power USD (smooth): 1.0109359066157741
+2026-02-17 16:53:19,268 | INFO | Purchasing power change vs base: 0.7828265970549309%
+2026-02-17 16:53:19,268 | INFO | Hybrid spot used: ['GC=F', 'SI=F', 'PL=F'] | Spot fallback to futures: []
+2026-02-17 16:53:19,268 | INFO | SMA7: None | SMA30: None
+2026-02-17 16:53:19,268 | INFO | Archive saved.
+2026-02-17 16:53:19,268 | INFO | === TRML run end ===
+2026-02-17 18:21:54,504 | INFO | === TRML run start | date(UTC)=2026-02-17 | version=TRML-R1 ===
+2026-02-17 18:21:56,005 | INFO | Fetched CL=F via stooq (median-3): 63.45
+2026-02-17 18:21:57,634 | INFO | Fetched NG=F via stooq (median-3): 3.102
+2026-02-17 18:21:59,228 | INFO | Fetched GC=F via stooq (median-3): 4938.24
+2026-02-17 18:22:00,833 | INFO | Fetched SI=F via stooq (median-3): 7416.8
+2026-02-17 18:22:02,468 | INFO | Fetched HG=F via stooq (median-3): 566.6
+2026-02-17 18:22:04,056 | INFO | Fetched PL=F via stooq (median-3): 1997.45
+2026-02-17 18:22:05,617 | INFO | Fetched ZW=F via stooq (median-3): 539.5
+2026-02-17 18:22:07,221 | INFO | Fetched ZC=F via stooq (median-3): 429.12
+2026-02-17 18:22:09,178 | INFO | Fetched ZS=F via stooq (median-3): 1129.75
+2026-02-17 18:22:10,801 | INFO | Fetched KC=F via stooq (median-3): 284.35
+2026-02-17 18:22:12,452 | INFO | Fetched SB=F via stooq (median-3): 13.99
+2026-02-17 18:22:13,992 | INFO | Fetched CT=F via stooq (median-3): 61.77
+2026-02-17 18:22:14,807 | INFO | Backfilled missing base tickers: ['KC=F', 'SB=F', 'CT=F']
+2026-02-17 18:22:15,906 | INFO | Fetched SPOT GC=F via stooq symbol=xauusd (median-3): 4992.47
+2026-02-17 18:22:18,372 | INFO | Fetched SPOT SI=F via stooq symbol=xagusd (median-3): 76.625
+2026-02-17 18:22:20,286 | INFO | Fetched SPOT PL=F via stooq symbol=xptusd (median-3): 2045.7
+2026-02-17 18:22:21,120 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-17 18:22:21,123 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-17 18:22:21,124 | INFO | TRML index: 989161.2694789926
+2026-02-17 18:22:21,124 | INFO | K raw: 0.9891612694789925 | K smooth EMA7: 0.9891771126570107
+2026-02-17 18:22:21,125 | INFO | Index (raw): 989161.2694789926 | Index (smooth): 989177.1126570107
+2026-02-17 18:22:21,127 | INFO | Purchasing power USD (raw): 1.010957495865883 | Purchasing power USD (smooth): 1.010941303841855
+2026-02-17 18:22:21,128 | INFO | Purchasing power change vs base: 1.0957495865882905%
+2026-02-17 18:22:21,128 | INFO | Hybrid spot used: ['GC=F', 'SI=F', 'PL=F'] | Spot fallback to futures: []
+2026-02-17 18:22:21,129 | INFO | SMA7: None | SMA30: None
+2026-02-17 18:22:21,129 | INFO | Archive saved.
+2026-02-17 18:22:21,130 | INFO | === TRML run end ===
+2026-02-21 20:49:15,475 | INFO | === TRML run start | date(UTC)=2026-02-21 | version=TRML-R1 ===
+2026-02-21 20:49:16,562 | INFO | Fetched CL=F via stooq (median-3): 66.24
+2026-02-21 20:49:18,176 | INFO | Fetched NG=F via stooq (median-3): 3.047
+2026-02-21 20:49:19,813 | INFO | Fetched GC=F via stooq (median-3): 5080.9
+2026-02-21 20:49:21,459 | INFO | Fetched SI=F via stooq (median-3): 8234.3
+2026-02-21 20:49:23,087 | INFO | Fetched HG=F via stooq (median-3): 583.9
+2026-02-21 20:49:24,802 | INFO | Fetched PL=F via stooq (median-3): 2176.0
+2026-02-21 20:49:26,389 | INFO | Fetched ZW=F via stooq (median-3): 573.5
+2026-02-21 20:49:27,995 | INFO | Fetched ZC=F via stooq (median-3): 427.5
+2026-02-21 20:49:29,575 | INFO | Fetched ZS=F via stooq (median-3): 1137.5
+2026-02-21 20:49:31,156 | INFO | Fetched KC=F via stooq (median-3): 285.7
+2026-02-21 20:49:32,723 | INFO | Fetched SB=F via stooq (median-3): 14.3
+2026-02-21 20:49:34,261 | INFO | Fetched CT=F via stooq (median-3): 63.03
+2026-02-21 20:49:36,080 | INFO | Fetched SPOT GC=F via stooq symbol=xauusd (median-3): 4996.325
+2026-02-21 20:49:37,981 | INFO | Fetched SPOT SI=F via stooq symbol=xagusd (median-3): 78.533
+2026-02-21 20:49:39,667 | INFO | Fetched SPOT PL=F via stooq symbol=xptusd (median-3): 2081.8
+2026-02-21 20:49:40,515 | INFO | Public snapshot updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-latest.json
+2026-02-21 20:49:40,515 | INFO | Public history updated: C:\Users\Иван\Desktop\SITE-trml\assets\trml-history.json
+2026-02-21 20:49:40,515 | INFO | TRML index: 1017017.2607584418
+2026-02-21 20:49:40,515 | INFO | K raw: 1.0170172607584418 | K smooth EMA7: 0.9961371496823686
+2026-02-21 20:49:40,515 | INFO | Index (raw): 1017017.2607584418 | Index (smooth): 996137.1496823685
+2026-02-21 20:49:40,515 | INFO | Purchasing power USD (raw): 0.9832674808825259 | Purchasing power USD (smooth): 1.0038778297936817
+2026-02-21 20:49:40,515 | INFO | Purchasing power change vs base: -1.6732519117474087%
+2026-02-21 20:49:40,515 | INFO | Hybrid spot used: ['GC=F', 'SI=F', 'PL=F'] | Spot fallback to futures: []
+2026-02-21 20:49:40,515 | INFO | SMA7: None | SMA30: None
+2026-02-21 20:49:40,515 | INFO | Archive saved.
+2026-02-21 20:49:40,515 | INFO | === TRML run end ===

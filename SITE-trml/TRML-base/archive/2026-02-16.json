@@ -1,0 +1,54 @@
+{
+  "date_utc": "2026-02-16",
+  "version": "TRML-R1",
+  "index": 993761.1652749752,
+  "prices": {
+    "CL=F": 63.44,
+    "NG=F": 3.04,
+    "GC=F": 5012.61,
+    "SI=F": 7650.0,
+    "HG=F": 576.8,
+    "PL=F": 2042.65,
+    "ZW=F": 548.5,
+    "ZC=F": 431.25,
+    "ZS=F": 1133.75
+  },
+  "base_prices": {
+    "CL=F": 62.89,
+    "NG=F": 3.243,
+    "GC=F": 5046.3,
+    "SI=F": 7796.4,
+    "HG=F": 580.3,
+    "PL=F": 2077.1,
+    "ZW=F": 548.75,
+    "ZC=F": 431.75,
+    "ZS=F": 1133.0
+  },
+  "spot_prices": {
+    "GC=F": 4991.905,
+    "SI=F": 76.611,
+    "PL=F": 2039.04
+  },
+  "base_spot_prices": {
+    "GC=F": 4993.895,
+    "SI=F": 76.611,
+    "PL=F": 2042.86
+  },
+  "method": "geometric_weighted_hybrid_spot_futures_median3",
+  "spot_blend_alpha": 0.5,
+  "hybrid_tickers_used": [
+    "GC=F",
+    "SI=F",
+    "PL=F"
+  ],
+  "hybrid_tickers_futures_only": [],
+  "base_index_value": 1000000.0,
+  "coverage": 1.0,
+  "excluded_tickers": [],
+  "k_raw": 0.9937611652749753,
+  "k_smooth_ema7": 0.9894387929425679,
+  "trml_usd_raw": 993761.1652749752,
+  "trml_usd_smooth": 989438.7929425678,
+  "sma_7": null,
+  "sma_30": null
+}

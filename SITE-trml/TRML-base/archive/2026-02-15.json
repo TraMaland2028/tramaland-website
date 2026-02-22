@@ -1,0 +1,31 @@
+{
+  "date_utc": "2026-02-15",
+  "version": "TRML-R1",
+  "index": 1000000.0,
+  "prices": {
+    "CL=F": 62.89,
+    "NG=F": 3.243,
+    "GC=F": 5046.3,
+    "SI=F": 7796.4,
+    "HG=F": 580.3,
+    "PL=F": 2077.1,
+    "ZW=F": 548.75,
+    "ZC=F": 431.75,
+    "ZS=F": 1133.0
+  },
+  "base_prices": {
+    "CL=F": 62.89,
+    "NG=F": 3.243,
+    "GC=F": 5046.3,
+    "SI=F": 7796.4,
+    "HG=F": 580.3,
+    "PL=F": 2077.1,
+    "ZW=F": 548.75,
+    "ZC=F": 431.75,
+    "ZS=F": 1133.0
+  },
+  "method": "geometric_weighted",
+  "base_index_value": 1000000.0,
+  "sma_7": null,
+  "sma_30": null
+}

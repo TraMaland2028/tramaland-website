@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRML Whitepaper</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: linear-gradient(160deg, #3f5f8f 0%, #2f4c7a 45%, #233e67 100%);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-band">
+    <img src="assets/trml-logo.png" alt="TRML Logo" class="logo page2-logo" />
+    <div class="slogan-wrap">
+      <div class="slogan-label">TRML concept</div>
+      <div id="slogan" class="slogan">Total Resilience Meme Line</div>
+    </div>
+  </div>
+
+          <section class="trml-widget" id="trmlWidget">
+    <div class="trml-widget__grid"></div>
+    <div class="trml-widget__scan"></div>
+
+    <h3 class="trml-title">TRML Daily Index</h3>    <div class="trml-value" id="trmlIndexValue">Loading...</div>
+    <div class="trml-summary">
+      <div class="trml-summary-item">
+        <div class="trml-summary-label">Basket Cost Index (K)</div>
+        <div class="trml-summary-value" id="trmlCostKVal">-</div>
+      </div>
+      <div class="trml-summary-item">
+        <div class="trml-summary-label">USD Purchasing Power vs Base</div>
+        <div class="trml-summary-value" id="trmlPpChangeVal">-</div>
+      </div>
+      <div class="trml-summary-item">
+        <div class="trml-summary-label">$100 Base = Today</div>
+        <div class="trml-summary-value" id="trmlHundredNowVal">-</div>
+      </div>
+    </div>
+
+    <div class="trml-meta" id="trmlHumanHint">Same basket now needs more or less USD vs base.</div>
+
+    <details class="trml-details">
+      <summary>Details</summary>
+      <div class="trml-metrics">
+        <div class="trml-row"><span class="trml-label">K coefficient (raw)</span><span class="trml-num" id="trmlKRawVal">-</span></div>
+        <div class="trml-row"><span class="trml-label">Index (raw)</span><span class="trml-num" id="trmlUsdRawVal">-</span></div>
+      </div>
+      <div class="trml-basket">
+        <div class="trml-basket__title">Basket components and prices</div>
+        <div id="trmlBasketRows" class="trml-basket__rows">Loading...</div>
+      </div>
+      <div class="trml-drivers">
+        <div class="trml-drivers__title">Top-3 drivers of the day</div>
+        <div id="trmlDriversRows" class="trml-drivers__rows">Loading...</div>
+      </div>
+      <div class="trml-meta" id="trmlMeta">Source: pending</div>
+      <div class="trml-meta" id="trmlUpdated">Updated (UTC): -</div>
+    </details>
+
+    <div class="trml-chart-wrap">
+      <canvas id="trmlChart" aria-label="TRML history chart"></canvas>
+    </div>
+  </section>
+
+  <div class="language-note">Select the Whitepaper Language</div>
+
+  <div class="flags">
+    <img src="assets/flag-usa.png" alt="English" class="flag" onclick="showText('en')" />
+    <img src="assets/flag-japan.png" alt="Japanese" class="flag" onclick="showText('jp')" />
+    <img src="assets/flag-china.png" alt="Chinese" class="flag" onclick="showText('cn')" />
+    <img src="assets/flag-germany.png" alt="German" class="flag" onclick="showText('de')" />
+    <img src="assets/flag-france.png" alt="French" class="flag" onclick="showText('fr')" />
+    <img src="assets/flag-spain.png" alt="Spanish" class="flag" onclick="showText('es')" />
+    <img src="assets/flag-russia.png" alt="Russian" class="flag" onclick="showText('ru')" />
+  </div>
+
+  <div id="text-display" class="book-text"></div>
+
+  <div class="telegram-link">
+    <button class="telegram-btn" id="telegramBtn">
+      <img src="assets/telegram-icon.png" alt="Telegram" class="telegram-icon" />
+      Ready? Join us!
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="wp.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

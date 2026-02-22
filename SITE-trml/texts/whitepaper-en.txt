@@ -1,0 +1,581 @@
+Introduction
+1.TRML Shit Manifesto
+Why TRML?
+Beats me, it just felt right. 
+Or "Why the Hell Are We Still Building This Crap While You're Busy Getting Rekt on 10/10"Tired?
+Of course you're tired.  Because price isn't value.
+It's just somebody's faith + somebody's leverage + somebody's tweet.  October 10, 2025:
+$19 billion wiped out in 40 minutes.
+$3.21 billion — in one single minute.
+1.6 million people liquidated.
+A politician tweeted about tariffs — and boom, crypto winter.  And you?
+You were sitting in a 50x long screaming "to the moon"?
+Now you're rotting in the basement waiting for the 2028 halving.
+Congrats, genius.  Crypto isn't freedom.
+It's a casino with a pretty logo.
+Exchanges profit off your liquidations.
+Whales feast on your stops.
+Regulators choke on your fear.
+And you? Cannon fodder.  TRML?
+Not for pumps or hype.
+Not "100x to the moon".
+Just an index of real shit: oil, gas, gold, wheat, copper.
+The stuff factories and people actually consume.
+Not what bots and Twitter gurus feed on.  Our token?
+Non-tradable. No order book. No pump.
+No "buy the dip and sell the rip" bullshit.
+Just a share in the basket of life.
+So your years don't dissolve in the next 10/10 wipeout.  Why this might die?
+Because people love chaos.
+Love 100x.
+Love blowing everything up in one minute and blaming someone else.
+And they hate measuring.
+It's easier to believe in a "new era" than to count the hours of your own life.  
+But if you're sick of being part of this circus —
+Join in.
+Check the data yourself (everything's open).
+Run a script that tracks the index.
+Use TRML in a real contract with someone else who's fed up.
+Tell three friends who also got rekt on 10/10.  This isn't an investment.
+It's a rebellion.
+Small, stubborn, with zero chance of quick cash.
+But the only one that doesn't end with your liquidation.  
+Why this actually makes sense (no rose-tinted glasses)
+Crypto right now is pure faith + leverage + whale/politician tweets → price can 
+rocket to the moon or zero out in 40 minutes (just like October 2025).  
+Real commodities aren't pure faith.
+There are factories eating copper; people eating wheat; machines drinking oil.
+Speculation exists, sure, but there's a physical anchor: production, demand, 
+logistics, wars, weather. It's much harder to completely detach from reality.  
+TRML takes prices of these goods (futures + spot for metals) → builds an index.
+→ You get a digital tag: "how much the basic basket of life costs today",
+not "how much people believe in this meme".  What does this make easier for people?
+Preserve effort without inflation/devaluation → your accumulated "hours of life" 
+don't melt away in dollar/euro/whatever printing.
+Negotiate without middlemen → "let's calculate debt/salary/rent in 
+TRML units based on the current index" → voluntary, no exchange, no pump.
+Stop waiting for the moon → no speculation on upside, just measuring "what's 
+happening in the real world right now".
+Transparency → data open (Yahoo Finance etc.), code public, 
+calculation automatic → anyone can verify, no blind trust.  Is it really simpler?
+For most people — yes, because:
+No need to dive into DeFi, leverage, yield farming.
+No fear the token dumps 90% on a random tweet.
+Just: "My TRML is a share in the oil+grain+metals basket. 
+If the world gets more expensive — my share does too."  
+The downsides are obvious (and you know them):
+If nobody uses it in real agreements → it stays a pretty number on a website.
+Data can lag/get distorted.
+No hype → no viral growth → project can quietly fade away.  
+But that's exactly the point:
+Not building another casino, but a tool for people tired of casinos.  
+Join or keep waiting for the next "10/10".
+Your choice.
+Our GitHub is open.
+Data is public.
+Nobody's forcing you.
+But if not you — then who?
+
+
+2. TRML Calculation Methodology
+2.1 Basket Composition (Version v1.0)
+
+The current TRML basket reflects the foundational raw materials of the global economy.
+
+Energy
+
+WTI Crude Oil (CL=F) — 20%
+Natural Gas (NG=F) — 8%
+
+Industrial and Precious Metals
+
+Gold (GC=F) — 11%
+Silver (SI=F) — 7%
+Copper (HG=F) — 11%
+Platinum (PL=F) — 7%
+
+Agriculture
+
+Wheat (ZW=F) — 9%
+Corn (ZC=F) — 8%
+Soybeans (ZS=F) — 7%
+Coffee (KC=F) — 4%
+Sugar (SB=F) — 4%
+Cotton (CT=F) — 4%
+
+Total basket weight — 100%.
+
+Why the Basket Uses Tickers with “=F”
+
+The TRML index uses designations such as CL=F, GC=F, ZW=F, etc.
+
+“=F” is a technical market ticker format that allows for consistent 
+and standardized data retrieval across the entire basket.
+
+This does not mean the index is “about futures traders.”
+It means a unified and comparable source of quotations 
+has been selected for all basket components.
+
+For certain assets, a hybrid approach is already applied. For gold, silver, 
+and platinum, the calculation incorporates not only futures data but also spot data.
+
+This reduces distortions and makes the resulting index more closely aligned with 
+the actual dynamics of the underlying commodity basket.
+
+Conclusion
+
+“=F” in the ticker is a data format.
+The purpose of the index is to measure changes 
+in the cost of a base commodity basket.
+Where possible, spot pricing has already been incorporated into 
+the calculation to improve the accuracy of the result.
+
+2.2 Calculation Principle
+FORMULAS USED IN THE TRML-base SERVICE
+
+1. Relative price per asset
+
+r_i = P_i(t) / P_i(0)
+
+Where:
+P_i(t) = current asset price
+P_i(0) = base price (on launch day)
+
+2. Hybrid futures + spot (for GC, SI, PL)
+
+First calculated:
+
+r_i_fut = P_i_fut(t) / P_i_fut(0)
+r_i_spot = P_i_spot(t) / P_i_spot(0)
+
+Then logarithmic blending is applied:
+
+r_i_hyb = exp( (1 - alpha) * ln(r_i_fut)
+
+alpha * ln(r_i_spot) )
+
+Where:
+alpha = 0.5
+
+3. Weighted geometric basket index
+
+L = SUM( w_i * ln(r_i) )
+
+If part of the data is missing:
+
+L_norm = L / SUM(w_i_covered)
+
+Index(t) = BaseIndex * exp(L_norm)
+
+BaseIndex = 1,000,000
+Minimum data coverage: 85%
+
+4. Basket coefficient
+
+K_raw = Index(t) / BaseIndex
+
+5. EMA7 smoothing
+
+K_ema7(t) = alpha_ema * K_raw(t)
+
+(1 - alpha_ema) * K_ema7(t - 1)
+
+alpha_ema = 2 / (7 + 1) = 0.25
+
+6. USD purchasing power
+
+PP_raw = 1 / K_raw
+PP_ema7 = 1 / K_ema7
+
+7. Percentage change
+
+Delta_K_percent = (K_raw - 1) * 100
+Delta_PP_percent = (PP_raw - 1) * 100
+
+8. JSON values (as implemented in code)
+
+TRML_USD_raw = 1,000,000 * K_raw
+TRML_USD_ema = 1,000,000 * K_ema7
+
+9. Simple Moving Average (SMA)
+
+SMA_n = (1 / n) * SUM_{k=0 to n-1} Index(t - k)
+
+n belongs to the set {7, 30}
+
+10. Daily change cap (anti-noise filter)
+
+P_i(t) belongs to the range:
+
+[ P_ref * (1 - 0.15) , P_ref * (1 + 0.15) ]
+
+MAX_DAILY_MOVE = 15%
+
+2.3 Purchasing Power
+CALCULATION OF THE BASKET COEFFICIENT AND PURCHASING POWER
+
+First, the basket coefficient is calculated:
+
+K = Index / BaseIndex
+
+Where:
+BaseIndex = 1,000,000
+
+USD Purchasing Power
+
+PP_USD = 1 / K
+
+Change in Purchasing Power Relative to Base (%)
+
+Delta_PP_percent = (PP_USD - 1) * 100
+
+EXAMPLES
+
+1. If:
+
+K = 1.10
+(the basket increased by 10%)
+
+Then:
+
+PP_USD = 1 / 1.10 = 0.909
+
+Delta_PP_percent = (0.909 - 1) * 100
+= -9.1%
+
+The dollar has weakened relative to the basket.
+
+2. If:
+
+K = 0.90
+
+Then:
+
+PP_USD = 1 / 0.90 = 1.111
+
+Delta_PP_percent = (1.111 - 1) * 100
+= +11.1%
+
+The dollar has strengthened relative to the basket.
+
+An increase in K reflects a rise in the commodity basket price and a decline 
+in the purchasing power of nominal currency relative to core resources.
+
+2.4 Hybrid Quotes
+
+For gold, silver, and platinum, a hybrid valuation mechanism is applied:
+
+50% — futures quotation
+50% — spot quotation
+
+This reduces potential distortions associated with futures market structure 
+(contango, backwardation).
+
+2.5 Data Sources
+
+At the current stage, open market data sources are used.
+
+The calculation is performed algorithmically without manual adjustments.
+
+3. Current Status
+
+TRML v1.0 is a test version of the methodology.
+
+If a stable audience forms and interest grows:
+
+the basket may be expanded with additional components,
+
+the mechanism may be refined,
+
+data sources may be migrated to professional paid APIs,
+
+the calculation may undergo external verification.
+
+Any changes to the methodology will be publicly documented.
+(At the moment, there simply isn’t funding for a full-scale launch.)
+
+3.1 Model Limitations
+
+TRML:
+
+reflects only the commodity sector,
+
+does not account for services or technological assets,
+
+depends on the quality of market data,
+
+is not an official economic index.
+
+The model is published as an open algorithmic methodology.
+
+3.2 Index Scale and Community Calculation Axis
+
+On the launch day, the TRML index was normalized to the value:
+
+TRML_launch = 1,000,000
+
+This value serves as a scaling reference point and is used solely 
+for convenience in displaying dynamics.
+
+The number 1,000,000:
+
+is not a fixed price,
+
+does not create exchange obligations.
+
+It is the initial index level.
+
+Relative Unit
+
+TRML measures the change in the value of the commodity basket 
+relative to the starting level.
+
+Thus:
+
+1,100,000 indicates a 10% increase in the basket
+900,000 indicates a 10% decrease
+
+The index expresses the relative change in real resources.
+
+3.3 Collective Calculation Interpretation
+
+TRML does not assign a price and does not set an exchange rate.
+
+However, participants may, by mutual agreement, use the index as 
+a calculation axis for internal arrangements.
+
+For example, parties may agree that:
+
+the value 1,000,000 corresponds to a conventional base unit,
+
+the current index value reflects its relative change.
+
+Such usage:
+
+is not prescribed by the protocol,
+
+is not mandatory,
+
+is not guaranteed to third parties,
+
+exists solely as a form of voluntary agreement between participants.
+
+TRML publishes a number.
+A number becomes a measure only when people accept it as one.
+
+4. TRML Index and TRML Token
+
+TRML consists of two layers:
+
+TRML Index — an algorithmic indicator of changes in the commodity basket.
+
+TRML Token:
+
+is not a collateralized asset,
+
+does not represent a share in a fund,
+
+does not guarantee returns,
+
+does not create claims on any assets,
+
+is not a means of payment.
+
+The token is not “backed” by the index.
+
+It is connected to the index conceptually and informationally.
+
+4.1 Relationship to the Index
+
+The TRML index publishes a coefficient reflecting changes in the commodity base.
+
+The token may be used by participants as a digital unit whose 
+value is interpreted relative to the index.
+
+The protocol does not fix an exchange rate between the token 
+and the index and does not guarantee alignment between them.
+
+However, participants may, by mutual agreement, reference the index value w
+hen determining the settlement value of the token within their own arrangements.
+
+4.2 Voluntary Interpretation Model
+
+The community may consider:
+
+1 TRML Token as a conventional unit,
+
+the index value as a dynamic scale reflecting changes in that unit.
+
+Such a model:
+
+is not legally закрепed,
+
+is not mandatory,
+
+does not create exchange guarantees,
+
+exists exclusively within the framework of voluntary agreement among participants.
+
+The index publishes a measurement.
+The token allows participants to operate with that measurement in digital form.
+
+5. Position Toward the Crypto Growth Model
+
+TRML did not emerge as an attempt to compete with existing cryptocurrencies.
+
+It emerged from observing their evolution.
+
+In recent years, digital assets have increasingly become objects of exponential 
+growth expectations. 
+Endless anticipation of BTC reaching $1,000,000.
+
+In many cases, value has come to be measured not by usage 
+or fundamentals, but by forecasts of future price.
+
+Forecasts tend to move in one direction. Reality often moves in another.
+
+At the same time, significant computational power, electricity, 
+and material resources are allocated to maintaining networks whose primary function 
+is the confirmation of numerical records in distributed ledgers.
+
+One question follows: is this the optimal allocation of resources?
+
+TRML does not classify these models as “right” or “wrong.”
+It proposes an alternative vector.
+
+Instead of waiting decades for hypothetical price levels, 
+TRML focuses on measuring the present state of the real commodity base.
+
+Instead of consuming resources in pursuit of abstract valuation growth, 
+TRML publishes a coefficient reflecting changes in the already existing material structure of the economy.
+
+TRML is not built on hash rate competition, emission schedules, or computational scarcity.
+It is built on a transparent formula and minimal algorithmic calculation.
+
+TRML does not bet on a future price. It records current dynamics.
+
+6. Technological Environment: Why Polygon
+
+TRML exists in a digital environment, and the choice of that environment matters.
+
+For the digital implementation of the project, the Polygon network was selected as 
+infrastructure offering low transaction costs, fast confirmation times, 
+and a resilient ecosystem.
+
+TRML does not require energy-intensive computational mechanisms.
+Its logic is measurement, not mining.
+
+Polygon operates on a consensus model designed 
+for efficiency and scalability, allowing it to:
+
+minimize energy consumption,
+
+provide fast confirmations,
+
+reduce interaction costs,
+
+avoid network congestion.
+
+This aligns with the TRML philosophy:
+
+fewer redundant computations,
+
+fewer barriers,
+
+greater accessibility.
+
+Ecosystem
+
+Polygon provides mature infrastructure:
+
+compatibility with Ethereum,
+
+a developed tooling ecosystem,
+
+stable smart contract execution,
+
+broad integration with wallets and services.
+
+TRML does not aim to create its own computational race.
+It uses existing digital infrastructure optimized 
+for practical application.
+
+7. Transactions and Network Gas
+
+Like any digital asset on the Polygon network, 
+TRML operates through the standard blockchain transaction mechanism.
+
+To perform operations, including transfers or smart contract interactions, 
+a network fee must be paid. This fee is known as gas.
+
+On the Polygon network, gas is paid in the native network token, POL.
+
+This is a technical requirement of the blockchain infrastructure, 
+not a feature specific to TRML.
+
+TRML:
+
+does not charge its own fees,
+
+does not control gas costs,
+
+does not receive network fee revenue.
+
+Gas cost is determined by network congestion and Polygon protocol parameters.
+
+Principle of Transparency
+
+Any interaction with TRML on-chain:
+
+requires a minimal amount of POL to pay for the transaction,
+
+is executed directly by the user,
+
+does not involve a centralized intermediary.
+
+TRML uses existing infrastructure.
+The network fee is a payment for recording data in a distributed ledger, 
+not an internal economic model of the project.
+
+Conclusion
+
+TRML is a public experiment.
+Participation is entirely voluntary.
+
+Starting Point
+
+If you are here, perhaps you already understand why.
+
+You receive a reference point for an alternative framework.
+
+The essential part lies slightly deeper, beyond the surface layer of text.
+
+Why It Spreads
+
+TRML will not become valuable because of its price.
+It will become valuable only if it is recognized.
+
+Each new participant does not increase someone’s profit.
+They increase the strength of a shared agreement.
+
+You are not distributing a token.
+You are distributing an idea.
+
+The idea that things can be structured differently.
+
+That is all.
+
+DISCLAIMER
+This document does not constitute legal, financial, tax, investment, 
+or any other form of professional advice. It creates no obligations, 
+warranties, representations, or rights of action. All participation 
+is strictly voluntary. The TRML project is an open-source experimental 
+initiative with no assurances of returns, value preservation, or performance. 
+Users engage with it at their sole discretion and risk. The authors, 
+contributors, and publishers disclaim any and all liability for losses, 
+damages, or consequences arising from the use of or reliance 
+on this document or the associated materials.
+
+
+
+

@@ -1,0 +1,66 @@
+{
+  "date_utc": "2026-02-17",
+  "version": "TRML-R1",
+  "index": 989161.2694789926,
+  "prices": {
+    "CL=F": 63.45,
+    "NG=F": 3.102,
+    "GC=F": 4938.24,
+    "SI=F": 7416.8,
+    "HG=F": 566.6,
+    "PL=F": 1997.45,
+    "ZW=F": 539.5,
+    "ZC=F": 429.12,
+    "ZS=F": 1129.75,
+    "KC=F": 284.35,
+    "SB=F": 13.99,
+    "CT=F": 61.77
+  },
+  "base_prices": {
+    "CL=F": 62.89,
+    "NG=F": 3.243,
+    "GC=F": 5046.3,
+    "SI=F": 7796.4,
+    "HG=F": 580.3,
+    "PL=F": 2077.1,
+    "ZW=F": 548.75,
+    "ZC=F": 431.75,
+    "ZS=F": 1133.0,
+    "KC=F": 284.35,
+    "SB=F": 13.99,
+    "CT=F": 61.77
+  },
+  "spot_prices": {
+    "GC=F": 4992.47,
+    "SI=F": 76.625,
+    "PL=F": 2045.7
+  },
+  "base_spot_prices": {
+    "GC=F": 4993.895,
+    "SI=F": 76.611,
+    "PL=F": 2042.86
+  },
+  "method": "geometric_weighted_hybrid_spot_futures_median3",
+  "spot_blend_alpha": 0.5,
+  "hybrid_tickers_used": [
+    "GC=F",
+    "SI=F",
+    "PL=F"
+  ],
+  "hybrid_tickers_futures_only": [],
+  "base_index_value": 1000000.0,
+  "coverage": 1.0000000000000002,
+  "excluded_tickers": [],
+  "k_raw": 0.9891612694789925,
+  "k_smooth_ema7": 0.9891771126570107,
+  "cost_index_k": 0.9891612694789925,
+  "cost_index_k_smooth": 0.9891771126570107,
+  "cost_index_change_pct": -1.0838730521007478,
+  "purchasing_power_usd": 1.010957495865883,
+  "purchasing_power_usd_smooth": 1.010941303841855,
+  "purchasing_power_change_pct": 1.0957495865882905,
+  "trml_usd_raw": 989161.2694789926,
+  "trml_usd_smooth": 989177.1126570107,
+  "sma_7": null,
+  "sma_30": null
+}

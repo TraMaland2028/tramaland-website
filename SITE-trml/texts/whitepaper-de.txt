@@ -1,0 +1,550 @@
+Einführung
+
+1.TRML Shit Manifesto
+Warum eigentlich TRML?
+Weiß nicht, keine Ahnung , es klingt einfach geil. )))
+
+
+Oder „Warum zum Teufel bauen wir diesen Scheiß eigentlich, 
+während ihr weiter auf 10/10 liquidiert werdet“Müde?
+Klar bist du müde.Weil Preis nicht Wert ist.
+Preis ist einfach nur Glaube von irgendwem + Hebel von irgendwem 
++ Tweet von irgendwem.Oktober 2025:
+19 Milliarden in 40 Minuten weggewischt.
+3,21 Milliarden – in einer einzigen Minute.
+1,6 Millionen Leute liquidiert.
+Ein Politiker tweetet über Zölle – und zack, Crypto-Winter.
+
+Und du?
+Hast du in 50x Long gesessen und „to the moon“ gebrüllt?
+Jetzt hockst du im Keller und wartest auf den Halving 2028.
+Herzlichen Glückwunsch, Genie.Krypto ist keine Freiheit.
+Es ist ein Casino mit hübschem Logo.
+Börsen kassieren an deinen Liquidationen.
+Whales fressen deine Stops.
+Regulierer würgen an deiner Angst.
+Und du? Kanonenfutter.TRML?
+Nicht für Pump oder Hype.
+Kein „100x to the moon“.
+Einfach ein Index aus richtigem Dreck: Öl, Gas, Gold, Weizen, Kupfer.
+Das Zeug, das Fabriken und Menschen wirklich fressen.
+Nicht das, was Bots und Twitter-Gurus fressen.Unser Token?
+Nicht handelbar. Kein Orderbuch. Kein Pump.
+Kein „kauf den Dip und verkauf den Rip“-Bullshit.
+Einfach nur ein Anteil am Korb des Lebens.
+Damit deine Jahre nicht in der nächsten 10/10-Löschung verschwinden.
+Warum das Ganze wahrscheinlich scheitern wird?
+Weil die Leute Chaos lieben.
+100x lieben.
+Alles in einer Minute verbrennen und dann jemand anderem die Schuld geben.
+Und messen hassen sie.
+Ihnen ist es leichter, an eine „neue Ära“ zu glauben, 
+als die Stunden ihres eigenen Lebens zu zählen.Aber wenn du es satt hast, 
+Teil dieses Zirkus zu sein –
+Mach mit.
+Prüf die Daten selbst (alles offen).
+Starte ein Script, das den Index trackt.
+Nutze TRML in einem echten Vertrag mit jemandem, der auch die Schnauze voll hat.
+Erzähl drei Freunden, die auch auf 10/10 reingeflogen sind.Das ist keine Investition.
+Das ist Rebellion.
+Klein, stur, ohne Chance auf schnelles Geld.
+Aber die einzige, die nicht mit deiner Liquidation endet.
+Warum das eigentlich Sinn ergibt (ohne rosa Brille)
+Krypto im Moment ist reiner Glaube + Leverage + Tweets von Walen/Politikern → Preis kann in 
+40 Minuten zum Mond fliegen oder auf null gehen (genau wie Oktober 2025).
+Echte Rohstoffe sind nicht reiner Glaube.
+Es gibt Fabriken, die Kupfer fressen; Menschen, die Weizen essen; Maschinen, die Öl saufen.
+Spekulation gibt’s, klar, aber es gibt einen physischen Anker: Produktion, Nachfrage, 
+Logistik, Kriege, Wetter. Vollständig von der Realität abzukoppeln ist viel schwerer.
+TRML nimmt die Preise dieser Waren (Futures + Spot bei Metallen) → baut einen Index.
+→ Du bekommst eine digitale Marke: „Was kostet der Basis-Korb des Lebens heute“,
+nicht „wie sehr die Leute an diesen Meme glauben“.Was macht das für die Leute einfacher?
+Anstrengung bewahren ohne Inflation/Abwertung → deine angesparten „Lebensstunden“ 
+lösen sich nicht in Dollar-/Euro-/was-auch-immer-Druckerei auf.
+Verhandeln ohne Mittelsmänner → „Lass uns Schuld/Gehalt/Miete in TRML-Einheiten nach 
+aktuellem Index abrechnen“ → freiwillig, ohne Börse, ohne Pump.
+Nicht mehr auf den Mond warten → keine Spekulation auf Aufwärts, sondern Messung 
+„was passiert gerade in der realen Welt“.
+Transparenz → Daten offen (Yahoo Finance usw.), Code öffentlich, 
+Berechnung automatisch → jeder kann nachprüfen, muss nicht blind vertrauen.
+Ist das wirklich einfacher?
+Für die meisten – ja, weil:
+Kein Bedarf, sich in DeFi, Leverage, Yield Farming einzuarbeiten.
+Keine Angst, dass der Token wegen eines Tweets 90 % crasht.
+Einfach: „Mein TRML ist ein Anteil am Öl+Getreide+Metalle-Korb. 
+Wenn die Welt teurer wird – mein Anteil auch.“Die Nachteile sind 
+offensichtlich (und du kennst sie):
+Wenn niemand es in echten Vereinbarungen nutzt → bleibt eine schöne Zahl auf der Website.
+Daten können hinken/verzerrt sein.
+Kein Hype → kein virales Wachstum → Projekt kann leise eingehen.
+Aber genau das ist der Punkt:
+Kein weiteres Casino bauen, sondern ein Werkzeug für Leute, 
+die Casinos satt haben.Mach mit oder warte weiter auf das nächste „10/10“.
+Deine Entscheidung.
+Unser GitHub ist offen.
+Daten sind öffentlich.
+Niemand zwingt dich.
+Aber wenn nicht du – wer dann?
+
+
+2. Methodik zur Berechnung von TRML
+2.1 Zusammensetzung des Warenkorbs (Version v1.0)
+
+Der aktuelle TRML-Warenkorb bildet die grundlegenden Rohstoffkomponenten der Weltwirtschaft ab.
+
+Energie
+
+WTI Crude Oil (CL=F) — 20 %
+Natural Gas (NG=F) — 8 %
+
+Industriemetalle und Edelmetalle
+
+Gold (GC=F) — 11 %
+Silber (SI=F) — 7 %
+Kupfer (HG=F) — 11 %
+Platin (PL=F) — 7 %
+
+Agrarsektor
+
+Weizen (ZW=F) — 9 %
+Mais (ZC=F) — 8 %
+Sojabohnen (ZS=F) — 7 %
+Kaffee (KC=F) — 4 %
+Zucker (SB=F) — 4 %
+Baumwolle (CT=F) — 4 %
+
+Das Gesamtgewicht des Warenkorbs beträgt 100 %.
+
+Warum werden in diesem Warenkorb Ticker mit „=F“ verwendet
+Im TRML-Index werden Bezeichnungen wie CL=F, GC=F, ZW=F usw. verwendet.
+
+„=F“ ist ein technisches Format von Markttickern, das eine einheitliche 
+und stabile Datenerfassung für den gesamten Warenkorb ermöglicht.
+
+Das bedeutet nicht, dass sich der Index an Futures-Trader richtet.
+Es bedeutet vielmehr, dass für die Berechnung eine gemeinsame und 
+vergleichbare Kursquelle für alle Komponenten des Warenkorbs gewählt wurde.
+
+Für bestimmte Vermögenswerte wird bereits ein hybrider Ansatz angewendet: 
+Bei Gold, Silber und Platin fließen neben Futures-Daten auch Spot-Preise 
+in die Berechnung ein. Dadurch werden Verzerrungen reduziert und der resultierende 
+Index bildet die tatsächliche Preisentwicklung des Warenkorbs realistischer ab.
+
+Fazit:
+
+„=F“ im Namen bezeichnet das Datenformat.
+Der Zweck des Index ist die Messung der Wertveränderung eines grundlegenden Rohstoffwarenkorbs.
+Wo möglich, werden zusätzlich Spot-Preise berücksichtigt, 
+um die Aussagekraft des Ergebnisses zu erhöhen.
+
+2.2 Berechnungsprinzip
+
+FORMELN, DIE IM SERVICE TRML-base VERWENDET WERDEN
+
+1. Relativer Preis pro Asset
+
+r_i = P_i(t) / P_i(0)
+
+Wobei:
+P_i(t) = aktueller Preis des Assets
+P_i(0) = Basispreis (am Starttag)
+
+2. Hybrid aus Futures + Spot (für GC, SI, PL)
+
+Zunächst werden berechnet:
+
+r_i_fut = P_i_fut(t) / P_i_fut(0)
+r_i_spot = P_i_spot(t) / P_i_spot(0)
+
+Anschließend erfolgt die logarithmische Mischung:
+
+r_i_hyb = exp( (1 - alpha) * ln(r_i_fut)
+
+alpha * ln(r_i_spot) )
+
+Wobei:
+alpha = 0.5
+
+3. Gewichteter geometrischer Warenkorbindex
+
+L = SUM( w_i * ln(r_i) )
+
+Falls ein Teil der Daten fehlt:
+
+L_norm = L / SUM(w_i_covered)
+Index(t) = BaseIndex * exp(L_norm)
+
+BaseIndex = 1,000,000
+Minimale Datenabdeckung: 85 %
+
+4. Warenkorbkoeffizient
+
+K_raw = Index(t) / BaseIndex
+
+5. Glättung EMA7
+
+K_ema7(t) = alpha_ema * K_raw(t)
+
+(1 - alpha_ema) * K_ema7(t - 1)
+
+alpha_ema = 2 / (7 + 1) = 0.25
+
+6. Kaufkraft des USD
+
+PP_raw = 1 / K_raw
+PP_ema7 = 1 / K_ema7
+
+7. Prozentuale Veränderung
+
+Delta_K_percent = (K_raw - 1) * 100
+Delta_PP_percent = (PP_raw - 1) * 100
+
+8. Werte im JSON (wie im Code implementiert)
+
+TRML_USD_raw = 1,000,000 * K_raw
+TRML_USD_ema = 1,000,000 * K_ema7
+
+9. Einfache gleitende Durchschnitt (SMA)
+
+SMA_n = (1 / n) * SUM_{k=0 to n-1} Index(t - k)
+n gehört zur Menge {7, 30}
+
+10. Begrenzung der täglichen Veränderung (Rauschfilter)
+
+P_i(t) gehört zum Bereich:
+[ P_ref * (1 - 0.15) , P_ref * (1 + 0.15) ]
+
+MAX_DAILY_MOVE = 15 %
+
+2.3 Kaufkraft
+
+BERECHNUNG DES KORBKOEFFIZIENTEN UND DER KAUFKRAFT
+
+Zunächst wird der Warenkorbkoeffizient berechnet:
+
+K = Index / BaseIndex
+
+Wobei:
+BaseIndex = 1,000,000
+
+Kaufkraft des US-Dollars
+
+PP_USD = 1 / K
+
+Veränderung der Kaufkraft gegenüber der Basis (in %)
+
+Delta_PP_percent = (PP_USD - 1) * 100
+
+BEISPIELE
+
+1. Wenn:
+
+K = 1.10
+(Der Warenkorb ist um 10% gestiegen)
+
+Dann:
+
+PP_USD = 1 / 1.10 = 0.909
+
+Delta_PP_percent = (0.909 - 1) * 100
+= -9.1%
+
+Der Dollar ist gegenüber dem Warenkorb schwächer geworden.
+
+2. Wenn:
+
+K = 0.90
+
+Dann:
+
+PP_USD = 1 / 0.90 = 1.111
+
+Delta_PP_percent = (1.111 - 1) * 100
+= +11.1%
+
+Der Dollar ist gegenüber dem Warenkorb stärker geworden.
+
+Ein steigendes K spiegelt höhere Preise des Rohstoffkorbs und eine sinkende Kaufkraft der Nominalwährung im Verhältnis zu Basisressourcen wider.
+
+2.4 Hybride Notierungen
+
+Für Gold, Silber und Platin wird ein hybrider Bewertungsmechanismus angewendet:
+
+50% — Futures-Notierung
+50% — Spot-Notierung
+
+Dies reduziert mögliche Verzerrungen, die mit Besonderheiten des Terminmarktes verbunden sind (Contango, Backwardation).
+
+2.5 Datenquellen
+
+Derzeit werden offene Marktquellen für Preisdaten verwendet.
+
+Die Berechnung erfolgt algorithmisch ohne manuelle Anpassungen.
+
+3. Aktueller Status
+
+TRML v1.0 ist eine Testversion der Methodik.
+
+Bei stabil wachsender Nutzerbasis und zunehmendem Interesse:
+
+der Warenkorb kann um zusätzliche Positionen erweitert werden
+der Mechanismus kann präzisiert werden
+die Datenquellen können auf professionelle kostenpflichtige APIs umgestellt werden
+die Berechnung kann einer externen Verifikation unterzogen werden
+
+Alle Änderungen der Methodik werden öffentlich dokumentiert.
+(Die finanziellen Mittel für einen vollständigen professionellen Start stehen derzeit noch nicht zur Verfügung.)
+
+3.1 Modellgrenzen
+
+TRML:
+
+bildet ausschließlich den Rohstoffsektor ab
+berücksichtigt keine Dienstleistungen oder Technologie-Assets
+ist von der Qualität der Marktdaten abhängig
+ist kein offizieller Wirtschaftsindex
+
+Das Modell wird als offene algorithmische Methodik veröffentlicht.
+
+3.2 Indexskala und Berechnungsachse der Community
+
+Am Tag des Starts wurde der TRML-Index normalisiert auf:
+
+TRML_launch = 1,000,000
+
+Dieser Wert dient als skalierte Referenzgröße und wird ausschließlich 
+zur übersichtlichen Darstellung der Dynamik verwendet.
+
+Die Zahl 1 000 000:
+
+ist kein fixer Preis,
+begründet keine Umtauschverpflichtung.
+
+Sie stellt das anfängliche Indexniveau dar.
+
+Relative Einheit
+
+TRML misst die Veränderung des Wertes des Rohstoffkorbs relativ zum Startniveau.
+
+Somit bedeutet:
+
+1 100 000 einen Anstieg des Korbs um 10%
+900 000 einen Rückgang um 10%
+
+Der Index drückt die relative Veränderung realer Ressourcen aus.
+
+3.3 Kollektive rechnerische Interpretation
+
+TRML legt keinen Preis fest und setzt keinen Wechselkurs.
+
+Teilnehmer können jedoch im gegenseitigen Einvernehmen den Index als rechnerische 
+Bezugsachse für interne Vereinbarungen nutzen.
+
+Beispielsweise können Parteien vereinbaren, dass:
+
+der Wert 1 000 000 einer hypothetischen Basiseinheit entspricht,
+der aktuelle Indexwert deren relative Veränderung widerspiegelt.
+
+Eine solche Nutzung:
+
+ist nicht durch das Protokoll vorgeschrieben,
+ist nicht verpflichtend,
+wird Dritten gegenüber nicht garantiert,
+existiert ausschließlich als freiwillige Übereinkunft zwischen Beteiligten.
+
+TRML veröffentlicht eine Zahl.
+Eine Zahl wird erst dann zu einem Maßstab, wenn Menschen sie als solchen anerkennen.
+
+4. Index und Token TRML
+
+TRML besteht aus zwei Ebenen:
+
+TRML Index — ein algorithmischer Indikator zur Messung der Veränderung eines Rohstoffwarenkorbs.
+
+TRML Token:
+ist kein besichertes Asset,
+stellt keinen Fondsanteil dar,
+garantiert keine Rendite,
+begründet keinen Anspruch auf Vermögenswerte,
+ist kein gesetzliches Zahlungsmittel.
+
+Der Token ist nicht durch den Index „gedeckt“.
+
+Er ist konzeptionell und informativ mit dem Index verbunden.
+
+4.1 Verbindung zum Index
+
+Der TRML-Index veröffentlicht einen Koeffizienten, 
+der die Veränderung der Rohstoffbasis abbildet.
+
+Der Token kann von Teilnehmern als digitale Einheit verwendet werden, 
+deren Wert im Verhältnis zum Index interpretiert wird.
+
+Das Protokoll legt keinen festen Wechselkurs zwischen Token und Index fest 
+und garantiert keine Übereinstimmung zwischen beiden.
+
+Teilnehmer können jedoch im gegenseitigen Einvernehmen den Indexwert 
+als Referenz bei der Bestimmung eines internen Abrechnungswerts des Tokens heranziehen.
+
+4.2 Freiwilliges Interpretationsmodell
+
+Die Community kann:
+
+1 TRML Token als konventionelle Einheit betrachten,
+den Indexwert als dynamische Skala für die Veränderung 
+dieser Einheit verstehen.
+
+Dieses Modell:
+
+ist rechtlich nicht verankert,
+nicht verpflichtend,
+begründet keine Austauschgarantie,
+existiert ausschließlich auf Basis freiwilliger Übereinkunft zwischen Beteiligten.
+
+Der Index veröffentlicht eine Messgröße.
+Der Token ermöglicht es, diese Messgröße in digitaler Form zu verwenden.
+
+5. Verhältnis zum kryptobasierten Wachstumsmodell
+
+TRML entstand nicht als Versuch, mit bestehenden Kryptowährungen 
+zu konkurrieren.
+
+Er entstand aus der Beobachtung ihrer Entwicklung.
+
+In den letzten Jahren wurden digitale Assets häufig mit Erwartungen 
+exponentiellen Wachstums verbunden.
+In vielen Fällen wurde der Wert weniger durch Nutzung oder 
+Fundamentaldaten bestimmt als durch Prognosen zukünftiger Preise.
+Prognosen und Realität fallen jedoch nicht immer zusammen.
+
+Gleichzeitig werden erhebliche Rechenleistung, Energie und materielle
+Ressourcen zur Aufrechterhaltung von Netzwerken eingesetzt, 
+deren Hauptfunktion in der Bestätigung numerischer Einträge in verteilten Registern besteht.
+Die Frage nach der Effizienz solcher Strukturen ist berechtigt.
+
+TRML bewertet diese Modelle weder als „richtig“ noch als „falsch“.
+Er schlägt eine alternative Ausrichtung vor.
+
+Anstatt auf hypothetische Preisniveaus in ferner Zukunft zu spekulieren, 
+konzentriert sich TRML auf die Messung des aktuellen Zustands der realen Rohstoffbasis.
+
+Anstatt Ressourcen für das Wachstum abstrakter Bewertungen einzusetzen, 
+veröffentlicht TRML einen Koeffizienten, der die Veränderung einer bereits 
+existierenden materiellen Wirtschaftsstruktur abbildet.
+
+TRML basiert nicht auf Hashrate-Wettbewerb, Emission oder künstlicher Verknappung von Rechenleistung.
+Er basiert auf einer transparenten Formel und minimalem algorithmischem Rechenaufwand.
+
+TRML spekuliert nicht auf einen zukünftigen Preis.
+Er dokumentiert die gegenwärtige Dynamik.
+
+6. Technologisches Umfeld: Warum Polygon
+
+TRML existiert in einer digitalen Umgebung, und die Wahl dieser Umgebung ist relevant.
+
+Für die digitale Umsetzung des Projekts wurde das Netzwerk Polygon gewählt — als Infrastruktur 
+mit niedrigen Transaktionskosten, schnellen Bestätigungszeiten und einer stabilen Ökosystembasis.
+
+TRML benötigt keine energieintensiven Rechenmechanismen.
+Seine Logik besteht im Messen, nicht im Mining.
+
+Das Polygon-Netzwerk basiert auf einem Konsensmodell, 
+das auf Effizienz und Skalierbarkeit ausgerichtet ist. Dadurch wird ermöglicht:
+
+Minimierung des Energieverbrauchs,
+schnelle Transaktionsbestätigungen,
+geringe Interaktionskosten,
+Vermeidung von Netzwerküberlastung.
+
+Dies entspricht der Philosophie von TRML:
+
+weniger überflüssige Berechnungen,
+geringere Barrieren,
+größere Zugänglichkeit.
+
+Ökosystem
+
+Polygon bietet eine ausgereifte Infrastruktur:
+
+Kompatibilität mit Ethereum,
+eine entwickelte Tooling-Landschaft,
+stabile Smart-Contract-Umgebung,
+breite Integration in Wallets und Services.
+
+TRML strebt keinen eigenen Rechenwettlauf an.
+Er nutzt bestehende digitale Infrastruktur, 
+die für praktische Anwendung optimiert ist.
+
+7. Transaktionen und Netzwerk-Gas
+
+Wie jedes digitale Asset im Polygon-Netzwerk verwendet 
+TRML den standardmäßigen Blockchain-Transaktionsmechanismus.
+
+Für die Durchführung von Operationen, einschließlich Übertragungen 
+oder Smart-Contract-Interaktionen, ist eine Netzwerkgebühr 
+erforderlich — das sogenannte Gas.
+
+Im Polygon-Netzwerk wird Gas im nativen Token des Netzwerks bezahlt — POL.
+
+Dies ist eine technische Anforderung der Blockchain-Infrastruktur 
+und keine Besonderheit von TRML.
+
+TRML:
+
+erhebt keine eigene Gebühr,
+kontrolliert nicht die Höhe der Netzwerkgebühren,
+zieht keinen Vorteil aus Netzwerkgebühren.
+
+Die Gas-Kosten werden durch Netzwerkauslastung und Protokollparameter von Polygon bestimmt.
+
+Transparenzprinzip
+
+Jede Interaktion mit TRML auf der Blockchain:
+
+erfordert eine minimale Menge an POL zur Begleichung der Transaktionsgebühr,
+wird direkt vom Nutzer durchgeführt,
+setzt keinen zentralen Vermittler voraus.
+
+TRML nutzt bestehende Infrastruktur.
+Die Netzwerkgebühr ist die Vergütung für die Eintragung von Daten in ein verteiltes Register,
+nicht Bestandteil des internen Projektmodells.
+
+Schlusswort
+
+TRML ist ein öffentliches Experiment.
+Die Teilnahme erfolgt ausschließlich freiwillig.
+
+Ausgangspunkt
+
+Wenn du hier bist, verstehst du möglicherweise bereits, warum.
+Du erhältst einen Referenzpunkt für eine alternative Betrachtungsweise der Realität.
+Das Wesentliche liegt oft etwas tiefer — dort, wo nicht nur der Text gelesen wird, 
+sondern auch seine Bedeutung reflektiert wird.
+
+Warum sich das verbreitet
+
+TRML wird nicht durch seinen Preis zu einem Wert.
+Er wird es nur, wenn Menschen ihn als solchen anerkennen.
+
+Jeder neue Teilnehmer erhöht nicht den Gewinn einzelner.
+Er stärkt die Grundlage einer gemeinsamen Übereinkunft.
+
+Du verbreitest keinen Token.
+Du verbreitest eine Idee.
+
+Die Idee, dass es auch anders möglich ist.
+
+Das ist alles.
+
+HAFTUNGSAUSSCHLUSS
+Dieses Dokument stellt weder eine rechtliche, 
+finanzielle, steuerliche noch eine Anlageberatung dar.
+Nichts darin begründet Verpflichtungen, Garantien oder Ansprüche.
+Die Teilnahme erfolgt ausschließlich freiwillig.
+Das Projekt ist ein offenes Experiment ohne Zusagen 
+hinsichtlich Rendite oder Stabilität.
+Nutzen Sie es auf eigenes Risiko.
+Die Autoren/Veröffentlicher übernehmen keinerlei Haftung für 
+Verluste oder Entscheidungen, die auf Grundlage dieses 
+Textes getroffen werden.
+
