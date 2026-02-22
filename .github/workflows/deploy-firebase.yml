@@ -1,0 +1,22 @@
+name: Deploy Firebase
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "SITE-trml/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Deploy to Firebase Hosting
+        uses: w9jds/firebase-action@v13.35.1
+        with:
+          args: deploy --only hosting --project tramaland2028
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
