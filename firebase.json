@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "SITE-trml",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
