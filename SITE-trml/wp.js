@@ -214,6 +214,10 @@ async function loadTrmlWidget() {
     }
   }
 
+  if (trmlHintEl && payload && payload.market_data_fresh === false) {
+    trmlHintEl.textContent += ' Market closed or unchanged: latest available prices used.';
+  }
+
   trmlUpdatedEl.textContent = `Updated (UTC): ${formatIsoDate(payload.date_utc)}`;
   renderBasketRows(payload);
   renderDrivers(payload);
@@ -435,16 +439,4 @@ async function loadTrmlHistoryChart() {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
