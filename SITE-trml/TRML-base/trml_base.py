@@ -1,4 +1,4 @@
-﻿import json
+import json
 import logging
 import math
 import os
@@ -97,6 +97,12 @@ def inverse_power(value: float | None) -> float | None:
     if value is None or value <= 0:
         return None
     return 1.0 / value
+
+
+def append_note(existing: str | None, extra: str) -> str:
+    if not existing:
+        return extra
+    return f"{existing} {extra}"
 
 
 # ================= Yahoo/Stooq Fetch =================
@@ -331,8 +337,13 @@ def clamp_price_change(ticker: str, price: float, reference: float | None) -> fl
     return price
 
 
-def fetch_all_prices(base_prices: dict | None = None) -> dict:
+def fetch_all_prices(base_prices: dict | None = None) -> tuple[dict, dict]:
     prices = {}
+    meta = {
+        "live_tickers": [],
+        "fallback_tickers": [],
+        "missing_tickers": [],
+    }
     cache = load_last_prices_cache()
 
     for ticker in TICKERS.keys():
@@ -342,6 +353,7 @@ def fetch_all_prices(base_prices: dict | None = None) -> dict:
             live_price = fetch_last_close_stooq(ticker)
             live_price = clamp_price_change(ticker, live_price, ref_price)
             prices[ticker] = live_price
+            meta["live_tickers"].append(ticker)
             logging.info(f"Fetched {ticker} via stooq (median-{MEDIAN_WINDOW}): {live_price}")
 
         except Exception as stooq_error:
@@ -351,6 +363,7 @@ def fetch_all_prices(base_prices: dict | None = None) -> dict:
                 live_price = fetch_last_close(ticker)
                 live_price = clamp_price_change(ticker, live_price, ref_price)
                 prices[ticker] = live_price
+                meta["live_tickers"].append(ticker)
                 logging.info(f"Fetched {ticker} via yahoo (median-{MEDIAN_WINDOW}): {live_price}")
                 time.sleep(SLEEP_BETWEEN_TICKERS_SEC)
                 continue
@@ -370,19 +383,26 @@ def fetch_all_prices(base_prices: dict | None = None) -> dict:
 
             if fallback is not None:
                 prices[ticker] = fallback
+                meta["fallback_tickers"].append(ticker)
                 logging.warning(f"Using fallback ({source}) for {ticker}: {fallback}")
             else:
                 prices[ticker] = None
+                meta["missing_tickers"].append(ticker)
                 logging.error(f"No fallback available for {ticker}")
 
         time.sleep(SLEEP_BETWEEN_TICKERS_SEC)
 
     save_last_prices_cache(prices)
-    return prices
+    return prices, meta
 
 
-def fetch_all_spot_prices(base_spot: dict | None = None) -> dict:
+def fetch_all_spot_prices(base_spot: dict | None = None) -> tuple[dict, dict]:
     spot_prices = {}
+    meta = {
+        "live_tickers": [],
+        "fallback_tickers": [],
+        "missing_tickers": [],
+    }
     cache = load_last_spot_cache()
 
     for ticker, feed in SPOT_SYMBOLS.items():
@@ -393,12 +413,14 @@ def fetch_all_spot_prices(base_spot: dict | None = None) -> dict:
         try:
             live_price = fetch_last_close_stooq_symbol(stooq_symbol)
             spot_prices[ticker] = live_price
+            meta["live_tickers"].append(ticker)
             logging.info(f"Fetched SPOT {ticker} via stooq symbol={stooq_symbol} (median-{MEDIAN_WINDOW}): {live_price}")
         except Exception as stooq_err:
             logging.warning(f"SPOT stooq fetch failed for {ticker} ({stooq_symbol}): {stooq_err}")
             try:
                 live_price = fetch_last_close(yahoo_symbol)
                 spot_prices[ticker] = live_price
+                meta["live_tickers"].append(ticker)
                 logging.info(f"Fetched SPOT {ticker} via yahoo symbol={yahoo_symbol} (median-{MEDIAN_WINDOW}): {live_price}")
                 time.sleep(SLEEP_BETWEEN_TICKERS_SEC)
                 continue
@@ -414,14 +436,16 @@ def fetch_all_spot_prices(base_spot: dict | None = None) -> dict:
 
             if fallback is not None:
                 spot_prices[ticker] = fallback
+                meta["fallback_tickers"].append(ticker)
                 logging.warning(f"Using SPOT fallback ({source}) for {ticker}: {fallback}")
             else:
                 spot_prices[ticker] = None
+                meta["missing_tickers"].append(ticker)
                 logging.warning(f"No SPOT price available for {ticker}; futures-only mode for this ticker")
         time.sleep(SLEEP_BETWEEN_TICKERS_SEC)
 
     save_last_spot_cache(spot_prices)
-    return spot_prices
+    return spot_prices, meta
 
 
 # ================= Index Core =================
@@ -611,7 +635,10 @@ def upsert_history(run_date: str, raw_index: float, k_raw: float, k_smooth: floa
 def build_output(run_date: str, prices: dict, base: dict, index_value: float, history_row: dict,
                  coverage: float | None, excluded: list, note: str | None = None,
                  spot_prices: dict | None = None, base_spot_prices: dict | None = None,
-                 hybrid_used: list | None = None, hybrid_fallback: list | None = None) -> dict:
+                 hybrid_used: list | None = None, hybrid_fallback: list | None = None,
+                 market_data_fresh: bool = True,
+                 market_live_tickers: list | None = None,
+                 market_fallback_tickers: list | None = None) -> dict:
     k_raw = history_row["k_raw"]
     k_smooth = history_row["k_smooth_ema7"]
     pp_raw = inverse_power(k_raw)
@@ -619,6 +646,8 @@ def build_output(run_date: str, prices: dict, base: dict, index_value: float, hi
 
     out = {
         "date_utc": run_date,
+        "run_date_utc": run_date,
+        "run_timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "version": INDEX_VERSION,
         "index": index_value,
         "prices": prices,
@@ -632,6 +661,9 @@ def build_output(run_date: str, prices: dict, base: dict, index_value: float, hi
         "base_index_value": BASE_INDEX_VALUE,
         "coverage": coverage,
         "excluded_tickers": excluded,
+        "market_data_fresh": market_data_fresh,
+        "market_live_tickers": market_live_tickers or [],
+        "market_fallback_tickers": market_fallback_tickers or [],
         "k_raw": k_raw,
         "k_smooth_ema7": k_smooth,
         "cost_index_k": k_raw,
@@ -671,7 +703,7 @@ def main():
     if base_spot is None:
         base_spot = {}
 
-    prices = fetch_all_prices(base_prices=base)
+    prices, prices_meta = fetch_all_prices(base_prices=base)
 
     if base is not None:
         base, added_base_tickers = backfill_missing_base_tickers(base, prices)
@@ -679,12 +711,15 @@ def main():
             save_json(BASE_FILE, base)
             logging.info(f"Backfilled missing base tickers: {added_base_tickers}")
 
-    spot_prices = fetch_all_spot_prices(base_spot=base_spot)
+    spot_prices, spot_meta = fetch_all_spot_prices(base_spot=base_spot)
     base_spot, normalized = normalize_base_spot_prices(base_spot, spot_prices)
     if normalized:
         save_json(BASE_SPOT_FILE, base_spot)
         logging.info(f"Normalized base SPOT prices for: {normalized}")
     missing = [ticker for ticker, value in prices.items() if value is None]
+    market_live_tickers = sorted(set(prices_meta["live_tickers"] + spot_meta["live_tickers"]))
+    market_fallback_tickers = sorted(set(prices_meta["fallback_tickers"] + spot_meta["fallback_tickers"]))
+    market_data_fresh = bool(market_live_tickers)
 
     if base is None:
         if missing:
@@ -711,6 +746,9 @@ def main():
             base_spot_prices=base_spot_seed,
             hybrid_used=list(base_spot_seed.keys()),
             hybrid_fallback=[ticker for ticker in SPOT_SYMBOLS.keys() if ticker not in base_spot_seed],
+            market_data_fresh=market_data_fresh,
+            market_live_tickers=market_live_tickers,
+            market_fallback_tickers=market_fallback_tickers,
         )
 
         save_json(os.path.join(ARCHIVE_DIR, f"{run_date}.json"), out)
@@ -728,6 +766,12 @@ def main():
     coverage = None
     hybrid_used = []
     hybrid_fallback = []
+
+    if not market_data_fresh:
+        note = append_note(
+            note,
+            "Market session appears closed or unchanged: used latest available cached/archive prices for daily calendar update.",
+        )
 
     if not base_spot:
         base_spot = {ticker: value for ticker, value in spot_prices.items() if value is not None}
@@ -779,6 +823,9 @@ def main():
         base_spot_prices=base_spot,
         hybrid_used=hybrid_used,
         hybrid_fallback=hybrid_fallback,
+        market_data_fresh=market_data_fresh,
+        market_live_tickers=market_live_tickers,
+        market_fallback_tickers=market_fallback_tickers,
     )
 
     save_json(os.path.join(ARCHIVE_DIR, f"{run_date}.json"), out)
@@ -793,6 +840,7 @@ def main():
     logging.info(f"Index (raw): {MEME_USD_BASE * k_raw} | Index (smooth): {MEME_USD_BASE * k_smooth}")
     logging.info(f"Purchasing power USD (raw): {pp_raw} | Purchasing power USD (smooth): {pp_smooth}")
     logging.info(f"Purchasing power change vs base: {((pp_raw - 1.0) * 100.0) if pp_raw is not None else None}%")
+    logging.info(f"Market data fresh: {market_data_fresh} | Live tickers: {market_live_tickers} | Fallback tickers: {market_fallback_tickers}")
     logging.info(f"Hybrid spot used: {hybrid_used} | Spot fallback to futures: {hybrid_fallback}")
     logging.info(f"SMA7: {last_row['sma_7']} | SMA30: {last_row['sma_30']}")
     logging.info("Archive saved.")
@@ -801,6 +849,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
 
