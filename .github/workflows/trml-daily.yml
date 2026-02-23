@@ -2,8 +2,8 @@ name: TRML Daily Update
 
 on:
   schedule:
-    - cron: "10 0 * * *"   # каждый день в 00:10 UTC
-  workflow_dispatch:         # кнопка Run workflow вручную
+    - cron: "10 0 * * *"   # daily at 00:10 UTC
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -41,8 +41,15 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
-            exit 0
+          else
+            git commit -m "chore: daily TRML index update"
+            git push
           fi
 
-          git commit -m "chore: daily TRML index update"
-          git push
+      - name: Deploy to Firebase Hosting
+        uses: w9jds/firebase-action@v13.35.1
+        with:
+          args: deploy --only hosting --project tramaland2028
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
