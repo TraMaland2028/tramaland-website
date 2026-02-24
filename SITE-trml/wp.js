@@ -2,6 +2,8 @@
 
 
 
+
+
 const slogans = {
   en: 'Total Resilience Meme Line',
   ru: 'Total Resilience Meme Line',
@@ -602,5 +604,3 @@ async function loadTrmlHistoryChart() {
     }
   }
 }
-
-
