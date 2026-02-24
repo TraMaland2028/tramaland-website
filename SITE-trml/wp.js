@@ -1,5 +1,7 @@
 ﻿
 
+
+
 const slogans = {
   en: 'Total Resilience Meme Line',
   ru: 'Total Resilience Meme Line',
@@ -11,13 +13,81 @@ const slogans = {
 };
 
 const translations = {
-  en: { selectLang: 'Select the Whitepaper Language', telegramText: 'Ready? Join us!' },
-  ru: { selectLang: 'Выбери язык белой книги', telegramText: 'Готов к будущему? Присоединяйся!' },
-  fr: { selectLang: 'Selectionne la langue du livre blanc', telegramText: 'Pret pour l\'avenir? Rejoins-nous !' },
-  cn: { selectLang: '请选择白皮书语言', telegramText: '准备迎接未来？加入我们！' },
-  de: { selectLang: 'Wahle die Sprache des Whitepapers', telegramText: 'Bereit fur die Zukunft? Mach mit!' },
-  es: { selectLang: 'Selecciona el idioma del libro blanco', telegramText: 'Listo para el futuro? Unete!' },
-  jp: { selectLang: 'ホワイトペーパーの言語を選択してください', telegramText: '未来のために準備はできていますか？ 参加しよう！' }
+  en: {
+    selectLang: 'Select the Whitepaper Language',
+    telegramText: 'Ready? Join us!',
+    supportText: 'Support the project',
+    supportTitle: 'Support the project',
+    supportBody: 'If you like TRML and would like to support the development of the project, you can send a donation to any of the addresses below:',
+    supportThanks: 'Thank you for your support 🙏❤️',
+    copyBtn: 'Copy',
+    copiedBtn: 'Copied'
+  },
+  ru: {
+    selectLang: 'Выбери язык белой книги',
+    telegramText: 'Готов к будущему? Присоединяйся!',
+    supportText: 'Поддержать проект',
+    supportTitle: 'Поддержка проекта',
+    supportBody: 'Если вам нравится TRML и вы хотите поддержать развитие проекта, вы можете отправить донат на любой из адресов ниже:',
+    supportThanks: 'Спасибо за поддержку 🙏❤️',
+    copyBtn: 'Копировать',
+    copiedBtn: 'Скопировано'
+  },
+  fr: {
+    selectLang: 'Selectionne la langue du livre blanc',
+    telegramText: 'Pret pour l\'avenir? Rejoins-nous !',
+    supportText: 'Soutenir le projet',
+    supportTitle: 'Soutenir le projet',
+    supportBody: 'Si vous aimez TRML et souhaitez soutenir le développement du projet, vous pouvez envoyer un don à l’une des adresses ci-dessous :',
+    supportThanks: 'Merci pour votre soutien 🙏❤️',
+    copyBtn: 'Copier',
+    copiedBtn: 'Copié'
+  },
+  cn: {
+    selectLang: '请选择白皮书语言',
+    telegramText: '准备迎接未来？加入我们！',
+    supportText: '支持该项目',
+    supportTitle: '支持该项目',
+    supportBody: '如果您喜欢 TRML，并希望支持项目的发展，您可以向以下任一地址发送捐赠：',
+    supportThanks: '感谢您的支持 🙏❤️',
+    copyBtn: '复制',
+    copiedBtn: '已复制'
+  },
+  de: {
+    selectLang: 'Wahle die Sprache des Whitepapers',
+    telegramText: 'Bereit fur die Zukunft? Mach mit!',
+    supportText: 'Projekt unterstützen',
+    supportTitle: 'Projekt unterstützen',
+    supportBody: 'Wenn Ihnen TRML gefällt und Sie die Weiterentwicklung des Projekts unterstützen möchten, können Sie eine Spende an eine der untenstehenden Adressen senden:',
+    supportThanks: 'Vielen Dank für Ihre Unterstützung 🙏❤️',
+    copyBtn: 'Kopieren',
+    copiedBtn: 'Kopiert'
+  },
+  es: {
+    selectLang: 'Selecciona el idioma del libro blanco',
+    telegramText: 'Listo para el futuro? Unete!',
+    supportText: 'Apoyar el proyecto',
+    supportTitle: 'Apoyar el proyecto',
+    supportBody: 'Si te gusta TRML y deseas apoyar el desarrollo del proyecto, puedes enviar una donación a cualquiera de las siguientes direcciones:',
+    supportThanks: 'Gracias por tu apoyo 🙏❤️',
+    copyBtn: 'Copiar',
+    copiedBtn: 'Copiado'
+  },
+  jp: {
+    selectLang: 'ホワイトペーパーの言語を選択してください',
+    telegramText: '未来のために準備はできていますか？ 参加しよう！',
+    supportText: 'プロジェクトを応援する',
+    supportTitle: 'プロジェクトを支援する',
+    supportBody: 'TRMLを気に入っていただき、プロジェクトの発展を支援したい場合は、以下のいずれかのアドレスへご寄付をお送りください。',
+    supportThanks: 'ご支援ありがとうございます 🙏❤️',
+    copyBtn: 'コピー',
+    copiedBtn: 'コピー済み'
+  }
+};
+
+const DONATION_ADDRESSES = {
+  polygon: '0x09c4681F706eA371C9b44ea1502aE2959e13dbbB',
+  ton: 'UQBycExf_jrE8umE9vzQ3fduTQyLxw4S7CIzxh6z1VMDHbUo'
 };
 
 const TRML_CHART_WINDOW_POINTS = 120;
@@ -331,16 +401,91 @@ function showText(lang) {
         `;
       }
 
-
+      updateSupportPanel(lang);
       localStorage.setItem('selectedLang', lang);
     });
 }
 
+function getCurrentLang() {
+  return localStorage.getItem('selectedLang') || 'en';
+}
+
+function updateSupportPanel(lang) {
+  const tr = translations[lang] || translations.ru;
+  const supportTitleEl = document.getElementById('supportTitle');
+  const supportTextEl = document.getElementById('supportText');
+  const supportThanksEl = document.getElementById('supportThanks');
+  const supportBtnEl = document.getElementById('supportBtn');
+  const polygonEl = document.getElementById('polygonAddress');
+  const tonEl = document.getElementById('tonAddress');
+  const copyButtons = document.querySelectorAll('.copy-btn');
+
+  if (supportTitleEl) supportTitleEl.textContent = tr.supportTitle;
+  if (supportTextEl) supportTextEl.textContent = tr.supportBody;
+  if (supportThanksEl) supportThanksEl.textContent = tr.supportThanks;
+  if (supportBtnEl) supportBtnEl.textContent = tr.supportText;
+
+  if (polygonEl) polygonEl.textContent = DONATION_ADDRESSES.polygon;
+  if (tonEl) tonEl.textContent = DONATION_ADDRESSES.ton;
+
+  copyButtons.forEach((btn) => {
+    btn.textContent = tr.copyBtn;
+    btn.dataset.copyDefault = tr.copyBtn;
+    btn.dataset.copyDone = tr.copiedBtn;
+  });
+}
+
+async function copyAddress(targetId, button) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+
+  const text = target.textContent?.trim() || '';
+  if (!text) return;
+
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const area = document.createElement('textarea');
+      area.value = text;
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand('copy');
+      area.remove();
+    }
+
+    const done = button.dataset.copyDone || 'Copied';
+    const def = button.dataset.copyDefault || 'Copy';
+    button.textContent = done;
+    setTimeout(() => {
+      button.textContent = def;
+    }, 1200);
+  } catch (_e) {
+    // silent fallback
+  }
+}
+
+function toggleSupportPanel() {
+  const panel = document.getElementById('supportPanel');
+  if (!panel) return;
+
+  const lang = getCurrentLang();
+  updateSupportPanel(lang);
+
+  const isHidden = panel.hasAttribute('hidden');
+  if (isHidden) {
+    panel.removeAttribute('hidden');
+    panel.classList.add('is-open');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    panel.setAttribute('hidden', 'hidden');
+    panel.classList.remove('is-open');
+  }
+}
 
 const telegramBtn = document.getElementById('telegramBtn');
 if (telegramBtn) {
   telegramBtn.addEventListener('click', () => {
-
     const textEl = document.getElementById('text-display');
     if (textEl) {
       textEl.textContent = '';
@@ -353,15 +498,33 @@ if (telegramBtn) {
   });
 }
 
+const supportBtn = document.getElementById('supportBtn');
+if (supportBtn) {
+  supportBtn.addEventListener('click', () => {
+    if (supportBtn.hasAttribute('onclick')) return;
+    toggleSupportPanel();
+  });
+}
+
+document.querySelectorAll('.copy-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-copy-target');
+    copyAddress(targetId, btn);
+  });
+});
+
 window.addEventListener('DOMContentLoaded', () => {
   initTrmlTilt();
   loadTrmlWidget();
   loadTrmlHistoryChart();
+  localStorage.setItem('selectedLang', 'en');
+  updateSupportPanel('en');
   setInterval(loadTrmlWidget, 10 * 60 * 1000);
   setInterval(loadTrmlHistoryChart, 10 * 60 * 1000);
 });
 
 window.showText = showText;
+window.toggleSupportPanel = toggleSupportPanel;
 
 let trmlChartInstance = null;
 
@@ -439,4 +602,5 @@ async function loadTrmlHistoryChart() {
     }
   }
 }
+
 
