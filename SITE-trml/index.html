@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -84,16 +84,38 @@
 
   <div id="text-display" class="book-text"></div>
 
-  <div class="telegram-link">
+  <div class="action-buttons">
     <button class="telegram-btn" id="telegramBtn">
       <img src="assets/telegram-icon.png" alt="Telegram" class="telegram-icon" />
       Ready? Join us!
     </button>
+    <button class="support-btn" id="supportBtn" onclick="toggleSupportPanel()">Поддержать проект</button>
   </div>
+
+  <section class="support-panel" id="supportPanel" hidden>
+    <h4 class="support-title" id="supportTitle">Поддержка проекта</h4>
+    <p class="support-text" id="supportText"></p>
+
+    <div class="support-addresses">
+      <div class="support-address-row">
+        <div class="support-address-label">Polygon (POL)</div>
+        <div class="support-address-box" id="polygonAddress"></div>
+        <button class="copy-btn" data-copy-target="polygonAddress" id="copyPolygonBtn">Copy</button>
+      </div>
+
+      <div class="support-address-row">
+        <div class="support-address-label">TON</div>
+        <div class="support-address-box" id="tonAddress"></div>
+        <button class="copy-btn" data-copy-target="tonAddress" id="copyTonBtn">Copy</button>
+      </div>
+    </div>
+
+    <p class="support-thanks" id="supportThanks"></p>
+  </section>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="wp.js"></script>
- </body>
+</body>
 </html>
 
 
