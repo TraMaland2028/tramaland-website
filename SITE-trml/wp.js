@@ -109,6 +109,8 @@ const basketLabels = {
   'CT=F': 'Cotton (CT)'
 };
 
+let trmlChartInstance = null;
+
 function asNumber(value) {
   if (typeof value === 'number' && !Number.isNaN(value)) return value;
   const parsed = Number(value);
@@ -138,7 +140,12 @@ function formatIsoDate(isoDate) {
   if (!isoDate) return '-';
   const dt = new Date(`${isoDate}T00:00:00Z`);
   if (Number.isNaN(dt.getTime())) return isoDate;
-  return dt.toLocaleDateString('ru-RU', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+  return dt.toLocaleDateString('ru-RU', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC'
+  });
 }
 
 async function fetchJson(url) {
@@ -147,65 +154,102 @@ async function fetchJson(url) {
   return response.json();
 }
 
-async function loadHistoryRows() {
-  const sources = [
-    'assets/trml-history.json',
-    'TRML-base/data/history.json'
-  ];
-
-  for (const src of sources) {
-    try {
-      const history = await fetchJson(src);
-      if (Array.isArray(history) && history.length > 0) return history;
-    } catch (_e) {
-      // try next source
-    }
-  }
-
-  return [];
+function changeClass(pct) {
+  const value = asNumber(pct);
+  if (value === null) return 'is-flat';
+  if (value > 0) return 'is-up';
+  if (value < 0) return 'is-down';
+  return 'is-flat';
 }
 
-function getDailyChangePercent(history) {
-  if (!Array.isArray(history) || history.length < 2) return null;
-  const rows = history
-    .map((r) => ({ raw: asNumber(r.raw), date: r.date || '' }))
-    .filter((r) => r.raw !== null);
-
-  if (rows.length < 2) return null;
-
-  const prev = rows[rows.length - 2].raw;
-  const curr = rows[rows.length - 1].raw;
-  if (!prev || !curr) return null;
-
-  return ((curr / prev) - 1) * 100;
+function getCurrentLang() {
+  return localStorage.getItem('selectedLang') || 'en';
 }
 
-function updateStatusChip(chipEl, dayPct) {
-  if (!chipEl) return;
+function getDefaultLang() {
+  const existing = localStorage.getItem('selectedLang');
+  if (existing) return existing;
+  localStorage.setItem('selectedLang', 'en');
+  return 'en';
+}
 
-  chipEl.classList.remove('is-up', 'is-down', 'is-flat');
+function renderBasketRows(payload) {
+  const basketEl = document.getElementById('trmlBasketRows');
+  if (!basketEl) return;
 
-  const pct = asNumber(dayPct);
-  if (pct === null) {
-    chipEl.textContent = 'Нет данных';
-    chipEl.classList.add('is-flat');
+  const displayPrices = payload?.display_prices_usd_per_unit || {};
+  const displayBasePrices = payload?.display_base_prices_usd_per_unit || {};
+  const units = payload?.display_units || {};
+  const sources = payload?.display_price_sources || {};
+
+  const fallbackPrices = payload?.prices || {};
+  const fallbackBasePrices = payload?.base_prices || {};
+
+  const tickers = Object.keys(displayPrices).length > 0
+    ? Object.keys(displayPrices)
+    : Object.keys(fallbackPrices);
+
+  if (tickers.length === 0) {
+    basketEl.textContent = 'No basket data';
     return;
   }
 
-  if (pct > 0.05) {
-    chipEl.textContent = 'День инфляции';
-    chipEl.classList.add('is-up');
+  const rows = tickers.map((ticker) => {
+    const now = asNumber(displayPrices[ticker] ?? fallbackPrices[ticker]);
+    const base = asNumber(displayBasePrices[ticker] ?? fallbackBasePrices[ticker]);
+    const pct = (now !== null && base !== null && base > 0) ? ((now / base) - 1) * 100 : null;
+    const unit = units[ticker] || 'USD/unit';
+    const source = (sources[ticker] || 'futures').toLowerCase();
+
+    return `
+      <div class="trml-basket-row">
+        <span class="trml-basket-name">${basketLabels[ticker] || ticker}<span class="trml-basket-unit">${unit}</span><span class="trml-basket-source">source: ${source}</span></span>
+        <span class="trml-basket-now">${formatNumber(now)}</span>
+        <span class="trml-basket-change ${changeClass(pct)}">${formatPercent(pct)}</span>
+      </div>
+    `;
+  }).join('');
+
+  basketEl.innerHTML = `
+    <div class="trml-basket-head">
+      <span>Component</span>
+      <span>Price (USD/unit)</span>
+      <span>vs base</span>
+    </div>
+    ${rows}
+  `;
+}
+
+function renderDrivers(payload) {
+  const el = document.getElementById('trmlDriversRows');
+  if (!el) return;
+
+  const prices = payload?.prices || {};
+  const basePrices = payload?.base_prices || {};
+
+  const entries = Object.keys(prices)
+    .map((ticker) => {
+      const now = asNumber(prices[ticker]);
+      const base = asNumber(basePrices[ticker]);
+      const pct = (now !== null && base !== null && base > 0) ? ((now / base) - 1) * 100 : null;
+      return { ticker, pct, absPct: pct === null ? -1 : Math.abs(pct) };
+    })
+    .filter((item) => item.pct !== null)
+    .sort((a, b) => b.absPct - a.absPct)
+    .slice(0, 3);
+
+  if (entries.length === 0) {
+    el.textContent = 'No drivers data';
     return;
   }
 
-  if (pct < -0.05) {
-    chipEl.textContent = 'День дефляции';
-    chipEl.classList.add('is-down');
-    return;
-  }
-
-  chipEl.textContent = 'Нейтрально';
-  chipEl.classList.add('is-flat');
+  el.innerHTML = entries.map((item, idx) => `
+    <div class="trml-driver-row">
+      <span class="trml-driver-rank">#${idx + 1}</span>
+      <span class="trml-driver-name">${basketLabels[item.ticker] || item.ticker}</span>
+      <span class="trml-driver-change ${changeClass(item.pct)}">${formatPercent(item.pct)}</span>
+    </div>
+  `).join('');
 }
 
 async function loadTrmlWidget() {
@@ -284,10 +328,10 @@ async function loadTrmlWidget() {
     } else {
       trmlHintEl.textContent = 'USD purchasing power is close to the base level.';
     }
-  }
 
-  if (trmlHintEl && payload && payload.market_data_fresh === false) {
-    trmlHintEl.textContent += ' Market closed or unchanged: latest available prices used.';
+    if (payload.market_data_fresh === false) {
+      trmlHintEl.textContent += ' Market closed or unchanged: latest available prices used.';
+    }
   }
 
   trmlUpdatedEl.textContent = `Updated (UTC): ${formatIsoDate(payload.date_utc)}`;
@@ -295,125 +339,8 @@ async function loadTrmlWidget() {
   renderDrivers(payload);
 }
 
-function renderBasketRows(payload) {
-  const basketEl = document.getElementById('trmlBasketRows');
-  if (!basketEl) return;
-
-  const prices = payload?.prices || {};
-  const basePrices = payload?.base_prices || {};
-  const tickers = Object.keys(prices);
-
-  if (tickers.length === 0) {
-    basketEl.textContent = 'No basket data';
-    return;
-  }
-
-  const rows = tickers.map((ticker) => {
-    const now = asNumber(prices[ticker]);
-    const base = asNumber(basePrices[ticker]);
-    const pct = (now !== null && base !== null && base > 0) ? ((now / base) - 1) * 100 : null;
-
-    return `
-      <div class="trml-basket-row">
-        <span class="trml-basket-name">${basketLabels[ticker] || ticker}</span>
-        <span class="trml-basket-now">${formatNumber(now)}</span>
-        <span class="trml-basket-change ${changeClass(pct)}">${formatPercent(pct)}</span>
-      </div>
-    `;
-  }).join('');
-
-  basketEl.innerHTML = `
-    <div class="trml-basket-head">
-      <span>Component</span>
-      <span>Price</span>
-      <span>vs base</span>
-    </div>
-    ${rows}
-  `;
-}
-
-function changeClass(pct) {
-  const v = asNumber(pct);
-  if (v === null) return 'is-flat';
-  if (v > 0) return 'is-up';
-  if (v < 0) return 'is-down';
-  return 'is-flat';
-}
-
-function renderDrivers(payload) {
-  const el = document.getElementById('trmlDriversRows');
-  if (!el) return;
-
-  const prices = payload?.prices || {};
-  const basePrices = payload?.base_prices || {};
-  const entries = Object.keys(prices).map((ticker) => {
-    const now = asNumber(prices[ticker]);
-    const base = asNumber(basePrices[ticker]);
-    const pct = (now !== null && base !== null && base > 0) ? ((now / base) - 1) * 100 : null;
-    const absPct = pct === null ? -1 : Math.abs(pct);
-    return { ticker, pct, absPct };
-  }).filter((x) => x.pct !== null)
-    .sort((a, b) => b.absPct - a.absPct)
-    .slice(0, 3);
-
-  if (entries.length === 0) {
-    el.textContent = 'No drivers data';
-    return;
-  }
-
-  el.innerHTML = entries.map((item, idx) => `
-    <div class="trml-driver-row">
-      <span class="trml-driver-rank">#${idx + 1}</span>
-      <span class="trml-driver-name">${basketLabels[item.ticker] || item.ticker}</span>
-      <span class="trml-driver-change ${changeClass(item.pct)}">${formatPercent(item.pct)}</span>
-    </div>
-  `).join('');
-}
-
-function initTrmlTilt() {
-  const trmlWidgetEl = document.getElementById('trmlWidget');
-  if (!trmlWidgetEl) return;
-  trmlWidgetEl.style.transform = 'none';
-}
-
-function showText(lang) {
-  const textEl = document.getElementById('text-display');
-  const sloganEl = document.getElementById('slogan');
-  const langNote = document.querySelector('.language-note');
-  const telegramBtn = document.querySelector('.telegram-btn');
-
-  if (!textEl || !sloganEl) return;
-
-  textEl.textContent = '...';
-
-  fetch(`/texts/whitepaper-${lang}.txt`)
-    .then(res => res.text())
-    .then(text => {
-      textEl.style.display = 'block';
-      textEl.classList.remove('typing-cursor');
-      textEl.style.whiteSpace = 'pre-wrap';
-      textEl.textContent = text.replace(/\r\n/g, '\n');
-
-      sloganEl.textContent = slogans[lang] || '';
-      if (langNote) langNote.textContent = translations[lang]?.selectLang || '';
-      if (telegramBtn) {
-        telegramBtn.innerHTML = `
-          <img src="assets/telegram-icon.png" alt="Telegram" class="telegram-icon" />
-          ${translations[lang]?.telegramText || ''}
-        `;
-      }
-
-      updateSupportPanel(lang);
-      localStorage.setItem('selectedLang', lang);
-    });
-}
-
-function getCurrentLang() {
-  return localStorage.getItem('selectedLang') || 'en';
-}
-
 function updateSupportPanel(lang) {
-  const tr = translations[lang] || translations.ru;
+  const tr = translations[lang] || translations.en;
   const supportTitleEl = document.getElementById('supportTitle');
   const supportTextEl = document.getElementById('supportText');
   const supportThanksEl = document.getElementById('supportThanks');
@@ -463,7 +390,7 @@ async function copyAddress(targetId, button) {
       button.textContent = def;
     }, 1200);
   } catch (_e) {
-    // silent fallback
+    // silent
   }
 }
 
@@ -471,11 +398,9 @@ function toggleSupportPanel() {
   const panel = document.getElementById('supportPanel');
   if (!panel) return;
 
-  const lang = getCurrentLang();
-  updateSupportPanel(lang);
+  updateSupportPanel(getCurrentLang());
 
-  const isHidden = panel.hasAttribute('hidden');
-  if (isHidden) {
+  if (panel.hasAttribute('hidden')) {
     panel.removeAttribute('hidden');
     panel.classList.add('is-open');
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -485,50 +410,37 @@ function toggleSupportPanel() {
   }
 }
 
-const telegramBtn = document.getElementById('telegramBtn');
-if (telegramBtn) {
-  telegramBtn.addEventListener('click', () => {
-    const textEl = document.getElementById('text-display');
-    if (textEl) {
-      textEl.textContent = '';
-      textEl.classList.remove('typing-cursor');
-    }
+function showText(lang) {
+  const textEl = document.getElementById('text-display');
+  const sloganEl = document.getElementById('slogan');
+  const langNote = document.querySelector('.language-note');
+  const telegramBtn = document.querySelector('.telegram-btn');
 
-    setTimeout(() => {
-      window.open('https://t.me/trml_dispenser_bot', '_blank');
-    }, 300);
-  });
+  if (!textEl || !sloganEl) return;
+
+  textEl.textContent = '...';
+
+  fetch(`/texts/whitepaper-${lang}.txt`)
+    .then((res) => res.text())
+    .then((text) => {
+      textEl.style.display = 'block';
+      textEl.style.whiteSpace = 'pre-wrap';
+      textEl.textContent = text.replace(/\r\n/g, '\n');
+
+      sloganEl.textContent = slogans[lang] || '';
+      if (langNote) langNote.textContent = translations[lang]?.selectLang || '';
+
+      if (telegramBtn) {
+        telegramBtn.innerHTML = `
+          <img src="assets/telegram-icon.png" alt="Telegram" class="telegram-icon" />
+          ${translations[lang]?.telegramText || ''}
+        `;
+      }
+
+      updateSupportPanel(lang);
+      localStorage.setItem('selectedLang', lang);
+    });
 }
-
-const supportBtn = document.getElementById('supportBtn');
-if (supportBtn) {
-  supportBtn.addEventListener('click', () => {
-    if (supportBtn.hasAttribute('onclick')) return;
-    toggleSupportPanel();
-  });
-}
-
-document.querySelectorAll('.copy-btn').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const targetId = btn.getAttribute('data-copy-target');
-    copyAddress(targetId, btn);
-  });
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  initTrmlTilt();
-  loadTrmlWidget();
-  loadTrmlHistoryChart();
-  localStorage.setItem('selectedLang', 'en');
-  updateSupportPanel('en');
-  setInterval(loadTrmlWidget, 10 * 60 * 1000);
-  setInterval(loadTrmlHistoryChart, 10 * 60 * 1000);
-});
-
-window.showText = showText;
-window.toggleSupportPanel = toggleSupportPanel;
-
-let trmlChartInstance = null;
 
 function renderTrmlChart(history) {
   const canvas = document.getElementById('trmlChart');
@@ -539,11 +451,10 @@ function renderTrmlChart(history) {
     ? allRows.slice(-TRML_CHART_WINDOW_POINTS)
     : allRows;
 
-  const labels = rows.map(r => r.date || '');
-  const rawData = rows.map(r => asNumber(r.raw));
-  if (trmlChartInstance) {
-    trmlChartInstance.destroy();
-  }
+  const labels = rows.map((r) => r.date || '');
+  const rawData = rows.map((r) => asNumber(r.raw));
+
+  if (trmlChartInstance) trmlChartInstance.destroy();
 
   trmlChartInstance = new Chart(canvas.getContext('2d'), {
     type: 'line',
@@ -557,7 +468,7 @@ function renderTrmlChart(history) {
           backgroundColor: 'rgba(127, 246, 255, 0.12)',
           pointRadius: 2,
           tension: 0.25,
-          borderWidth: 2,
+          borderWidth: 2
         }
       ]
     },
@@ -604,3 +515,48 @@ async function loadTrmlHistoryChart() {
     }
   }
 }
+
+function bindUi() {
+  const telegramBtn = document.getElementById('telegramBtn');
+  if (telegramBtn) {
+    telegramBtn.addEventListener('click', () => {
+      const textEl = document.getElementById('text-display');
+      if (textEl) textEl.textContent = '';
+      setTimeout(() => {
+        window.open('https://t.me/trml_dispenser_bot', '_blank');
+      }, 300);
+    });
+  }
+
+  const supportBtn = document.getElementById('supportBtn');
+  if (supportBtn) {
+    supportBtn.addEventListener('click', () => {
+      if (supportBtn.hasAttribute('onclick')) return;
+      toggleSupportPanel();
+    });
+  }
+
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-copy-target');
+      copyAddress(targetId, btn);
+    });
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  bindUi();
+  loadTrmlWidget();
+  loadTrmlHistoryChart();
+
+  const startLang = getDefaultLang();
+  updateSupportPanel(startLang);
+
+  setInterval(loadTrmlWidget, 10 * 60 * 1000);
+  setInterval(loadTrmlHistoryChart, 10 * 60 * 1000);
+});
+
+window.showText = showText;
+window.toggleSupportPanel = toggleSupportPanel;
+}
+
