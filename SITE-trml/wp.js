@@ -263,9 +263,14 @@ async function loadTrmlWidget() {
   const trmlHintEl = document.getElementById('trmlHumanHint');
   const trmlUpdatedEl = document.getElementById('trmlUpdated');
 
-  if (!trmlIndexEl || !trmlMetaEl || !trmlKRawEl || !trmlUsdRawEl || !trmlCostKEl || !trmlPpChangeEl || !trmlHundredNowEl || !trmlUpdatedEl) {
+  const hasWidgetTarget = trmlIndexEl || trmlMetaEl || trmlKRawEl || trmlUsdRawEl || trmlCostKEl || trmlPpChangeEl || trmlHundredNowEl || trmlHintEl || trmlUpdatedEl;
+  if (!hasWidgetTarget) {
     return;
   }
+
+  const setText = (el, text) => {
+    if (el) el.textContent = text;
+  };
 
   const sources = [
     { label: 'assets/trml-latest.json', url: 'assets/trml-latest.json' },
@@ -286,15 +291,15 @@ async function loadTrmlWidget() {
   }
 
   if (!payload) {
-    trmlIndexEl.textContent = 'N/A';
-    trmlMetaEl.textContent = 'Source: unavailable';
-    trmlKRawEl.textContent = '-';
-    trmlUsdRawEl.textContent = '-';
-    trmlCostKEl.textContent = '-';
-    trmlPpChangeEl.textContent = '-';
-    trmlHundredNowEl.textContent = '-';
-    if (trmlHintEl) trmlHintEl.textContent = 'No data for interpretation.';
-    trmlUpdatedEl.textContent = 'Updated (UTC): no data';
+    setText(trmlIndexEl, 'N/A');
+    setText(trmlMetaEl, 'Source: unavailable');
+    setText(trmlKRawEl, '-');
+    setText(trmlUsdRawEl, '-');
+    setText(trmlCostKEl, '-');
+    setText(trmlPpChangeEl, '-');
+    setText(trmlHundredNowEl, '-');
+    setText(trmlHintEl, 'No data for interpretation.');
+    setText(trmlUpdatedEl, 'Updated (UTC): no data');
     renderBasketRows(null);
     renderDrivers(null);
     return;
@@ -309,14 +314,14 @@ async function loadTrmlWidget() {
   const ppChangePct = asNumber(payload.purchasing_power_change_pct) ?? (ppValue !== null ? (ppValue - 1) * 100 : null);
   const hundredNow = ppValue !== null ? 100 * ppValue : null;
 
-  trmlIndexEl.textContent = formatNumber(indexValue);
-  trmlMetaEl.textContent = `Source: ${sourceLabel} | Version: ${payload.version || '-'}`;
-  trmlKRawEl.textContent = formatNumber(kRaw);
-  trmlUsdRawEl.textContent = formatNumber(usdRaw);
+  setText(trmlIndexEl, formatNumber(indexValue));
+  setText(trmlMetaEl, `Source: ${sourceLabel} | Version: ${payload.version || '-'}`);
+  setText(trmlKRawEl, formatNumber(kRaw));
+  setText(trmlUsdRawEl, formatNumber(usdRaw));
 
-  trmlCostKEl.textContent = kRaw !== null ? kRaw.toFixed(4) : '-';
-  trmlPpChangeEl.textContent = formatPercent(ppChangePct);
-  trmlHundredNowEl.textContent = formatMoney(hundredNow);
+  setText(trmlCostKEl, kRaw !== null ? kRaw.toFixed(4) : '-');
+  setText(trmlPpChangeEl, formatPercent(ppChangePct));
+  setText(trmlHundredNowEl, formatMoney(hundredNow));
 
   if (trmlHintEl) {
     if (ppChangePct === null) {
@@ -334,7 +339,7 @@ async function loadTrmlWidget() {
     }
   }
 
-  trmlUpdatedEl.textContent = `Updated (UTC): ${formatIsoDate(payload.date_utc)}`;
+  setText(trmlUpdatedEl, `Updated (UTC): ${formatIsoDate(payload.date_utc)}`);
   renderBasketRows(payload);
   renderDrivers(payload);
 }
@@ -558,5 +563,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.showText = showText;
 window.toggleSupportPanel = toggleSupportPanel;
-}
+
+
 
