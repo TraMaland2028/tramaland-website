@@ -1,90 +1,144 @@
 Introduction
-1.TRML Shit Manifesto
-Ou « Pourquoi on construit quand même cette merde pendant que 
-vous continuez à vous faire liquider sur le 10/10 »Pourquoi TRML ?
-Aucune idée, franchement , ça sonne juste bien. )))Fatigué ?
-Évidemment que t’es fatigué.Parce que le prix, c’est pas de la valeur.
-C’est juste la foi de quelqu’un + l’effet de levier de 
-quelqu’un + le tweet de quelqu’un.10 octobre 2025 :
-19 milliards effacés en 40 minutes.
-3,21 milliards – en une seule minute.
-1,6 million de personnes liquidées.
-Un politicien tweete sur des tarifs douaniers – et bam, hiver crypto.Et toi ?
-T’étais en position long 50x en train de hurler « to the moon » ?
-Maintenant t’es dans ta cave à attendre le halving 2028.
-Félicitations, génie.La crypto, c’est pas la liberté.
+
+1. TRML Shit Manifesto
+
+Pourquoi l’avoir appelé TRML ?
+Parce que ça sonne bien.)))
+
+Ou peut-être :
+« Pourquoi construisons-nous cette absurdité pendant que vous continuez à brûler vos budgets à des dates si élégantes comme le 10.10.2025 ? »
+
+Fatigué ?
+
+On pense que oui.
+
+Pourquoi ?
+
+Parce que le prix n’est pas la valeur.
+C’est juste la croyance de quelqu’un + le levier de quelqu’un + le tweet de quelqu’un.
+
+10 octobre 2025 :
+19 milliards de dollars effacés en 40 minutes.
+3,21 milliards — en une seule minute.
+1,6 million de personnes ont perdu leur argent.
+
+Un politicien tweete à propos de droits de douane — et bonjour l’hiver crypto.
+
+Et toi ?
+En position long x50 à crier « to the moon » ?
+Maintenant tu es au sous-sol à attendre le halving de 2028.
+
+Félicitations, génie.
+
+La crypto ne parle pas de liberté.
 C’est un casino avec un joli logo.
-Les exchanges se gavent sur tes liquidations.
-Les whales se régalent sur tes stops.
-Les régulateurs t’étouffent avec ta peur.
-Et toi ? Chair à canon.TRML ?
-Pas pour le pump ou le hype.
-Pas de « 100x to the moon ».
-Juste un indice de vraie merde : pétrole, gaz, or, blé, cuivre.
-Ce que les usines et les gens consomment vraiment.
-Pas ce que les bots et les gourous Twitter bouffent.Notre token ?
-Non négociable. Pas d’order book. Pas de pump.
-Pas de « j’achète le dip et je vends le rip ».
-Juste une part du panier de la vie.
-Pour que tes années ne se dissolvent pas dans la prochaine purge 10/10.
-Pourquoi ça peut crever ?
-Parce que les gens adorent le chaos.
-Adorent le 100x.
-Adorent tout cramer en une minute et accuser quelqu’un d’autre.
-Et ils détestent mesurer.
-C’est plus facile de croire à une « nouvelle ère » que de compter les 
-heures de sa propre vie.Mais si t’en as marre d’être un clown dans ce cirque –
+
+Les plateformes gagnent sur tes liquidations.
+Les baleines sur tes stop-loss.
+Les régulateurs sur ta peur.
+Et toi — chair à canon, donneur sans droits.
+
+TRML ?
+
+Pas pour le pump ni pour le hype.
+Pas « 100x to the moon ».
+
+Juste un indice de choses réelles : pétrole, gaz, or, blé, cuivre, etc.
+Ce que les usines consomment vraiment et ce dont les gens ont réellement besoin.
+Pas ce dont les bots et les gourous de Twitter ont besoin.
+
+TRML.
+Non négociable. Pas de carnet d’ordres. Pas de pump.
+Pas de « j’achète au plus bas et je vends au plus haut ».
+
+Juste une part dans le panier de la vie.
+
+Pour que tes années ne se dissolvent pas dans un autre 10.10.
+
+Pourquoi ce projet pourrait-il mourir ?
+
+Parce que les gens aiment le chaos.
+Ils aiment le 100x.
+Ils aiment tout perdre en une minute et accuser quelqu’un d’autre.
+Et ils détestent travailler sur des idées.
+
+Il est plus facile de croire en une « nouvelle ère » où ils deviendront riches et heureux.
+
+Mais si tu es fatigué de faire partie de ce cirque —
 Rejoins-nous.
+
 Vérifie les données toi-même (tout est ouvert).
-Lance un script qui suit l’indice.
-Utilise TRML dans un vrai contrat avec quelqu’un d’autre qui en a ras-le-bol.
-Parle-en à trois potes qui se sont aussi fait démonter le 10/10.
-C’est pas un investissement.
+Utilise TRML dans un contrat réel avec quelqu’un qui en a aussi assez.
+Parle-en à trois amis qui ont perdu le 10.10.
+
+Ce n’est pas un investissement.
 C’est une révolte.
-Petite, têtue, zéro chance de thune rapide.
-Mais la seule qui ne finit pas par ta liquidation.
-Pourquoi ça a du sens (sans lunettes roses)
-La crypto en ce moment, c’est foi pure + levier + tweets de 
-whales/politiciens → le prix peut partir sur la Lune ou tomber 
-à zéro en 40 minutes (comme en octobre 2025).Les vraies matières premières, 
-c’est pas que de la foi.
-Il y a des usines qui bouffent du cuivre ; des gens qui mangent du blé ;
- des machines qui boivent du pétrole.
-La spéculation existe, oui, mais il y a un ancrage physique : production, 
-demande, logistique, guerres, météo. Se détacher complètement de la réalité, 
-c’est beaucoup plus dur.TRML prend les prix de ces marchandises 
-(futures + spot pour les métaux) → construit un indice.
-→ Tu obtiens une étiquette numérique : « combien coûte le panier 
-de base de la vie aujourd’hui »,
-pas « combien les gens croient à ce meme ».Qu’est-ce que ça 
-rend plus simple pour les gens ?
-Préserver l’effort sans inflation/dévaluation → tes heures de vie accumulées 
-ne fondent pas dans l’impression de dollars/euros/je-ne-sais-quoi.
-Négocier sans intermédiaires → « on calcule la dette/salaire/loyer en unités 
-TRML selon l’indice actuel » → volontaire, sans exchange, sans pump.
-Arrêter d’attendre la Lune → pas de spéculation à la hausse, juste mesurer
- « ce qui se passe dans le monde réel là tout de suite ».
-Transparence → données ouvertes (Yahoo Finance etc.), code public, calcul 
-automatique → n’importe qui peut vérifier, pas besoin de croire sur parole.
-C’est vraiment plus simple ?
-Pour la plupart – oui, parce que :
-Pas besoin de plonger dans DeFi, levier, yield farming.
-Pas peur que le token chute de 90 % à cause d’un tweet.
-Juste : « Mon TRML, c’est une part du panier pétrole + céréales + métaux. 
-Si le monde devient plus cher – ma part aussi. »Les inconvénients 
-sont évidents (et tu les connais) :
-Si personne ne l’utilise dans de vrais accords → ça reste un joli 
-chiffre sur un site.
-Les données peuvent laguer/se déformer.
-Pas de hype → pas de croissance virale → le projet peut crever doucement.
-Mais c’est exactement le but :
-Ne pas construire un autre casino, mais un outil pour ceux qui en ont marre 
-des casinos.Rejoins ou continue d’attendre le prochain « 10/10 ».
+
+Petite. Têtue. Sans promesse d’argent rapide.
+Mais la seule qui ne se termine pas par ta liquidation.
+
+Pourquoi cela a du sens (sans lunettes roses) ?
+
+Aujourd’hui, la crypto, c’est surtout croyance + levier + tweets de baleines ou de politiciens
+→ le prix peut s’envoler ou s’effondrer en 40 minutes (comme en octobre 2025).
+
+Les matières premières réelles ne sont pas une pure croyance.
+Il y a des usines qui ont besoin de cuivre.
+Des gens qui mangent du blé.
+Des machines qui boivent du pétrole.
+
+La spéculation existe, oui.
+Mais il y a aussi une ancre physique :
+production, demande, logistique, guerres, météo.
+Il est plus difficile de se détacher totalement de la réalité.
+
+TRML prend les prix de ces matières premières (via les futures + le spot pour les métaux) → construit un indice.
+
+→ On obtient ainsi un repère numérique de « combien coûte aujourd’hui le panier de base de la vie »,
+et non « combien les gens croient en ce mème ».
+
+Qu’est-ce que cela apporte concrètement ?
+
+Préserver l’effort sans inflation ni dévaluation → tes « heures de vie » accumulées ne se dissolvent pas dans la planche à billets.
+
+Conclure des accords sans intermédiaires →
+« Calculons dette / salaire / loyer en unités TRML selon l’indice actuel » → volontairement, sans plateforme, sans pump.
+
+Ne pas attendre la lune → pas de spéculation sur la hausse, mais une mesure de ce qui se passe dans le monde réel en ce moment.
+
+Transparence → données ouvertes (Yahoo Finance, etc.), code public, calcul automatique → chacun peut vérifier au lieu de croire sur parole.
+
+Est-ce vraiment plus simple ?
+
+Pour la majorité — oui, parce que :
+
+Pas besoin de comprendre la DeFi, le levier ou le yield farming.
+Pas besoin de craindre qu’un token chute de 90 % à cause d’un tweet.
+
+Simplement :
+« Mon TRML reflète la valeur du panier — pétrole + céréales + métaux. Si le monde devient plus cher, la monnaie perd en pouvoir d’achat, l’indice le montre. »
+
+Les inconvénients sont évidents (et tu les connais) :
+
+Si personne ne l’utilise dans des accords réels → cela restera un joli chiffre sur un site web.
+Pas de hype → pas de croissance virale → le projet peut s’éteindre silencieusement.
+
+Mais c’est précisément le but :
+
+Ne pas créer un autre casino.
+Mais créer un outil pour ceux qui en ont assez du casino.
+
+Rejoins-nous — ou continue d’attendre le prochain « 10.10 ».
+
 Ton choix.
+
 Notre GitHub est ouvert.
 Les données sont publiques.
-Personne ne t’oblige.
-Mais si ce n’est pas toi – alors qui ?
+Personne ne te force.
+
+L’émission totale de TRML est fixée à 100 000 000 de tokens. L’émission a été effectuée en une seule fois et est définitivement terminée. Aucune émission supplémentaire n’est prévue. Le protocole ne permet aucune intervention centralisée sur ses paramètres monétaires.
+
+Une allocation préliminaire de tokens TRML a été distribuée sur 50 000 adresses. Ce pool constitue une réserve stratégique destinée à une distribution aléatoire ultérieure aux utilisateurs au fur et à mesure de l’évolution du projet.
 
  
 
@@ -578,4 +632,5 @@ de rentabilité ou de stabilité.
 Utilisez-le à vos propres risques et périls.
 Les auteurs / éditeurs déclinent toute responsabilité pour 
 les pertes ou décisions prises sur la base de ce texte.
+
 
