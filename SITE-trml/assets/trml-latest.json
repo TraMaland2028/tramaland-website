@@ -1,22 +1,22 @@
 {
-  "date_utc": "2026-02-25",
-  "run_date_utc": "2026-02-25",
-  "run_timestamp_utc": "2026-02-25T03:12:27.678047+00:00",
+  "date_utc": "2026-02-26",
+  "run_date_utc": "2026-02-26",
+  "run_timestamp_utc": "2026-02-26T02:52:31.215163+00:00",
   "version": "TRML-R1",
-  "index": 1033236.071703485,
+  "index": 1032745.0176528083,
   "prices": {
-    "CL=F": 66.19,
-    "NG=F": 2.838,
-    "GC=F": 5202.1,
-    "SI=F": 8963.5,
-    "HG=F": 601.45,
-    "PL=F": 2249.1,
-    "ZW=F": 574.87,
-    "ZC=F": 440.62,
-    "ZS=F": 1164.5,
-    "KC=F": 285.5,
-    "SB=F": 14.01,
-    "CT=F": 66.12
+    "CL=F": 65.5,
+    "NG=F": 2.859,
+    "GC=F": 5199.24,
+    "SI=F": 8868.0,
+    "HG=F": 601.4,
+    "PL=F": 2281.95,
+    "ZW=F": 569.25,
+    "ZC=F": 441.62,
+    "ZS=F": 1168.0,
+    "KC=F": 284.85,
+    "SB=F": 14.0,
+    "CT=F": 66.05
   },
   "base_prices": {
     "CL=F": 62.89,
@@ -33,9 +33,9 @@
     "CT=F": 61.77
   },
   "spot_prices": {
-    "GC=F": 5184.835,
-    "SI=F": 88.205,
-    "PL=F": 2175.0
+    "GC=F": 5165.025,
+    "SI=F": 88.78,
+    "PL=F": 2275.14
   },
   "base_spot_prices": {
     "GC=F": 4993.895,
@@ -69,16 +69,16 @@
     "ZW=F"
   ],
   "market_fallback_tickers": [],
-  "k_raw": 1.033236071703485,
-  "k_smooth_ema7": 1.0054118801876477,
-  "cost_index_k": 1.033236071703485,
-  "cost_index_k_smooth": 1.0054118801876477,
-  "cost_index_change_pct": 3.323607170348497,
-  "purchasing_power_usd": 0.9678330319530085,
-  "purchasing_power_usd_smooth": 0.9946172506071466,
-  "purchasing_power_change_pct": -3.2166968046991484,
-  "trml_usd_raw": 1033236.071703485,
-  "trml_usd_smooth": 1005411.8801876478,
+  "k_raw": 1.0327450176528084,
+  "k_smooth_ema7": 1.0052891166749784,
+  "cost_index_k": 1.0327450176528084,
+  "cost_index_k_smooth": 1.0052891166749784,
+  "cost_index_change_pct": 3.274501765280835,
+  "purchasing_power_usd": 0.968293221373045,
+  "purchasing_power_usd_smooth": 0.9947387108969484,
+  "purchasing_power_change_pct": -3.1706778626955034,
+  "trml_usd_raw": 1032745.0176528083,
+  "trml_usd_smooth": 1005289.1166749784,
   "sma_7": null,
   "sma_30": null
 }
