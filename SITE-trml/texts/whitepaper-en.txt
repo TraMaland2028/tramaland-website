@@ -1,81 +1,146 @@
-Introduction
-1.TRML Shit Manifesto
-Why TRML?
-Beats me, it just felt right. 
-Or "Why the Hell Are We Still Building This Crap While You're Busy Getting Rekt on 10/10"Tired?
-Of course you're tired.  Because price isn't value.
-It's just somebody's faith + somebody's leverage + somebody's tweet.  October 10, 2025:
-$19 billion wiped out in 40 minutes.
-$3.21 billion — in one single minute.
-1.6 million people liquidated.
-A politician tweeted about tariffs — and boom, crypto winter.  And you?
-You were sitting in a 50x long screaming "to the moon"?
-Now you're rotting in the basement waiting for the 2028 halving.
-Congrats, genius.  Crypto isn't freedom.
-It's a casino with a pretty logo.
-Exchanges profit off your liquidations.
-Whales feast on your stops.
-Regulators choke on your fear.
-And you? Cannon fodder.  TRML?
-Not for pumps or hype.
-Not "100x to the moon".
-Just an index of real shit: oil, gas, gold, wheat, copper.
-The stuff factories and people actually consume.
-Not what bots and Twitter gurus feed on.  Our token?
-Non-tradable. No order book. No pump.
-No "buy the dip and sell the rip" bullshit.
-Just a share in the basket of life.
-So your years don't dissolve in the next 10/10 wipeout.  Why this might die?
-Because people love chaos.
-Love 100x.
-Love blowing everything up in one minute and blaming someone else.
-And they hate measuring.
-It's easier to believe in a "new era" than to count the hours of your own life.  
-But if you're sick of being part of this circus —
-Join in.
-Check the data yourself (everything's open).
-Run a script that tracks the index.
-Use TRML in a real contract with someone else who's fed up.
-Tell three friends who also got rekt on 10/10.  This isn't an investment.
-It's a rebellion.
-Small, stubborn, with zero chance of quick cash.
-But the only one that doesn't end with your liquidation.  
-Why this actually makes sense (no rose-tinted glasses)
-Crypto right now is pure faith + leverage + whale/politician tweets → price can 
-rocket to the moon or zero out in 40 minutes (just like October 2025).  
-Real commodities aren't pure faith.
-There are factories eating copper; people eating wheat; machines drinking oil.
-Speculation exists, sure, but there's a physical anchor: production, demand, 
-logistics, wars, weather. It's much harder to completely detach from reality.  
-TRML takes prices of these goods (futures + spot for metals) → builds an index.
-→ You get a digital tag: "how much the basic basket of life costs today",
-not "how much people believe in this meme".  What does this make easier for people?
-Preserve effort without inflation/devaluation → your accumulated "hours of life" 
-don't melt away in dollar/euro/whatever printing.
-Negotiate without middlemen → "let's calculate debt/salary/rent in 
-TRML units based on the current index" → voluntary, no exchange, no pump.
-Stop waiting for the moon → no speculation on upside, just measuring "what's 
-happening in the real world right now".
-Transparency → data open (Yahoo Finance etc.), code public, 
-calculation automatic → anyone can verify, no blind trust.  Is it really simpler?
-For most people — yes, because:
-No need to dive into DeFi, leverage, yield farming.
-No fear the token dumps 90% on a random tweet.
-Just: "My TRML is a share in the oil+grain+metals basket. 
-If the world gets more expensive — my share does too."  
-The downsides are obvious (and you know them):
-If nobody uses it in real agreements → it stays a pretty number on a website.
-Data can lag/get distorted.
-No hype → no viral growth → project can quietly fade away.  
-But that's exactly the point:
-Not building another casino, but a tool for people tired of casinos.  
-Join or keep waiting for the next "10/10".
-Your choice.
-Our GitHub is open.
-Data is public.
-Nobody's forcing you.
-But if not you — then who?
 
+Introduction
+
+1. TRML Shit Manifesto
+
+Why did we call it TRML?
+Because it sounds right.)))
+
+Or maybe:
+“Why are we building this nonsense while you keep burning your budgets on beautiful dates like 10.10.2025?”
+
+Tired?
+
+We think you are.
+
+Why?
+
+Because price is not value.
+It’s just someone’s belief + someone’s leverage + someone’s tweet.
+
+October 10, 2025:
+$19 billion wiped out in 40 minutes.
+$3.21 billion — in a single minute.
+1.6 million people lost their money.
+
+A politician tweets about tariffs — hello, crypto winter.
+
+And you?
+Sitting in a 50x long screaming “to the moon”?
+Now you’re sitting in a basement waiting for the 2028 halving.
+
+Congratulations, genius.
+
+Crypto isn’t about freedom.
+It’s a casino with a beautiful logo.
+
+Exchanges profit from your liquidations.
+Whales profit from your stop losses.
+Regulators profit from your fear.
+And you? Cannon fodder. A disposable donor.
+
+TRML?
+
+Not for pump.
+Not for hype.
+Not “100x to the moon.”
+
+Just an index of real stuff: oil, gas, gold, wheat, copper, and more.
+The things factories consume and people actually use.
+Not what bots and Twitter gurus need.
+
+TRML.
+Non-tradable. No order book. No pump.
+No “I’ll buy the bottom and sell the top.”
+
+Just a share in the basket of life.
+
+So your years don’t dissolve in the next 10.10.
+
+Why could this project die?
+
+Because people love chaos.
+They love 100x.
+They love losing everything in one minute and blaming someone else.
+And they hate working on ideas.
+
+It’s easier to believe in a “new era” where they’ll finally become rich and happy.
+
+But if you’re tired of being part of this circus —
+Join.
+
+Check the data yourself (everything is open).
+Use TRML in a real agreement with someone who’s also tired.
+Tell three friends who also lost on 10.10.
+
+This isn’t an investment.
+It’s a rebellion.
+
+Small. Stubborn. No promise of quick money.
+But the only one that doesn’t end with your liquidation.
+
+Why This Makes Sense (Without Rose-Colored Glasses)
+
+Crypto today is mostly belief + leverage + tweets from whales or politicians
+→ price can skyrocket or collapse in 40 minutes (like October 2025).
+
+Real commodities aren’t pure belief.
+There are factories that need copper.
+People who eat wheat.
+Machines that drink oil.
+
+Yes, speculation exists.
+But there’s a physical anchor:
+production, demand, logistics, wars, weather.
+It’s much harder to detach completely from reality.
+
+TRML takes the prices of these commodities (via futures + spot for metals) → builds an index.
+
+→ The result is a digital marker of “how much the basic basket of life costs today,”
+not “how much people believe in this meme.”
+
+What Does This Give People — Simply?
+
+Preserve effort without inflation or devaluation → your accumulated “hours of life” don’t dissolve in money printing.
+
+Make agreements without intermediaries →
+“Let’s calculate debt / salary / rent in TRML units at the current index” → voluntarily, without an exchange, without pump mechanics.
+
+Stop waiting for the moon → not speculation on growth, but measurement of what’s happening in the real world right now.
+
+Transparency → open data (Yahoo Finance, etc.), public code, automated calculation → anyone can verify instead of taking someone’s word for it.
+
+Is It Actually Simpler?
+
+For most people — yes, because:
+
+You don’t need to understand DeFi, leverage, or yield farming.
+You don’t need to fear a 90% crash because of a tweet.
+
+It’s just:
+“My TRML reflects the value of the basket — oil + grain + metals. If the world becomes more expensive, the index shows it.”
+
+The Downsides (You Already Know Them)
+
+If nobody uses it in real agreements → it remains a beautiful number on a website.
+No hype → no viral growth → the project may quietly fade away.
+
+But that’s exactly the point:
+
+Not to build another casino.
+But to build a tool for people tired of casinos.
+
+Join — or keep waiting for the next “10.10.”
+
+Your choice.
+
+Our GitHub is open.
+The data is public.
+No one is forcing you.
+
+The total TRML supply is fixed at 100,000,000 tokens. The issuance was a one-time event and is permanently complete. No additional minting is possible. The protocol does not allow centralized intervention in its monetary parameters.
+
+A preliminary allocation of TRML tokens has been distributed across 50,000 addresses. This pool serves as a strategic reserve and is intended for random distribution to users as the project evolves.
 
 2. TRML Calculation Methodology
 2.1 Basket Composition (Version v1.0)
@@ -575,6 +640,7 @@ Users engage with it at their sole discretion and risk. The authors,
 contributors, and publishers disclaim any and all liability for losses, 
 damages, or consequences arising from the use of or reliance 
 on this document or the associated materials.
+
 
 
 
