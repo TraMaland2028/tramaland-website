@@ -1,22 +1,26 @@
 name: Deploy Firebase
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - "SITE-trml/**"
+  workflow_run:
+    workflows: ["TRML Daily Update"]
+    types: [completed]
+  workflow_dispatch:
 
 jobs:
   deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && 'main' || github.event.workflow_run.head_branch }}
 
       - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@v13.35.1
         with:
-          args: deploy --only hosting --project tramaland2028
+          args: deploy --only hosting --project tramaland2028 --config SITE-trml/firebase.json
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
