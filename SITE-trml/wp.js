@@ -92,7 +92,7 @@ const DONATION_ADDRESSES = {
   ton: 'UQBycExf_jrE8umE9vzQ3fduTQyLxw4S7CIzxh6z1VMDHbUo'
 };
 
-const TRML_CHART_WINDOW_POINTS = 120;
+const TRML_CHART_DEFAULT_WINDOW_POINTS = 30;
 
 const basketLabels = {
   'CL=F': 'Oil (CL)',
@@ -110,6 +110,8 @@ const basketLabels = {
 };
 
 let trmlChartInstance = null;
+let trmlChartWindowPoints = TRML_CHART_DEFAULT_WINDOW_POINTS;
+let trmlHistoryCache = [];
 
 function asNumber(value) {
   if (typeof value === 'number' && !Number.isNaN(value)) return value;
@@ -452,8 +454,8 @@ function renderTrmlChart(history) {
   if (!canvas || typeof Chart === 'undefined') return;
 
   const allRows = Array.isArray(history) ? history : [];
-  const rows = allRows.length > TRML_CHART_WINDOW_POINTS
-    ? allRows.slice(-TRML_CHART_WINDOW_POINTS)
+  const rows = Number.isFinite(trmlChartWindowPoints)
+    ? (allRows.length > trmlChartWindowPoints ? allRows.slice(-trmlChartWindowPoints) : allRows)
     : allRows;
 
   const labels = rows.map((r) => r.date || '');
@@ -512,6 +514,7 @@ async function loadTrmlHistoryChart() {
     try {
       const history = await fetchJson(src);
       if (Array.isArray(history) && history.length > 0) {
+        trmlHistoryCache = history;
         renderTrmlChart(history);
         return;
       }
@@ -521,7 +524,38 @@ async function loadTrmlHistoryChart() {
   }
 }
 
+
+function setChartRange(value) {
+  if (value === 'all') {
+    trmlChartWindowPoints = Number.POSITIVE_INFINITY;
+  } else {
+    const days = Number.parseInt(value, 10);
+    trmlChartWindowPoints = Number.isFinite(days) ? days : TRML_CHART_DEFAULT_WINDOW_POINTS;
+  }
+
+  document.querySelectorAll('.trml-range-btn').forEach((btn) => {
+    btn.classList.toggle('is-active', btn.getAttribute('data-range') === value);
+  });
+
+  if (Array.isArray(trmlHistoryCache) && trmlHistoryCache.length > 0) {
+    renderTrmlChart(trmlHistoryCache);
+  }
+}
+
+function bindChartControls() {
+  const buttons = document.querySelectorAll('.trml-range-btn');
+  if (!buttons.length) return;
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const range = btn.getAttribute('data-range') || '30';
+      setChartRange(range);
+    });
+  });
+}
 function bindUi() {
+  bindChartControls();
+
   const telegramBtn = document.getElementById('telegramBtn');
   if (telegramBtn) {
     telegramBtn.addEventListener('click', () => {
@@ -554,8 +588,7 @@ window.addEventListener('DOMContentLoaded', () => {
   loadTrmlWidget();
   loadTrmlHistoryChart();
 
-  const startLang = getDefaultLang();
-  updateSupportPanel(startLang);
+  updateSupportPanel('en');
 
   setInterval(loadTrmlWidget, 10 * 60 * 1000);
   setInterval(loadTrmlHistoryChart, 10 * 60 * 1000);
