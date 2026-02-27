@@ -88,7 +88,7 @@ const translations = {
 };
 
 const DONATION_ADDRESSES = {
-  polygon: '0x09c4681F706eA371C9b44ea1502aE2959e13dbbB',
+  polygon: '0x0739AF0E36A7220aC25b2B5Ba378ea627b332937',
   ton: 'UQBycExf_jrE8umE9vzQ3fduTQyLxw4S7CIzxh6z1VMDHbUo'
 };
 
