@@ -326,15 +326,48 @@ body {
   font-weight: 700;
 }
 
+
 .trml-chart-wrap {
   margin-top: 12px;
   padding: 8px 6px 2px;
   border-top: 1px solid rgba(132, 243, 255, 0.2);
 }
-
 #trmlChart {
-  width: 100%;
-  height: 170px;
+  width: 100% !important;
+  height: 170px !important;
+  max-height: 170px;
+  display: block;
+}
+
+
+
+.trml-chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin: 0 0 10px;
+}
+
+.trml-range-btn {
+  border: 1px solid rgba(132, 243, 255, 0.4);
+  background: rgba(11, 30, 57, 0.5);
+  color: #dff7ff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.trml-range-btn:hover {
+  background: rgba(23, 57, 95, 0.7);
+}
+
+.trml-range-btn.is-active {
+  background: rgba(127, 246, 255, 0.2);
+  border-color: rgba(127, 246, 255, 0.8);
+  color: #ffffff;
 }
 
 .language-note {
@@ -599,10 +632,20 @@ body {
     font-size: 18px;
   }
 
+  .trml-range-btn {
+    font-size: 11px;
+    padding: 4px 9px;
+  }
+
+
+
+
+
   .support-address-box {
     font-size: 12px;
   }
 }
+
 
 
 
