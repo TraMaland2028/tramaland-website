@@ -112,6 +112,7 @@ const basketLabels = {
 let trmlChartInstance = null;
 let trmlChartWindowPoints = TRML_CHART_DEFAULT_WINDOW_POINTS;
 let trmlHistoryCache = [];
+let currentUiLang = 'en';
 
 function asNumber(value) {
   if (typeof value === 'number' && !Number.isNaN(value)) return value;
@@ -165,7 +166,7 @@ function changeClass(pct) {
 }
 
 function getCurrentLang() {
-  return localStorage.getItem('selectedLang') || 'en';
+  return currentUiLang || 'en';
 }
 
 function getDefaultLang() {
@@ -425,27 +426,35 @@ function showText(lang) {
 
   if (!textEl || !sloganEl) return;
 
-  textEl.textContent = '...';
+  const targetLang = translations[lang] ? lang : 'en';
+  currentUiLang = targetLang;
+  localStorage.setItem('selectedLang', targetLang);
 
-  fetch(`/texts/whitepaper-${lang}.txt`)
-    .then((res) => res.text())
+  sloganEl.textContent = slogans[targetLang] || '';
+  if (langNote) langNote.textContent = translations[targetLang]?.selectLang || '';
+  if (telegramBtn) {
+    telegramBtn.innerHTML =       `
+          <img src="assets/telegram-icon.png" alt="Telegram" class="telegram-icon" />
+          ${translations[targetLang]?.telegramText || ''}
+        `;
+  }
+  updateSupportPanel(targetLang);
+
+  textEl.textContent = '...';
+  fetch(`/texts/whitepaper-${targetLang}.txt`)
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.text();
+    })
     .then((text) => {
       textEl.style.display = 'block';
       textEl.style.whiteSpace = 'pre-wrap';
       textEl.textContent = text.replace(/\r\n/g, '\n');
-
-      sloganEl.textContent = slogans[lang] || '';
-      if (langNote) langNote.textContent = translations[lang]?.selectLang || '';
-
-      if (telegramBtn) {
-        telegramBtn.innerHTML = `
-          <img src="assets/telegram-icon.png" alt="Telegram" class="telegram-icon" />
-          ${translations[lang]?.telegramText || ''}
-        `;
-      }
-
-      updateSupportPanel(lang);
-      localStorage.setItem('selectedLang', lang);
+    })
+    .catch(() => {
+      textEl.style.display = 'block';
+      textEl.style.whiteSpace = 'pre-wrap';
+      textEl.textContent = 'Whitepaper text is unavailable for this language.';
     });
 }
 
@@ -588,6 +597,7 @@ window.addEventListener('DOMContentLoaded', () => {
   loadTrmlWidget();
   loadTrmlHistoryChart();
 
+  currentUiLang = 'en';
   updateSupportPanel('en');
 
   setInterval(loadTrmlWidget, 10 * 60 * 1000);
@@ -596,6 +606,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.showText = showText;
 window.toggleSupportPanel = toggleSupportPanel;
-
-
 
