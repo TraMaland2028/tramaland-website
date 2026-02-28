@@ -143,6 +143,22 @@ The total TRML supply is fixed at 100,000,000 tokens. The issuance was a one-tim
 A preliminary allocation of TRML tokens has been distributed across 50,000 addresses. This pool serves as a strategic reserve and is intended for random distribution to users as the project evolves.
 
 2. TRML Calculation Methodology
+TRML is an indicator of what 1,000,000 US dollars are actually worth in the world of oil, grain, metals, and energy.
+
+The base date is 15.02.2025.
+From that point forward, the index tracks how the purchasing power of that million changes.
+
+If commodities rise in price, the coefficient increases.
+That means more dollars are required to buy the same resources.
+The dollar weakens relative to the real world.
+
+If commodities fall in price, the coefficient decreases.
+That means the million buys more.
+
+TRML is a mirror.
+Not of market expectations.
+But of real things.
+
 2.1 Basket Composition (Version v1.0)
 
 The current TRML basket reflects the foundational raw materials of the global economy.
@@ -640,6 +656,7 @@ Users engage with it at their sole discretion and risk. The authors,
 contributors, and publishers disclaim any and all liability for losses, 
 damages, or consequences arising from the use of or reliance 
 on this document or the associated materials.
+
 
 
 
