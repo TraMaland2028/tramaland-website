@@ -142,6 +142,22 @@ Se ha realizado una asignación preliminar de tokens TRML a 50.000 direcciones. 
 
 
 2. Metodología de cálculo de TRML
+
+TRML es un indicador de cuánto valen realmente 1.000.000 de dólares en el mundo del petróleo, los granos, los metales y la energía.
+
+La fecha base es el 15.02.2025.
+Desde ese día, el índice muestra cómo cambia el poder adquisitivo de ese millón.
+
+Si las materias primas suben de precio, el coeficiente aumenta.
+Eso significa que se necesitan más dólares para adquirir los mismos recursos.
+El dólar se debilita frente al mundo real.
+
+Si las materias primas bajan de precio, el coeficiente disminuye.
+Eso significa que el millón compra más.
+
+TRML es un espejo.
+No del mercado de expectativas.
+Sino del mercado de cosas reales.
 2.1 Composición de la cesta (versión v1.0)
 
 La cesta actual de TRML refleja los componentes básicos de la economía global.
@@ -632,5 +648,6 @@ de rentabilidad ni de estabilidad.
 Úselo bajo su propia responsabilidad y riesgo.
 Los autores/publicadores no asumen ninguna responsabilidad 
 por pérdidas o decisiones tomadas en base a este texto.
+
 
 
