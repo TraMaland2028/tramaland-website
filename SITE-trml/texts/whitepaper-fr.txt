@@ -143,6 +143,22 @@ Une allocation préliminaire de tokens TRML a été distribuée sur 50 000 adres
  
 
 2. Méthodologie de calcul de TRML
+
+TRML est un indicateur de ce que valent réellement 1 000 000 de dollars dans le monde du pétrole, des céréales, des métaux et de l’énergie.
+
+La date de référence est le 15.02.2025.
+À partir de ce jour, l’indice montre comment évolue le pouvoir d’achat de ce million.
+
+Si les matières premières augmentent, le coefficient progresse.
+Cela signifie qu’il faut davantage de dollars pour acquérir les mêmes ressources.
+Le dollar s’affaiblit face au monde réel.
+
+Si les matières premières baissent, le coefficient diminue.
+Cela signifie que le million permet d’acheter davantage.
+
+TRML est un miroir.
+Pas celui des anticipations du marché.
+Mais celui des choses réelles.
 2.1 Composition du panier (version v1.0)
 
 Le panier actuel de TRML reflète les composantes fondamentales 
@@ -632,5 +648,6 @@ de rentabilité ou de stabilité.
 Utilisez-le à vos propres risques et périls.
 Les auteurs / éditeurs déclinent toute responsabilité pour 
 les pertes ou décisions prises sur la base de ce texte.
+
 
 
