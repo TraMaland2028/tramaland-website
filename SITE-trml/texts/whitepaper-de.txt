@@ -141,6 +141,22 @@ Die Gesamtmenge von TRML ist auf 100.000.000 Token festgelegt. Die Emission erfo
 Eine vorläufige Allokation von TRML-Token wurde auf 50.000 Adressen verteilt. Dieser Pool dient als strategische Reserve und ist für die spätere zufällige Verteilung an Nutzer im Verlauf der Projektentwicklung vorgesehen.
 
 2. Methodik zur Berechnung von TRML
+
+TRML ist ein Indikator dafür, was 1.000.000 US-Dollar in der Welt von Öl, Getreide, Metallen und Energie tatsächlich wert sind.
+
+Der Basiszeitpunkt ist der 15.02.2025.
+Ab diesem Datum zeigt der Index, wie sich die Kaufkraft dieser Million verändert.
+
+Steigen die Rohstoffpreise, steigt der Koeffizient.
+Das bedeutet: Für die gleichen Ressourcen werden mehr Dollar benötigt.
+Der Dollar verliert gegenüber der realen Welt an Wert.
+
+Fallen die Rohstoffpreise, sinkt der Koeffizient.
+Das bedeutet: Die Million kauft mehr.
+
+TRML ist ein Spiegel.
+Nicht der Erwartungen.
+Sondern der realen Dinge.
 2.1 Zusammensetzung des Warenkorbs (Version v1.0)
 
 Der aktuelle TRML-Warenkorb bildet die grundlegenden Rohstoffkomponenten der Weltwirtschaft ab.
@@ -600,5 +616,6 @@ Nutzen Sie es auf eigenes Risiko.
 Die Autoren/Veröffentlicher übernehmen keinerlei Haftung für 
 Verluste oder Entscheidungen, die auf Grundlage dieses 
 Textes getroffen werden.
+
 
 
