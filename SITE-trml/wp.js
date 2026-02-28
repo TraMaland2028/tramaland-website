@@ -262,11 +262,10 @@ async function loadTrmlWidget() {
   const trmlUsdRawEl = document.getElementById('trmlUsdRawVal');
   const trmlCostKEl = document.getElementById('trmlCostKVal');
   const trmlPpChangeEl = document.getElementById('trmlPpChangeVal');
-  const trmlHundredNowEl = document.getElementById('trmlHundredNowVal');
   const trmlHintEl = document.getElementById('trmlHumanHint');
   const trmlUpdatedEl = document.getElementById('trmlUpdated');
 
-  const hasWidgetTarget = trmlIndexEl || trmlMetaEl || trmlKRawEl || trmlUsdRawEl || trmlCostKEl || trmlPpChangeEl || trmlHundredNowEl || trmlHintEl || trmlUpdatedEl;
+  const hasWidgetTarget = trmlIndexEl || trmlMetaEl || trmlKRawEl || trmlUsdRawEl || trmlCostKEl || trmlPpChangeEl || trmlHintEl || trmlUpdatedEl;
   if (!hasWidgetTarget) {
     return;
   }
@@ -300,7 +299,6 @@ async function loadTrmlWidget() {
     setText(trmlUsdRawEl, '-');
     setText(trmlCostKEl, '-');
     setText(trmlPpChangeEl, '-');
-    setText(trmlHundredNowEl, '-');
     setText(trmlHintEl, 'No data for interpretation.');
     setText(trmlUpdatedEl, 'Updated (UTC): no data');
     renderBasketRows(null);
@@ -315,7 +313,6 @@ async function loadTrmlWidget() {
 
   const ppValue = asNumber(payload.purchasing_power_usd) ?? (kRaw !== null && kRaw > 0 ? 1 / kRaw : null);
   const ppChangePct = asNumber(payload.purchasing_power_change_pct) ?? (ppValue !== null ? (ppValue - 1) * 100 : null);
-  const hundredNow = ppValue !== null ? 100 * ppValue : null;
 
   setText(trmlIndexEl, formatNumber(indexValue));
   setText(trmlMetaEl, `Source: ${sourceLabel} | Version: ${payload.version || '-'}`);
@@ -324,7 +321,6 @@ async function loadTrmlWidget() {
 
   setText(trmlCostKEl, kRaw !== null ? kRaw.toFixed(4) : '-');
   setText(trmlPpChangeEl, formatPercent(ppChangePct));
-  setText(trmlHundredNowEl, formatMoney(hundredNow));
 
   if (trmlHintEl) {
     if (ppChangePct === null) {
@@ -458,11 +454,45 @@ function showText(lang) {
     });
 }
 
+
+function normalizeHistoryForChart(history) {
+  const rows = Array.isArray(history) ? history : [];
+  const normalized = rows
+    .map((row) => ({
+      date: String(row?.date || ''),
+      raw: asNumber(row?.raw)
+    }))
+    .filter((row) => row.raw !== null && /^\d{4}-\d{2}-\d{2}$/.test(row.date))
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  if (normalized.length === 0) return [];
+
+  const byDate = new Map(normalized.map((row) => [row.date, row.raw]));
+  const out = [];
+
+  const start = new Date(`${normalized[0].date}T00:00:00Z`);
+  const lastDate = new Date(`${normalized[normalized.length - 1].date}T00:00:00Z`);
+
+  let current = new Date(start);
+  let lastRaw = normalized[0].raw;
+
+  while (current <= lastDate) {
+    const iso = current.toISOString().slice(0, 10);
+    if (byDate.has(iso)) {
+      lastRaw = byDate.get(iso);
+    }
+
+    out.push({ date: iso, raw: lastRaw });
+    current.setUTCDate(current.getUTCDate() + 1);
+  }
+
+  return out;
+}
 function renderTrmlChart(history) {
   const canvas = document.getElementById('trmlChart');
   if (!canvas || typeof Chart === 'undefined') return;
 
-  const allRows = Array.isArray(history) ? history : [];
+  const allRows = normalizeHistoryForChart(history);
   const rows = Number.isFinite(trmlChartWindowPoints)
     ? (allRows.length > trmlChartWindowPoints ? allRows.slice(-trmlChartWindowPoints) : allRows)
     : allRows;
@@ -498,7 +528,21 @@ function renderTrmlChart(history) {
       },
       scales: {
         x: {
-          ticks: { color: '#cdefff', maxTicksLimit: 5 },
+          ticks: {
+            color: '#cdefff',
+            autoSkip: false,
+            callback: (_value, index) => {
+              const total = labels.length;
+              if (total <= 1) return labels[index] || '';
+
+              const step = total <= 45 ? 2 : total <= 90 ? 3 : total <= 180 ? 7 : 14;
+              const isFirst = index === 0;
+              const isLast = index === total - 1;
+              const isStep = index % step === 0;
+
+              return (isFirst || isLast || isStep) ? labels[index] : '';
+            }
+          },
           grid: { color: 'rgba(132, 243, 255, 0.14)' }
         },
         y: {
@@ -606,4 +650,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.showText = showText;
 window.toggleSupportPanel = toggleSupportPanel;
+
 
