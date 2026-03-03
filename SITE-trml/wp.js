@@ -175,6 +175,7 @@ function getDisplayPriceInfo(payload, ticker) {
 let trmlChartWindowPoints = TRML_CHART_DEFAULT_WINDOW_POINTS;
 let trmlHistoryCache = [];
 let currentUiLang = 'en';
+const trmlArchiveSnapshotCache = new Map();
 
 function asNumber(value) {
   if (typeof value === 'number' && !Number.isNaN(value)) return value;
@@ -237,8 +238,96 @@ function getDefaultLang() {
   localStorage.setItem('selectedLang', 'en');
   return 'en';
 }
+function parseIsoDate(value) {
+  if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
+  const dt = new Date(`${value}T00:00:00Z`);
+  return Number.isNaN(dt.getTime()) ? null : dt;
+}
 
-function renderBasketRows(payload) {
+function isoDaysShift(iso, days) {
+  const dt = parseIsoDate(iso);
+  if (!dt) return null;
+  dt.setUTCDate(dt.getUTCDate() + days);
+  return dt.toISOString().slice(0, 10);
+}
+
+function pickNearestHistoryDate(targetIso) {
+  const target = parseIsoDate(targetIso);
+  if (!target || !Array.isArray(trmlHistoryCache) || trmlHistoryCache.length === 0) return null;
+
+  const dates = trmlHistoryCache
+    .map((row) => String(row?.date || ''))
+    .filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d))
+    .sort();
+
+  if (dates.length === 0) return null;
+
+  let candidate = null;
+  for (const d of dates) {
+    if (d <= targetIso) candidate = d;
+    if (d > targetIso) break;
+  }
+
+  return candidate || dates[0];
+}
+
+async function loadArchiveSnapshotByDate(dateIso) {
+  if (!dateIso) return null;
+  if (trmlArchiveSnapshotCache.has(dateIso)) return trmlArchiveSnapshotCache.get(dateIso);
+
+  const url = `TRML-base/archive/${dateIso}.json`;
+  try {
+    const payload = await fetchJson(url);
+    trmlArchiveSnapshotCache.set(dateIso, payload);
+    return payload;
+  } catch (_e) {
+    trmlArchiveSnapshotCache.set(dateIso, null);
+    return null;
+  }
+}
+
+async function buildPeriodChangeMap(currentPayload) {
+  const result = {};
+  const runDate = String(currentPayload?.date_utc || '');
+  const currentTickers = Object.keys(currentPayload?.prices || {});
+  if (!runDate || currentTickers.length === 0) return result;
+
+  const d7Target = isoDaysShift(runDate, -7);
+  const d30Target = isoDaysShift(runDate, -30);
+  const d7Date = pickNearestHistoryDate(d7Target);
+  const d30Date = pickNearestHistoryDate(d30Target);
+
+  const [snap7, snap30] = await Promise.all([
+    loadArchiveSnapshotByDate(d7Date),
+    loadArchiveSnapshotByDate(d30Date)
+  ]);
+
+  for (const ticker of currentTickers) {
+    const nowInfo = getDisplayPriceInfo(currentPayload, ticker);
+    const now = asNumber(nowInfo.now);
+
+    let d7 = null;
+    let d30 = null;
+
+    if (snap7) {
+      const info7 = getDisplayPriceInfo(snap7, ticker);
+      const ref7 = asNumber(info7.now);
+      if (now !== null && ref7 !== null && ref7 > 0) d7 = ((now / ref7) - 1) * 100;
+    }
+
+    if (snap30) {
+      const info30 = getDisplayPriceInfo(snap30, ticker);
+      const ref30 = asNumber(info30.now);
+      if (now !== null && ref30 !== null && ref30 > 0) d30 = ((now / ref30) - 1) * 100;
+    }
+
+    result[ticker] = { d7, d30 };
+  }
+
+  return result;
+}
+
+async function renderBasketRows(payload) {
   const basketEl = document.getElementById('trmlBasketRows');
   if (!basketEl) return;
 
@@ -254,13 +343,17 @@ function renderBasketRows(payload) {
     return;
   }
 
+  const periodMap = await buildPeriodChangeMap(payload);
+
   const rows = tickers.map((ticker) => {
     const info = getDisplayPriceInfo(payload, ticker);
     const pct = (info.now !== null && info.base !== null && info.base > 0) ? ((info.now / info.base) - 1) * 100 : null;
+    const p7 = periodMap?.[ticker]?.d7;
+    const p30 = periodMap?.[ticker]?.d30;
 
     return `
       <div class="trml-basket-row">
-        <span class="trml-basket-name">${basketLabels[ticker] || ticker}<span class="trml-basket-unit">${info.unit}</span><span class="trml-basket-source">source: ${info.source}</span></span>
+        <span class="trml-basket-name">${basketLabels[ticker] || ticker}<span class="trml-basket-unit">${info.unit}</span><span class="trml-basket-source">source: ${info.source}</span><span class="trml-basket-periods">7D: <span class="${changeClass(p7)}">${formatPercent(p7)}</span> | 30D: <span class="${changeClass(p30)}">${formatPercent(p30)}</span></span></span>
         <span class="trml-basket-now">${formatNumber(info.now)}</span>
         <span class="trml-basket-change ${changeClass(pct)}">${formatPercent(pct)}</span>
       </div>
@@ -354,7 +447,7 @@ async function loadTrmlWidget() {
     setText(trmlPpChangeEl, '-');
     setText(trmlHintEl, 'No data for interpretation.');
     setText(trmlUpdatedEl, 'Updated (UTC): no data');
-    renderBasketRows(null);
+    await renderBasketRows(null);
     renderDrivers(null);
     return;
   }
@@ -392,7 +485,7 @@ async function loadTrmlWidget() {
   }
 
   setText(trmlUpdatedEl, `Updated (UTC): ${formatIsoDate(payload.date_utc)}`);
-  renderBasketRows(payload);
+  await renderBasketRows(payload);
   renderDrivers(payload);
 }
 
@@ -689,10 +782,10 @@ function bindUi() {
   });
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
   bindUi();
-  loadTrmlWidget();
-  loadTrmlHistoryChart();
+  await loadTrmlHistoryChart();
+  await loadTrmlWidget();
 
   currentUiLang = 'en';
   updateSupportPanel('en');
@@ -703,5 +796,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.showText = showText;
 window.toggleSupportPanel = toggleSupportPanel;
-
 
