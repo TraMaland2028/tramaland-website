@@ -273,7 +273,8 @@ body {
 }
 
 .trml-basket-unit,
-.trml-basket-source {
+.trml-basket-source,
+.trml-basket-periods {
   display: block;
   font-size: 10px;
 }
@@ -287,6 +288,23 @@ body {
   margin-top: 1px;
   color: rgba(145, 205, 233, 0.68);
   text-transform: lowercase;
+}
+
+.trml-basket-periods {
+  margin-top: 2px;
+  color: rgba(170, 224, 244, 0.85);
+}
+
+.trml-basket-periods .is-up {
+  color: #7dffb0;
+}
+
+.trml-basket-periods .is-down {
+  color: #ff9fa8;
+}
+
+.trml-basket-periods .is-flat {
+  color: #dff7ff;
 }
 
 .trml-basket-change.is-up,
