@@ -110,6 +110,68 @@ const basketLabels = {
 };
 
 let trmlChartInstance = null;
+const DISPLAY_UNITS_FALLBACK = {
+  'CL=F': 'USD/barrel',
+  'NG=F': 'USD/MMBtu',
+  'GC=F': 'USD/troy oz',
+  'SI=F': 'USD/troy oz',
+  'HG=F': 'USD/lb',
+  'PL=F': 'USD/troy oz',
+  'ZW=F': 'USD/bushel',
+  'ZC=F': 'USD/bushel',
+  'ZS=F': 'USD/bushel',
+  'KC=F': 'USD/lb',
+  'SB=F': 'USD/lb',
+  'CT=F': 'USD/lb'
+};
+
+const CENTS_QUOTED_FALLBACK = new Set(['SI=F', 'HG=F', 'ZW=F', 'ZC=F', 'ZS=F', 'KC=F', 'SB=F', 'CT=F']);
+
+function normalizeFallbackDisplayPrice(ticker, value) {
+  const num = asNumber(value);
+  if (num === null) return null;
+  if (!CENTS_QUOTED_FALLBACK.has(ticker)) return num;
+  return num >= 20 ? num / 100 : num;
+}
+
+function getDisplayPriceInfo(payload, ticker) {
+  const displayPrices = payload?.display_prices_usd_per_unit || {};
+  const displayBasePrices = payload?.display_base_prices_usd_per_unit || {};
+  const displayUnits = payload?.display_units || {};
+  const displaySources = payload?.display_price_sources || {};
+
+  const hasDisplay = displayPrices[ticker] != null && displayBasePrices[ticker] != null;
+  if (hasDisplay) {
+    return {
+      now: asNumber(displayPrices[ticker]),
+      base: asNumber(displayBasePrices[ticker]),
+      unit: displayUnits[ticker] || DISPLAY_UNITS_FALLBACK[ticker] || 'USD/unit',
+      source: (displaySources[ticker] || 'futures').toLowerCase()
+    };
+  }
+
+  const rawPrices = payload?.prices || {};
+  const rawBasePrices = payload?.base_prices || {};
+  const spotPrices = payload?.spot_prices || {};
+  const baseSpotPrices = payload?.base_spot_prices || {};
+
+  if ((ticker === 'GC=F' || ticker === 'SI=F' || ticker === 'PL=F') &&
+      asNumber(spotPrices[ticker]) !== null && asNumber(baseSpotPrices[ticker]) !== null) {
+    return {
+      now: asNumber(spotPrices[ticker]),
+      base: asNumber(baseSpotPrices[ticker]),
+      unit: 'USD/troy oz',
+      source: 'spot'
+    };
+  }
+
+  return {
+    now: normalizeFallbackDisplayPrice(ticker, rawPrices[ticker]),
+    base: normalizeFallbackDisplayPrice(ticker, rawBasePrices[ticker]),
+    unit: DISPLAY_UNITS_FALLBACK[ticker] || 'USD/unit',
+    source: 'futures'
+  };
+}
 let trmlChartWindowPoints = TRML_CHART_DEFAULT_WINDOW_POINTS;
 let trmlHistoryCache = [];
 let currentUiLang = 'en';
@@ -181,12 +243,7 @@ function renderBasketRows(payload) {
   if (!basketEl) return;
 
   const displayPrices = payload?.display_prices_usd_per_unit || {};
-  const displayBasePrices = payload?.display_base_prices_usd_per_unit || {};
-  const units = payload?.display_units || {};
-  const sources = payload?.display_price_sources || {};
-
   const fallbackPrices = payload?.prices || {};
-  const fallbackBasePrices = payload?.base_prices || {};
 
   const tickers = Object.keys(displayPrices).length > 0
     ? Object.keys(displayPrices)
@@ -198,16 +255,13 @@ function renderBasketRows(payload) {
   }
 
   const rows = tickers.map((ticker) => {
-    const now = asNumber(displayPrices[ticker] ?? fallbackPrices[ticker]);
-    const base = asNumber(displayBasePrices[ticker] ?? fallbackBasePrices[ticker]);
-    const pct = (now !== null && base !== null && base > 0) ? ((now / base) - 1) * 100 : null;
-    const unit = units[ticker] || 'USD/unit';
-    const source = (sources[ticker] || 'futures').toLowerCase();
+    const info = getDisplayPriceInfo(payload, ticker);
+    const pct = (info.now !== null && info.base !== null && info.base > 0) ? ((info.now / info.base) - 1) * 100 : null;
 
     return `
       <div class="trml-basket-row">
-        <span class="trml-basket-name">${basketLabels[ticker] || ticker}<span class="trml-basket-unit">${unit}</span><span class="trml-basket-source">source: ${source}</span></span>
-        <span class="trml-basket-now">${formatNumber(now)}</span>
+        <span class="trml-basket-name">${basketLabels[ticker] || ticker}<span class="trml-basket-unit">${info.unit}</span><span class="trml-basket-source">source: ${info.source}</span></span>
+        <span class="trml-basket-now">${formatNumber(info.now)}</span>
         <span class="trml-basket-change ${changeClass(pct)}">${formatPercent(pct)}</span>
       </div>
     `;
@@ -222,7 +276,6 @@ function renderBasketRows(payload) {
     ${rows}
   `;
 }
-
 function renderDrivers(payload) {
   const el = document.getElementById('trmlDriversRows');
   if (!el) return;
