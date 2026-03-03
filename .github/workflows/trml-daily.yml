@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  update-index:
+  update-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,12 +32,45 @@ jobs:
         run: |
           python trml_base.py
 
+      - name: Validate output payload
+        run: |
+          python - << 'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('SITE-trml/assets/trml-latest.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+
+          required = [
+              'date_utc',
+              'prices',
+              'base_prices',
+              'display_prices_usd_per_unit',
+              'display_base_prices_usd_per_unit',
+              'display_units',
+              'display_price_sources'
+          ]
+
+          missing = [k for k in required if k not in data]
+          if missing:
+              raise SystemExit(f"Missing required keys in trml-latest.json: {missing}")
+
+          if 'NG=F' not in data.get('prices', {}):
+              raise SystemExit('NG=F is missing in prices')
+
+          print('Payload validation OK')
+          PY
+
       - name: Commit updated JSON
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Public files consumed by frontend
           git add SITE-trml/assets/trml-latest.json SITE-trml/assets/trml-history.json
+
+          # Daily archive files consumed by 7D/30D calculations on frontend
+          git add SITE-trml/TRML-base/archive/*.json
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
