@@ -26,8 +26,8 @@ TICKERS = {
 }
 
 INDEX_VERSION = "TRML-R1"
-BASE_INDEX_VALUE = 1_000_000.0
-MEME_USD_BASE = 1_000_000.0
+BASE_INDEX_VALUE = 1_062_343.36
+MEME_USD_BASE = 1_062_343.36
 SPOT_BLEND_ALPHA = 0.5
 SPOT_SYMBOLS = {
     "GC=F": {"stooq": "xauusd", "yahoo": "XAUUSD=X"},
@@ -1047,7 +1047,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
 
