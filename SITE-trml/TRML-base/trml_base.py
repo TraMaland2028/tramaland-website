@@ -35,6 +35,23 @@ SPOT_SYMBOLS = {
     "PL=F": {"stooq": "xptusd", "yahoo": "XPTUSD=X"},
 }
 
+DISPLAY_UNITS = {
+    "CL=F": "USD/barrel",
+    "NG=F": "USD/MMBtu",
+    "GC=F": "USD/troy oz",
+    "SI=F": "USD/troy oz",
+    "HG=F": "USD/lb",
+    "PL=F": "USD/troy oz",
+    "ZW=F": "USD/bushel",
+    "ZC=F": "USD/bushel",
+    "ZS=F": "USD/bushel",
+    "KC=F": "USD/lb",
+    "SB=F": "USD/lb",
+    "CT=F": "USD/lb",
+}
+
+CENTS_QUOTED_TICKERS = {"ZW=F", "ZC=F", "ZS=F", "KC=F", "SB=F", "CT=F", "HG=F"}
+
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_FILE = os.path.join(ROOT_DIR, "base_prices.json")
 BASE_SPOT_FILE = os.path.join(ROOT_DIR, "base_spot_prices.json")
@@ -205,6 +222,34 @@ def fetch_last_close_stooq_symbol(symbol: str) -> float:
         raise RuntimeError(f"No stooq spot data for symbol={symbol}")
 
     return float(statistics.median(closes))
+
+
+def fetch_last_quote_stooq(ticker: str) -> float:
+    symbol = ticker.replace("=F", ".F").lower()
+    return fetch_last_quote_stooq_symbol(symbol)
+
+
+def fetch_last_quote_stooq_symbol(symbol: str) -> float:
+    headers = {"User-Agent": "Mozilla/5.0 (TRML Index Bot)"}
+
+    quote_url = f"https://stooq.com/q/l/?s={symbol.lower()}&f=sd2t2ohlcv&h&e=csv"
+    response = requests.get(quote_url, headers=headers, timeout=15)
+    response.raise_for_status()
+
+    rows = [line.strip() for line in response.text.splitlines() if line.strip()]
+    data_rows = [line for line in rows if not line.lower().startswith("symbol,")]
+    if not data_rows:
+        raise RuntimeError(f"No stooq quote data for symbol={symbol}")
+
+    cols = [c.strip() for c in data_rows[0].split(",")]
+    if len(cols) < 7:
+        raise RuntimeError(f"Malformed stooq quote data for symbol={symbol}: {data_rows[0]}")
+
+    close = safe_float(cols[6])
+    if close is None:
+        raise RuntimeError(f"No valid stooq quote close for symbol={symbol}")
+
+    return float(close)
 
 
 # ================= Storage =================
@@ -448,6 +493,99 @@ def fetch_all_spot_prices(base_spot: dict | None = None) -> tuple[dict, dict]:
     return spot_prices, meta
 
 
+def fetch_all_prices_current(base_prices: dict | None = None, fallback_prices: dict | None = None) -> tuple[dict, dict]:
+    prices = {}
+    meta = {
+        "live_tickers": [],
+        "fallback_tickers": [],
+        "missing_tickers": [],
+    }
+    cache = load_last_prices_cache()
+    fallback_prices = fallback_prices or {}
+
+    for ticker in TICKERS.keys():
+        ref_price = reference_price_for_ticker(ticker, cache, base_prices)
+
+        try:
+            live_price = fetch_last_quote_stooq(ticker)
+            live_price = clamp_price_change(ticker, live_price, ref_price)
+            prices[ticker] = live_price
+            meta["live_tickers"].append(ticker)
+            logging.info(f"Fetched {ticker} via stooq quote (current): {live_price}")
+        except Exception as stooq_error:
+            logging.warning(f"Stooq current quote fetch failed for {ticker}: {stooq_error}")
+
+            fallback = fallback_prices.get(ticker)
+            source = "calc_prices"
+
+            if fallback is None and cache.get(ticker) is not None:
+                fallback = cache[ticker]
+                source = "last_prices_cache"
+
+            if fallback is None and base_prices and base_prices.get(ticker) is not None:
+                fallback = base_prices[ticker]
+                source = "base_prices"
+
+            if fallback is not None:
+                prices[ticker] = fallback
+                meta["fallback_tickers"].append(ticker)
+                logging.warning(f"Using current-price fallback ({source}) for {ticker}: {fallback}")
+            else:
+                prices[ticker] = None
+                meta["missing_tickers"].append(ticker)
+                logging.error(f"No current-price fallback available for {ticker}")
+
+        time.sleep(SLEEP_BETWEEN_TICKERS_SEC)
+
+    return prices, meta
+
+
+def fetch_all_spot_prices_current(base_spot: dict | None = None, fallback_spot_prices: dict | None = None) -> tuple[dict, dict]:
+    spot_prices = {}
+    meta = {
+        "live_tickers": [],
+        "fallback_tickers": [],
+        "missing_tickers": [],
+    }
+    cache = load_last_spot_cache()
+    fallback_spot_prices = fallback_spot_prices or {}
+
+    for ticker, feed in SPOT_SYMBOLS.items():
+        stooq_symbol = feed.get("stooq")
+
+        try:
+            live_price = fetch_last_quote_stooq_symbol(stooq_symbol)
+            spot_prices[ticker] = live_price
+            meta["live_tickers"].append(ticker)
+            logging.info(f"Fetched SPOT {ticker} via stooq quote symbol={stooq_symbol} (current): {live_price}")
+        except Exception as stooq_err:
+            logging.warning(f"SPOT stooq current quote fetch failed for {ticker} ({stooq_symbol}): {stooq_err}")
+
+            fallback = fallback_spot_prices.get(ticker)
+            source = "calc_spot_prices"
+
+            if fallback is None and cache.get(ticker) is not None:
+                fallback = cache[ticker]
+                source = "last_spot_cache"
+
+            if fallback is None and base_spot and base_spot.get(ticker) is not None:
+                fallback = base_spot[ticker]
+                source = "base_spot_prices"
+
+            if fallback is not None:
+                spot_prices[ticker] = fallback
+                meta["fallback_tickers"].append(ticker)
+                logging.warning(f"Using SPOT current-price fallback ({source}) for {ticker}: {fallback}")
+            else:
+                spot_prices[ticker] = None
+                meta["missing_tickers"].append(ticker)
+                logging.warning(f"No SPOT current-price available for {ticker}; using calc layer values")
+
+        time.sleep(SLEEP_BETWEEN_TICKERS_SEC)
+
+    return spot_prices, meta
+
+
 # ================= Index Core =================
 
 def validate_weights():
@@ -629,12 +767,59 @@ def upsert_history(run_date: str, raw_index: float, k_raw: float, k_smooth: floa
     save_history(history)
     return history[-1], history
 
+def normalize_to_display_usd(ticker: str, value: float | None) -> float | None:
+    if value is None:
+        return None
+    if ticker in CENTS_QUOTED_TICKERS:
+        return value / 100.0
+    return value
+
+
+def build_display_price_maps(
+    prices: dict,
+    base_prices: dict,
+    spot_prices: dict | None,
+    base_spot_prices: dict | None,
+) -> tuple[dict, dict, dict, dict]:
+    display_prices = {}
+    display_base_prices = {}
+    display_units = {}
+    display_sources = {}
+
+    spot_prices = spot_prices or {}
+    base_spot_prices = base_spot_prices or {}
+
+    for ticker in TICKERS.keys():
+        # Keep display aligned with index calculation inputs (daily median-close set).
+        current = prices.get(ticker) if isinstance(prices, dict) else None
+        base_value = base_prices.get(ticker) if isinstance(base_prices, dict) else None
+        source = "futures_median3"
+
+        # For precious metals, index already blends futures and spot.
+        # Display spot USD/oz when available, but from the same daily snapshot set.
+        if ticker in SPOT_SYMBOLS:
+            spot_current = spot_prices.get(ticker)
+            spot_base = base_spot_prices.get(ticker)
+            if spot_current is not None and spot_base is not None:
+                current = spot_current
+                base_value = spot_base
+                source = "spot_median3"
+            else:
+                source = "futures_median3_fallback"
+
+        display_prices[ticker] = normalize_to_display_usd(ticker, current)
+        display_base_prices[ticker] = normalize_to_display_usd(ticker, base_value)
+        display_units[ticker] = DISPLAY_UNITS.get(ticker, "USD/unit")
+        display_sources[ticker] = source
+
+    return display_prices, display_base_prices, display_units, display_sources
 
 # ================= Main =================
 
 def build_output(run_date: str, prices: dict, base: dict, index_value: float, history_row: dict,
                  coverage: float | None, excluded: list, note: str | None = None,
                  spot_prices: dict | None = None, base_spot_prices: dict | None = None,
+                 current_prices: dict | None = None, current_spot_prices: dict | None = None,
                  hybrid_used: list | None = None, hybrid_fallback: list | None = None,
                  market_data_fresh: bool = True,
                  market_live_tickers: list | None = None,
@@ -643,6 +828,13 @@ def build_output(run_date: str, prices: dict, base: dict, index_value: float, hi
     k_smooth = history_row["k_smooth_ema7"]
     pp_raw = inverse_power(k_raw)
     pp_smooth = inverse_power(k_smooth)
+
+    display_prices, display_base_prices, display_units, display_sources = build_display_price_maps(
+        prices=prices,
+        base_prices=base,
+        spot_prices=spot_prices,
+        base_spot_prices=base_spot_prices,
+    )
 
     out = {
         "date_utc": run_date,
@@ -654,6 +846,11 @@ def build_output(run_date: str, prices: dict, base: dict, index_value: float, hi
         "base_prices": base,
         "spot_prices": spot_prices or {},
         "base_spot_prices": base_spot_prices or {},
+        "display_prices_usd_per_unit": display_prices,
+        "display_base_prices_usd_per_unit": display_base_prices,
+        "display_units": display_units,
+        "display_price_sources": display_sources,
+        "display_mode": "aligned_with_index_inputs",
         "method": "geometric_weighted_hybrid_spot_futures_median3",
         "spot_blend_alpha": SPOT_BLEND_ALPHA,
         "hybrid_tickers_used": hybrid_used or [],
@@ -712,6 +909,7 @@ def main():
             logging.info(f"Backfilled missing base tickers: {added_base_tickers}")
 
     spot_prices, spot_meta = fetch_all_spot_prices(base_spot=base_spot)
+
     base_spot, normalized = normalize_base_spot_prices(base_spot, spot_prices)
     if normalized:
         save_json(BASE_SPOT_FILE, base_spot)
@@ -849,6 +1047,21 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
