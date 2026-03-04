@@ -5,12 +5,21 @@ on:
     - cron: "10 0 * * *"   # daily at 00:10 UTC
   workflow_dispatch:
 
+concurrency:
+  group: trml-daily-update
+  cancel-in-progress: true
+
 permissions:
   contents: write
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
 
     steps:
       - name: Checkout repo
@@ -24,16 +33,30 @@ jobs:
       - name: Install deps
         working-directory: SITE-trml/TRML-base
         run: |
+          set -euo pipefail
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run TRML backend
+      - name: Run TRML backend (with retry)
         working-directory: SITE-trml/TRML-base
         run: |
-          python trml_base.py
+          set -euo pipefail
+          for i in 1 2 3; do
+            echo "Run attempt $i"
+            if python trml_base.py; then
+              exit 0
+            fi
+            if [ "$i" -lt 3 ]; then
+              echo "Retry in 20s..."
+              sleep 20
+            fi
+          done
+          echo "Backend failed after 3 attempts"
+          exit 1
 
-      - name: Normalize payload for frontend
+      - name: Normalize payload for frontend (strict_market)
         run: |
+          set -euo pipefail
           python - << 'PY'
           import json
           from pathlib import Path
@@ -41,71 +64,91 @@ jobs:
           p = Path('SITE-trml/assets/trml-latest.json')
           data = json.loads(p.read_text(encoding='utf-8'))
 
-          for k in ['date_utc', 'prices', 'base_prices']:
+          for k in ['date_utc', 'prices', 'base_prices', 'index', 'k_raw', 'base_index_value']:
               if k not in data:
                   raise SystemExit(f"Missing required key: {k}")
 
           prices = data.get('prices', {})
           base_prices = data.get('base_prices', {})
 
-          if 'display_prices_usd_per_unit' not in data:
-              cents_quoted = {'SI=F','HG=F','ZW=F','ZC=F','ZS=F','KC=F','SB=F','CT=F'}
-              units = {
-                  'CL=F': 'USD/barrel',
-                  'NG=F': 'USD/MMBtu',
-                  'GC=F': 'USD/troy oz',
-                  'SI=F': 'USD/troy oz',
-                  'HG=F': 'USD/lb',
-                  'PL=F': 'USD/troy oz',
-                  'ZW=F': 'USD/bushel',
-                  'ZC=F': 'USD/bushel',
-                  'ZS=F': 'USD/bushel',
-                  'KC=F': 'USD/lb',
-                  'SB=F': 'USD/lb',
-                  'CT=F': 'USD/lb',
-              }
+          cents_quoted = {'SI=F','HG=F','ZW=F','ZC=F','ZS=F','KC=F','SB=F','CT=F'}
+          units = {
+              'CL=F': 'USD/barrel',
+              'NG=F': 'USD/MMBtu',
+              'GC=F': 'USD/troy oz',
+              'SI=F': 'USD/troy oz',
+              'HG=F': 'USD/lb',
+              'PL=F': 'USD/troy oz',
+              'ZW=F': 'USD/bushel',
+              'ZC=F': 'USD/bushel',
+              'ZS=F': 'USD/bushel',
+              'KC=F': 'USD/lb',
+              'SB=F': 'USD/lb',
+              'CT=F': 'USD/lb',
+          }
 
-              def norm(t, v):
-                  if v is None:
-                      return None
-                  x = float(v)
-                  if t in cents_quoted:
-                      return x / 100.0
-                  return x
+          def norm(t, v):
+              if v is None:
+                  return None
+              x = float(v)
+              return x / 100.0 if t in cents_quoted else x
 
-              display_prices = {}
-              display_base = {}
-              display_sources = {}
+          display_prices = {}
+          display_base = {}
+          display_sources = {}
 
-              spot = data.get('spot_prices', {}) or {}
-              base_spot = data.get('base_spot_prices', {}) or {}
-              precious = {'GC=F','SI=F','PL=F'}
+          spot = data.get('spot_prices', {}) or {}
+          base_spot = data.get('base_spot_prices', {}) or {}
+          precious = {'GC=F','SI=F','PL=F'}
 
-              for t in prices.keys():
-                  if t in precious and t in spot and t in base_spot:
-                      display_prices[t] = float(spot[t])
-                      display_base[t] = float(base_spot[t])
-                      display_sources[t] = 'spot'
-                  else:
-                      display_prices[t] = norm(t, prices.get(t))
-                      display_base[t] = norm(t, base_prices.get(t))
-                      display_sources[t] = 'futures'
+          for t in prices.keys():
+              if t in precious and t in spot and t in base_spot:
+                  display_prices[t] = float(spot[t])
+                  display_base[t] = float(base_spot[t])
+                  display_sources[t] = 'spot_median3'
+              else:
+                  display_prices[t] = norm(t, prices.get(t))
+                  display_base[t] = norm(t, base_prices.get(t))
+                  display_sources[t] = 'futures_median3'
 
-              data['display_prices_usd_per_unit'] = display_prices
-              data['display_base_prices_usd_per_unit'] = display_base
-              data['display_units'] = {t: units.get(t, 'USD/unit') for t in prices.keys()}
-              data['display_price_sources'] = display_sources
+          data['display_prices_usd_per_unit'] = display_prices
+          data['display_base_prices_usd_per_unit'] = display_base
+          data['display_units'] = {t: units.get(t, 'USD/unit') for t in prices.keys()}
+          data['display_price_sources'] = display_sources
+          data['index_mode'] = 'strict_market'
 
           p.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
           print('Payload normalized OK')
           PY
 
+      - name: Validate history file
+        run: |
+          set -euo pipefail
+          python - << 'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('SITE-trml/assets/trml-history.json')
+          hist = json.loads(p.read_text(encoding='utf-8'))
+          if not isinstance(hist, list) or not hist:
+              raise SystemExit('History file is empty or invalid')
+          req = ['date', 'raw', 'k_raw']
+          for i, row in enumerate(hist[-5:]):
+              for k in req:
+                  if k not in row:
+                      raise SystemExit(f'History row missing key {k}: {row}')
+          print('History validation OK')
+          PY
+
       - name: Commit updated JSON
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add SITE-trml/assets/trml-latest.json SITE-trml/assets/trml-history.json
+          git add SITE-trml/assets/trml-latest.json
+          git add SITE-trml/assets/trml-history.json
+          git add SITE-trml/TRML-base/data/history.json
           git add SITE-trml/TRML-base/archive/*.json
 
           if git diff --cached --quiet; then
