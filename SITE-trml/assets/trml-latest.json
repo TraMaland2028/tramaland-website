@@ -1,22 +1,22 @@
 {
-  "date_utc": "2026-03-20",
-  "run_date_utc": "2026-03-20",
-  "run_timestamp_utc": "2026-03-20T02:51:39.002296+00:00",
+  "date_utc": "2026-03-21",
+  "run_date_utc": "2026-03-21",
+  "run_timestamp_utc": "2026-03-21T02:45:21.300975+00:00",
   "version": "TRML-R1",
-  "index": 1112347.4453401857,
+  "index": 1100218.9625382475,
   "prices": {
     "CL=F": 76.17599999999999,
-    "NG=F": 3.131,
-    "GC=F": 4701.05,
-    "SI=F": 7417.7,
-    "HG=F": 554.03,
-    "PL=F": 2004.75,
-    "ZW=F": 606.6,
-    "ZC=F": 467.9,
-    "ZS=F": 1169.75,
-    "KC=F": 300.9,
-    "SB=F": 15.37,
-    "CT=F": 67.88
+    "NG=F": 3.095,
+    "GC=F": 4574.9,
+    "SI=F": 6999.154999999999,
+    "HG=F": 537.45,
+    "PL=F": 1970.5,
+    "ZW=F": 595.25,
+    "ZC=F": 465.5,
+    "ZS=F": 1161.25,
+    "KC=F": 311.15,
+    "SB=F": 15.63,
+    "CT=F": 67.34
   },
   "base_prices": {
     "CL=F": 62.89,
@@ -33,9 +33,9 @@
     "CT=F": 61.77
   },
   "spot_prices": {
-    "GC=F": 4701.36,
-    "SI=F": 74.088,
-    "PL=F": 2011.49
+    "GC=F": 4655.29,
+    "SI=F": 73.1,
+    "PL=F": 1976.05
   },
   "base_spot_prices": {
     "GC=F": 4993.895,
@@ -44,17 +44,17 @@
   },
   "display_prices_usd_per_unit": {
     "CL=F": 76.17599999999999,
-    "NG=F": 3.131,
-    "GC=F": 4701.36,
-    "SI=F": 74.088,
-    "HG=F": 5.540299999999999,
-    "PL=F": 2011.49,
-    "ZW=F": 6.066,
-    "ZC=F": 4.678999999999999,
-    "ZS=F": 11.6975,
-    "KC=F": 3.009,
-    "SB=F": 0.1537,
-    "CT=F": 0.6788
+    "NG=F": 3.095,
+    "GC=F": 4655.29,
+    "SI=F": 73.1,
+    "HG=F": 5.3745,
+    "PL=F": 1976.05,
+    "ZW=F": 5.9525,
+    "ZC=F": 4.655,
+    "ZS=F": 11.6125,
+    "KC=F": 3.1115,
+    "SB=F": 0.1563,
+    "CT=F": 0.6734
   },
   "display_base_prices_usd_per_unit": {
     "CL=F": 62.89,
@@ -126,17 +126,17 @@
     "ZW=F"
   ],
   "market_fallback_tickers": [],
-  "k_raw": 1.0470696078339357,
-  "k_smooth_ema7": 1.057252283117855,
-  "cost_index_k": 1.0470696078339357,
-  "cost_index_k_smooth": 1.057252283117855,
-  "cost_index_change_pct": 4.706960783393566,
-  "purchasing_power_usd": 0.9550463431640346,
-  "purchasing_power_usd_smooth": 0.9458480402151348,
-  "purchasing_power_change_pct": -4.495365683596542,
-  "trml_usd_raw": 1112347.4453401857,
-  "trml_usd_smooth": 1123164.9428150936,
-  "sma_7": 1125195.0124763122,
+  "k_raw": 1.035652882075949,
+  "k_smooth_ema7": 1.0518524328573786,
+  "cost_index_k": 1.035652882075949,
+  "cost_index_k_smooth": 1.0518524328573786,
+  "cost_index_change_pct": 3.5652882075948966,
+  "purchasing_power_usd": 0.9655744866904794,
+  "purchasing_power_usd_smooth": 0.950703700217225,
+  "purchasing_power_change_pct": -3.4425513309520595,
+  "trml_usd_raw": 1100218.9625382475,
+  "trml_usd_smooth": 1117428.4477458822,
+  "sma_7": 1120115.154524605,
   "sma_30": null,
   "index_mode": "strict_market"
 }
