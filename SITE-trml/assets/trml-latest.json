@@ -1,16 +1,16 @@
 {
-  "date_utc": "2026-03-28",
-  "run_date_utc": "2026-03-28",
-  "run_timestamp_utc": "2026-03-28T03:13:07.497151+00:00",
+  "date_utc": "2026-03-29",
+  "run_date_utc": "2026-03-29",
+  "run_timestamp_utc": "2026-03-29T03:32:41.183985+00:00",
   "version": "TRML-R1",
-  "index": 1097250.7296645376,
+  "index": 1112408.6860330307,
   "prices": {
     "CL=F": 76.17599999999999,
     "NG=F": 3.162,
     "GC=F": 4524.3,
     "SI=F": 6999.154999999999,
     "HG=F": 549.45,
-    "PL=F": 1875.9,
+    "PL=F": 1871.2,
     "ZW=F": 605.0,
     "ZC=F": 462.0,
     "ZS=F": 1159.25,
@@ -33,9 +33,9 @@
     "CT=F": 61.77
   },
   "spot_prices": {
-    "GC=F": 4494.04,
-    "SI=F": 69.7745,
-    "PL=F": 1865.39
+    "GC=F": 4996.325,
+    "SI=F": 78.533,
+    "PL=F": 2081.8
   },
   "base_spot_prices": {
     "GC=F": 4993.895,
@@ -45,10 +45,10 @@
   "display_prices_usd_per_unit": {
     "CL=F": 76.17599999999999,
     "NG=F": 3.162,
-    "GC=F": 4494.04,
-    "SI=F": 69.7745,
+    "GC=F": 4996.325,
+    "SI=F": 78.533,
     "HG=F": 5.4945,
-    "PL=F": 1865.39,
+    "PL=F": 2081.8,
     "ZW=F": 6.05,
     "ZC=F": 4.62,
     "ZS=F": 11.5925,
@@ -125,18 +125,22 @@
     "ZS=F",
     "ZW=F"
   ],
-  "market_fallback_tickers": [],
-  "k_raw": 1.0328588392217535,
-  "k_smooth_ema7": 1.032232176893011,
-  "cost_index_k": 1.0328588392217535,
-  "cost_index_k_smooth": 1.032232176893011,
-  "cost_index_change_pct": 3.2858839221753477,
-  "purchasing_power_usd": 0.9681865149679968,
-  "purchasing_power_usd_smooth": 0.968774295536854,
-  "purchasing_power_change_pct": -3.181348503200321,
-  "trml_usd_raw": 1097250.7296645376,
-  "trml_usd_smooth": 1096584.9991006358,
-  "sma_7": 1092616.1319255321,
+  "market_fallback_tickers": [
+    "GC=F",
+    "PL=F",
+    "SI=F"
+  ],
+  "k_raw": 1.047127254631714,
+  "k_smooth_ema7": 1.0359559463276868,
+  "cost_index_k": 1.047127254631714,
+  "cost_index_k_smooth": 1.0359559463276868,
+  "cost_index_change_pct": 4.712725463171408,
+  "purchasing_power_usd": 0.95499376563521,
+  "purchasing_power_usd_smooth": 0.9652920122181398,
+  "purchasing_power_change_pct": -4.500623436479001,
+  "trml_usd_raw": 1112408.6860330307,
+  "trml_usd_smooth": 1100540.9208337346,
+  "sma_7": 1094360.5803440232,
   "sma_30": null,
   "index_mode": "strict_market"
 }
