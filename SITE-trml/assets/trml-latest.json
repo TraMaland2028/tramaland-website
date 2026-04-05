@@ -1,7 +1,7 @@
 {
-  "date_utc": "2026-04-04",
-  "run_date_utc": "2026-04-04",
-  "run_timestamp_utc": "2026-04-04T02:55:21.921153+00:00",
+  "date_utc": "2026-04-05",
+  "run_date_utc": "2026-04-05",
+  "run_timestamp_utc": "2026-04-05T03:34:24.191181+00:00",
   "version": "TRML-R1",
   "index": 1104560.8401314032,
   "prices": {
@@ -131,16 +131,16 @@
     "SI=F"
   ],
   "k_raw": 1.0397399576455235,
-  "k_smooth_ema7": 1.0408696681793608,
+  "k_smooth_ema7": 1.0405872405459016,
   "cost_index_k": 1.0397399576455235,
-  "cost_index_k_smooth": 1.0408696681793608,
+  "cost_index_k_smooth": 1.0405872405459016,
   "cost_index_change_pct": 3.9739957645523516,
   "purchasing_power_usd": 0.9617789454437107,
-  "purchasing_power_usd_smooth": 0.9607350762263559,
+  "purchasing_power_usd_smooth": 0.960995831041894,
   "purchasing_power_change_pct": -3.8221054556289324,
   "trml_usd_raw": 1104560.8401314032,
-  "trml_usd_smooth": 1105760.9806157474,
-  "sma_7": 1108284.9517272995,
-  "sma_30": 1117332.8406501594,
+  "trml_usd_smooth": 1105460.9454946613,
+  "sma_7": 1107163.8308842096,
+  "sma_30": 1116619.6475197787,
   "index_mode": "strict_market"
 }
