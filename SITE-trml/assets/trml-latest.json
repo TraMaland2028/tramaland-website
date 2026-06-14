@@ -1,7 +1,7 @@
 {
-  "date_utc": "2026-06-13",
-  "run_date_utc": "2026-06-13",
-  "run_timestamp_utc": "2026-06-13T04:45:26.998970+00:00",
+  "date_utc": "2026-06-14",
+  "run_date_utc": "2026-06-14",
+  "run_timestamp_utc": "2026-06-14T05:03:03.713387+00:00",
   "version": "TRML-R1",
   "index": 1111218.1539105861,
   "prices": {
@@ -127,17 +127,17 @@
     "ZW=F"
   ],
   "k_raw": 1.0460065885954104,
-  "k_smooth_ema7": 1.0470683407823005,
+  "k_smooth_ema7": 1.0468029027355779,
   "cost_index_k": 1.0460065885954104,
-  "cost_index_k_smooth": 1.0470683407823005,
+  "cost_index_k_smooth": 1.0468029027355779,
   "cost_index_change_pct": 4.60065885954104,
   "purchasing_power_usd": 0.9560169227450196,
-  "purchasing_power_usd_smooth": 0.955047498860357,
+  "purchasing_power_usd_smooth": 0.9552896704687489,
   "purchasing_power_change_pct": -4.398307725498041,
   "trml_usd_raw": 1111218.1539105861,
-  "trml_usd_smooth": 1112346.0992962942,
+  "trml_usd_smooth": 1112064.112949867,
   "sma_7": 1111218.1539105864,
-  "sma_30": 1125825.955669286,
+  "sma_30": 1124740.4587127345,
   "note": "Market session appears closed or unchanged: used latest available cached/archive prices for daily calendar update.",
   "index_mode": "strict_market"
 }
